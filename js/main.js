@@ -9,6 +9,7 @@ function menuBar(x) {
         break; } }
 
 
-$(document).ready(function() { 
+$(document).ready(function() {
     $('header').load('../header.html');
+    $('head').load('../head.html');
 });

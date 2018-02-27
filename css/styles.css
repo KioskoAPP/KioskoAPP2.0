@@ -1,8 +1,10 @@
 h1 {
-  font-size: 5em;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4em;
   color: white;
-  outline: 0; }
+  display: inline-block;
+  margin: 25px 50px 25px 50px;
+  margin-right: 25px; }
 
 /********************************************************** */
 /************************ MENUBAR ************************* */

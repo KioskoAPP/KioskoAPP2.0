@@ -8,5 +8,14 @@
     "start": "lite-server -w"
   },
   "author": "Javier Suarez Sanchez",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KioskoAPP/KioskoAPP2.0.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/KioskoAPP/KioskoAPP2.0/issues"
+  },
+  "homepage": "https://github.com/KioskoAPP/KioskoAPP2.0#readme"
 }

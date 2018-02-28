@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head></head>
+<head>
+
+</head>
 
 <body>
-    <div class="dra-input">
-        <h1>KIOSKO</h1>
+    <div class="dra-padreh1">
+        <h1 class="dra-h1">KIOSKO</h1>
     </div>
 
-    <div>
-        <br>
-        <input type="text" class="dra-input" size="50" maxlength="40" placeholder="correo electronico" required>
-        <br>
-        <input type="password" size="50" maxlength="30" placeholder="xxxxxxxxxxxx" required>
-        <br>
-    </div>
-    <div>
+    <div class="container-fluid">
         <form action="https://plus.google.com">
-            <input type="submit" value="Entrar" />
-            <input type="submit" value="G+" />
-            <input type="submit" value="F" />
+            <div class="form-group">
+
+                <div>
+                    <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electronico" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div>
+                    <input type="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña" name="pwd">
+                </div>
+            </div>
+            <div class="entrar">
+
+                <button type="submit" class="btn btn-block"> Entrar</button>
+            </div>
         </form>
-        <br>
-        <p>¿No tienes cuenta?</p>
-        <a href=”https://juliorestrepo.wordpress.com”> Regístrate</a>
-    </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <!-- Our JS scripts -->
-    <script src="js/main.js"></script>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-4">
+                <input class="dra-button1" type="submit" value="G+" />
+            </div>
+            <div class=" col-xs-offset-2 col-xs-4">
+                <input class="dra-button2" type="submit" value="F" />
+
+            </div>
+            <div class="recordarme">
+                    <input type="checkbox"> Recordarme
+                </div>
+        
+
+        </div>
+        <div class="dra">
+           <p>¿No tienes cuenta? <a href=”https://juliorestrepo.wordpress.com”> Regístrate</a></p>
+           
+
+        </div>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <!-- Our JS scripts -->
+        <script src="js/main.js"></script>
 </body>
 
 </html>

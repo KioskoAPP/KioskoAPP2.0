@@ -8,6 +8,17 @@ $(document).ready(function() {
 
 });
 
+// Botón de "Obtén premium" //
+function goToBePrem(){
+    location.href='/payment.html'
+}
+
+$(document).ready(function() {
+    $('#abm_bePremBtn').click(goToBePrem);
+
+});
+
+
 
 // Botón de "Mis direcciones" //
 function goToDir(){
@@ -28,6 +39,8 @@ function goToCreditCards(){
 $(document).ready(function() {
     $('#abm_myCreditCards').click(goToCreditCards);
 });
+
+
 
 
 

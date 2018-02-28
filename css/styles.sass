@@ -5,92 +5,187 @@ $blackgray: #333333
 $black: #0A0A0A
 $orange: #FFB400
 $darkorange: rgb(219, 132, 0)
-
-h1
-    font-family: 'Montserrat', sans-serif
-    font-size: 4em
-    color: $white
-    display: inline-block
-    margin: 25px 50px 25px 50px
-    margin-right: 25px
+$screen-xs-max: 767px
+$screen-sm-min: 768px
+$screen-md-min: 992px
+$screen-lg-min: 1170px
 
 
 
+@media (max-width: $screen-xs-max) 
 
+    /***********************************************************/
+    /************************ MENUBAR **************************/
+    .menu 
+        background-color: #333333
+        height: 50px
+        > h1 
+            font-size: 1.3em
+            margin: 0
+            padding: 15px
+            text-align: center
+            > a 
+                text-decoration: none
+                color: $white
 
-/***********************************************************/
-/************************ MENUBAR **************************/
-.menu 
-    background-color: #333333
-    height: 100px
+    .toggle-menu
+        position: relative
+        display: none
+        min-width: 50%
+        background-color: #333333
+        z-index: 1
 
-.toggle-menu
-    position: relative
-    display: none
-    min-width: 50%
-    background-color: #333333
-    z-index: 1
+    .toggle-menu > div 
+        padding: 3em
+        display: inline-block
 
-.toggle-menu > div 
-    padding: 3em
-    display: inline-block
+    .toggle-menu_items-list 
+        float: left
 
-.toggle-menu_items-list 
-    float: left
+    .toggle-menu_items-list a 
+        display: block
+        font-family: 'Raleway', sans-serif
+        font-size: 1.8em
+        color: #C8C8C8
+        margin: 20px 75px 20px 75px
+        text-decoration: none
 
-.toggle-menu_items-list a 
-    display: block
-    font-family: 'Raleway', sans-serif
-    font-size: 1.8em
-    color: #C8C8C8
-    margin: 20px 75px 20px 75px
-    text-decoration: none
+    .toggle-menu_items-list a:hover 
+        color: #ffffff
 
-.toggle-menu_items-list a:hover 
-    color: #ffffff
+    .toggle-menu_items-list:first-child 
+        margin-top: 50px
 
-.toggle-menu_items-list:first-child 
-    margin-top: 50px
+    .toggle-menu_items-list:last-child 
+        margin-bottom: 50px
 
-.toggle-menu_items-list:last-child 
-    margin-bottom: 50px
+    .profilePhoto 
+        width: 200px
+        float: left
+        height: auto
 
-.profilePhoto 
-    width: 200px
-    float: left
-    height: auto
+    .menu-icon_container 
+        display: inline-block
+        float: left
+        cursor: pointer
+        margin-top: 10px
+        margin-left: 25px
 
-.menu-icon_container 
-    display: inline-block
-    cursor: pointer
-    margin-top: 10px
+    .bar1,
+    .bar2,
+    .bar3 
+        width: 25px
+        height: 3px
+        background-color: rgba(240,240,240,1)
+        margin: 6px 0
+        transition: 0.4s
 
-.bar1,
-.bar2,
-.bar3 
-    width: 35px
-    height: 5px
-    background-color: #ffffff
-    margin: 6px 0
-    transition: 0.4s
+    .change .bar1 
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px)
+        transform: rotate(-45deg) translate(-9px, 6px)
 
-.change .bar1 
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px)
-    transform: rotate(-45deg) translate(-9px, 6px)
+    .change .bar2 
+        opacity: 0
 
-.change .bar2 
-    opacity: 0
+    .change .bar3 
+        -webkit-transform: rotate(45deg) translate(-8px, -8px)
+        transform: rotate(45deg) translate(-8px, -8px)
 
-.change .bar3 
-    -webkit-transform: rotate(45deg) translate(-8px, -8px)
-    transform: rotate(45deg) translate(-8px, -8px)
+        
+    /***************************************************************/
+    /************************ Detail page **************************/
 
-    
-/***************************************************************/
-/************************ Detail page **************************/
+    .ss_detail-thumbnail
+        height: 200px
+        background-color: yellow
+        // background-image: url('images/thumbnail.jpg')
+    .ss_detail-info
 
-.ss_detail-thumbnail
-    height: 200px
-    background-color: yellow
-    // background-image: url('images/thumbnail.jpg')
-.ss_detail-info
+@media (min-width: $screen-sm-min) 
+
+    /***********************************************************/
+    /************************ MENUBAR **************************/
+    h1
+        font-family: 'Montserrat', sans-serif
+        font-size: 4em
+        color: $white
+        display: inline-block
+        margin-left: 25px
+        margin-right: 25px
+        text-decoration: none
+        a  
+            color: $white
+    .menu 
+        background-color: #333333
+        height: 100px
+
+    .toggle-menu
+        position: relative
+        display: none
+        min-width: 50%
+        background-color: #333333
+        z-index: 1
+
+    .toggle-menu > div 
+        padding: 3em
+        display: inline-block
+
+    .toggle-menu_items-list 
+        float: left
+
+    .toggle-menu_items-list a 
+        display: block
+        font-family: 'Raleway', sans-serif
+        font-size: 1.8em
+        color: #C8C8C8
+        margin: 20px 75px 20px 75px
+        text-decoration: none
+
+    .toggle-menu_items-list a:hover 
+        color: #ffffff
+
+    .toggle-menu_items-list:first-child 
+        margin-top: 50px
+
+    .toggle-menu_items-list:last-child 
+        margin-bottom: 50px
+
+    .profilePhoto 
+        width: 200px
+        float: left
+        height: auto
+
+    .menu-icon_container 
+        display: inline-block
+        cursor: pointer
+        margin-left: 25px
+
+    .bar1,
+    .bar2,
+    .bar3 
+        width: 35px
+        height: 5px
+        background-color: #ffffff
+        margin: 6px 0
+        transition: 0.4s
+
+    .change .bar1 
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px)
+        transform: rotate(-45deg) translate(-9px, 6px)
+
+    .change .bar2 
+        opacity: 0
+
+    .change .bar3 
+        -webkit-transform: rotate(45deg) translate(-8px, -8px)
+        transform: rotate(45deg) translate(-8px, -8px)
+
+        
+    /***************************************************************/
+    /************************ Detail page **************************/
+
+    .ss_detail-thumbnail
+        height: 200px
+        background-color: yellow
+        // background-image: url('images/thumbnail.jpg')
+    .ss_detail-info

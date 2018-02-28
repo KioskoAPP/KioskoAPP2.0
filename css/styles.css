@@ -117,6 +117,7 @@
       font-size: 1.2em;
       color: #C8C8C8; }
   .ss_detail-info .ss_description {
+    font-family: "PT Sans", sans-serif;
     margin-top: 25px;
     margin-left: 10px;
     font-size: 1em; }
@@ -127,7 +128,12 @@
     .ss_detail-info .ss_options .ss_btnDownload i {
       margin-right: 15px; }
   .ss_detail-info .ss_options .ss_btnDownload:hover {
-    background-color: #eeeeee; } }
+    background-color: #eeeeee; }
+  .ss_detail-info .ss_recommended {
+    margin-top: 50px; }
+    .ss_detail-info .ss_recommended .ss_recommended-title {
+      text-align: center;
+      color: #C8C8C8; } }
 @media (min-width: 768px) {
   /********************************************************** */
   /************************ MENUBAR ************************* */

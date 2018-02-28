@@ -26,8 +26,8 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_info">
-                                    <h3 class="ss_info_title">Lorem ipsum</h3>
-                                    <h4>dolor et</h4>
+                                <h3 class="ss_title"></h3>
+                                <h4 class="ss_author"></h4>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,6 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_description">
-                                Commodo laboris esse proident laborum dolore nostrud ut dolore consequat eu aliqua quis. Pariatur ea ullamco laborum sit reprehenderit reprehenderit cupidatat in Lorem id minim consequat. Est aute enim dolore officia anim sint irure nisi laborum. Mollit sunt consectetur proident exercitation amet ad incididunt est pariatur magna enim sunt enim consectetur. Magna adipisicing esse voluptate duis enim sint pariatur eu. Fugiat ea incididunt tempor aliquip culpa eu.
                             </div>
                         </div>
                     </div>
@@ -54,17 +53,41 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-xs-12 ss_recommended">
+                            <div class="row">
+                                <div class="col-xs-12 ss_recommended-title">
+                                    <p>Seleccionado para ti</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 ss_recommended-content">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- Our JS scripts -->
         <script src="js/main.js"></script>
+        <script src="js/magazine.controllers.js"></script>
+        <script src="js/user.controllers.js"></script>
+        <script>
+            $(document).ready(function(){
+                var id = 1;
+                printMagazineInfo(id, 'name','.ss_title');
+                printMagazineInfo(id, 'author','.ss_author');
+                printMagazineInfo(id, 'description','.ss_description');
+                
+            
+            
+            });
+        </script>
+        
     </body>
 </html>

@@ -1,13 +1,3 @@
-// Botón de "Mis direcciones" //
-function goToDir(){
-    location.href='/misdirecciones.html'
-}
-
-$(document).ready(function() {
-    $('#abm_myAdress').click(goToDir);
-
-});
-
 // Botón de "Pásate a premium" //
 function goToPrem(){
     location.href='/premium.html'
@@ -19,8 +9,30 @@ $(document).ready(function() {
 });
 
 
-/***********************************************************
-FUNCIÓN PARA MOSTRAR LOS DATOS DEL USUARIO ***********************************************************/
+// Botón de "Mis direcciones" //
+function goToDir(){
+    location.href='/misdirecciones.html'
+}
+
+$(document).ready(function() {
+    $('#abm_myAdress').click(goToDir);
+
+});
+
+
+// Botón de "Mis tarjetas" //
+function goToCreditCards(){
+    location.href='/mistarjetas.html'
+}
+
+$(document).ready(function() {
+    $('#abm_myCreditCards').click(goToCreditCards);
+});
+
+
+
+/*******************************************
+FUNCIÓN PARA MOSTRAR LOS DATOS DEL USUARIO *******************************************/
 
 /*function ver(idLibro) {
     $.ajax({

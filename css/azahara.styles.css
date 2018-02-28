@@ -1,3 +1,8 @@
+.borderFormul {
+  border-top: 0;
+  border-bottom-width: 2px;
+  border-bottom-color: #646464;
+}
 @media (max-width: 767px) {
   .abm_userPhoto {
     margin-top: 5%;
@@ -13,8 +18,12 @@
   }
   .form-control {
     margin-left: 25%;
+    border-top: 0;
+    border-bottom-width: 2px;
+    border-bottom-color: #646464;
   }
-  .abm_myAdress {
+  .abm_myAdress,
+  .abm_myCreditCards {
     margin-top: 5%;
     margin-bottom: 5%;
   }

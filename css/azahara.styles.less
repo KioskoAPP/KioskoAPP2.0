@@ -3,6 +3,22 @@
 @screen-md-min: 992px;
 @screen-lg-min: 1170px;
 
+@white: rgba(255,255,255,1);
+@verylightgray: #eeeeee;
+@lightgray: #C8C8C8;
+@darkgray: #646464;
+@blackgray: #333333;
+@black: #0A0A0A;
+@orange: #FFB400;
+@darkorange: rgb(219, 132, 0);
+
+.borderFormul{
+    border-top: 0;
+    border-bottom-width: 2px;
+    border-bottom-color: @darkgray;
+}
+
+
 @media (max-width: @screen-xs-max) {
     .abm_userPhoto{
         margin-top: 5%;
@@ -20,11 +36,11 @@
     }
 
     .form-control{
-        margin-left: 25%;
+       margin-left: 25%;
+       .borderFormul
+        }
 
-    }
-
-    .abm_myAdress{
+    .abm_myAdress, .abm_myCreditCards{
         margin-top: 5%;
         margin-bottom: 5%;
     }

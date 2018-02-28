@@ -14,4 +14,5 @@ $(document).ready(function() {
     $('head').load('../head.html');
     //Añade el menu contenido en el documento menu.html en aquellas etiquetas header que tengan la clase "menu"
     $('header[class="menu"]').load('../menu.html');
+    
 });

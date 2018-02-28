@@ -1,8 +1,76 @@
-.dra-input {
-    margin-bottom: 25px;
-    width: 100%;
+.form-group{
+    margin-bottom: 15px;
+    width: 80%;
     height: 60px;
     float: center;
-    margin-left: 25%;
+    margin-left: 10%;
+    color: black;
+    top: 50px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0;
+    text-align: left;
+    margin-top: 10px;
+
 }
 
+
+.dra-padreh1 {
+    text-align: center;
+
+}
+.dra-h1 {
+    color: black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.dra-buttonsdiv {
+    margin-top: 150px;
+    float: center;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    
+}
+.dra-button1 {
+    margin-top: 3%;
+    width: 50%;
+    margin-right:30%;
+}
+.dra-button2 {
+    margin-top: 3%;
+    width: 50%;
+    margin-left: 30%;
+}
+
+.dra {
+    float: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.recordarme {
+    float: center;
+    text-align: center;
+    margin-top:35px;
+}
+
+.entrar {
+    margin-bottom: 15px;
+    width: 80%;
+    height: 60px;
+    float: center;
+    margin-left: 10%;
+    color: black;
+    top: 50px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0;
+    text-align: left;
+    margin-top: 10px;
+
+}

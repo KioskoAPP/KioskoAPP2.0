@@ -1,4 +1,5 @@
 $white: rgba(255,255,255,1)
+$verylightgray: #eeeeee
 $lightgray: #C8C8C8
 $darkgray: #646464
 $blackgray: #333333
@@ -36,23 +37,22 @@ $screen-lg-min: 1170px
         background-color: #333333
         z-index: 1
 
-    .toggle-menu > div 
-        padding: 3em
+    .toggle-menu > div
         display: inline-block
 
     .toggle-menu_items-list 
         float: left
-
-    .toggle-menu_items-list a 
-        display: block
-        font-family: 'Raleway', sans-serif
-        font-size: 1.8em
-        color: #C8C8C8
-        margin: 20px 75px 20px 75px
-        text-decoration: none
-
-    .toggle-menu_items-list a:hover 
-        color: #ffffff
+        a 
+            display: block
+            font-family: 'Raleway', sans-serif
+            font-size: 1.6em
+            color: #C8C8C8
+            margin: 20px 75px 20px 70px
+            text-decoration: none
+        a:hover 
+            color: #ffffff
+        i
+            margin-right: 15px
 
     .toggle-menu_items-list:first-child 
         margin-top: 50px
@@ -76,9 +76,16 @@ $screen-lg-min: 1170px
         img 
             width: 40%
             margin-left: 30%
+            margin-top: 15px
         p
             color: $lightgray
             text-align: center
+        .menu-profileInfo_username
+            font-size: 1.4em
+            margin-top: 15px
+        .menu-profileInfo_moreinfo
+            font-size: 1em
+            margin-top: 10px
 
     .bar1,
     .bar2,
@@ -105,9 +112,47 @@ $screen-lg-min: 1170px
     /************************ Detail page **************************/
 
     .ss_detail-thumbnail
-        height: 200px
-        background-color: yellow
-        // background-image: url('images/thumbnail.jpg')
+        height: 250px
+        background-image: url('/images/thumbnail.jpg')
+        background-position: center top
+        background-size: cover
+    .ss_detail-info
+        .ss_rating
+            margin-top: 25px
+            margin-left: 10px
+            .fa-star
+                font-size: 1.5em
+                color: $lightgray
+            .checked
+                color: $orange
+        .ss_info
+            margin-top: 15px
+            margin-left: 10px
+            h3
+                margin: 0!important
+                font-size: 1.5em
+            h4 
+                margin: 0
+                font-size: 1.2em
+                color: $lightgray
+        .ss_tags
+        .ss_description
+            margin-top: 25px
+            margin-left: 10px
+            font-size: 1em
+        .ss_options
+            .ss_btnDownload
+                margin-top: 35px
+                background-color: $white
+                border: 2px solid $verylightgray
+                i 
+                    margin-right: 15px
+            .ss_btnDownload:hover
+                background-color: $verylightgray
+
+
+
+        
 
 @media (min-width: $screen-sm-min) 
 

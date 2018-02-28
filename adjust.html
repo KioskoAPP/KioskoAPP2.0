@@ -7,36 +7,82 @@
     <header class="menu"></header>
 
     <main>
-        <div class="abm_userPhoto">
-                <img src="images/jon.jpg" alt="Foto del usuario" class="img-circle">
+
+        <!-- FOTO DEL USUARIO -->
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <img src="images/jon.jpg" alt="Foto del usuario" class="img-circle abm_userPhoto center-block">
+            </div>
         </div>
 
+        <!-- BOTÓN "Pásate a PREMIUM" -->
+        <div class="row">
+                <div class="col-xs-12">
+                    <input id= "abm_premBtn" class="abm_premBtn center-block" type="button" value="Pásate a PREMIUM">
+                </div>
+        </div>
+        
         <!-- FORMULARIO PARA VER LOS DATOS PERSONALES DEL USUARIO -->
-        <form class="abm_userData">
-            <div class="form-group">
-                <label for="exampleInputdataName" class="">Nombre</label>
-                <input type="text" class="form-control" id="dataName" placeholder="Nombre">
+        <form class="">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputdataName" class="">Nombre</label>
+                        <input type="text" class="form-control" id="dataName" placeholder="Nombre">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputdataLastName">Apellidos</label>
-                <input type="text" class="form-control" id="dataLastName" placeholder="Apellidos">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputdataLastName">Apellidos</label>
+                        <input type="text" class="form-control" id="dataLastName" placeholder="Apellidos">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail">Email </label>
-                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Email </label>
+                        <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputBirthdate">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="exampleInputBirthdate">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputBirthdate">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="exampleInputBirthdate">
+                    </div>
+                </div>
             </div>
         </form>
 
-        <input class="abm_myAdress" type="button" value="Mis direcciones">
+        <!-- BOTÓN "MIS DIRECCIONES" -->
+        <div class="row">
+            <div class="col-xs-12">
+                <input id = "abm_myAdress" class="abm_myAdress center-block" type="button" value="Mis direcciones" onclick="goTo()">
+            </div>
+        </div>
+        
     </main>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Our JS scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/abm.js"></script>
+
+    
 </body>
 </html>

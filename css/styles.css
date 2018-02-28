@@ -73,4 +73,10 @@ h1 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px); }
 
+/************************************************************** */
+/************************ Detail page ************************* */
+.ss_detail-thumbnail {
+  height: 200px;
+  background-color: yellow; }
+
 /*# sourceMappingURL=styles.css.map */

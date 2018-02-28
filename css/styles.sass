@@ -1,4 +1,5 @@
 $white: rgba(255,255,255,1)
+$verylightgray: #eeeeee
 $lightgray: #C8C8C8
 $darkgray: #646464
 $blackgray: #333333
@@ -111,10 +112,47 @@ $screen-lg-min: 1170px
     /************************ Detail page **************************/
 
     .ss_detail-thumbnail
-        height: 300px
+        height: 250px
         background-image: url('/images/thumbnail.jpg')
         background-position: center top
         background-size: cover
+    .ss_detail-info
+        .ss_rating
+            margin-top: 25px
+            margin-left: 10px
+            .fa-star
+                font-size: 1.5em
+                color: $lightgray
+            .checked
+                color: $orange
+        .ss_info
+            margin-top: 15px
+            margin-left: 10px
+            h3
+                margin: 0!important
+                font-size: 1.5em
+            h4 
+                margin: 0
+                font-size: 1.2em
+                color: $lightgray
+        .ss_tags
+        .ss_description
+            margin-top: 25px
+            margin-left: 10px
+            font-size: 1em
+        .ss_options
+            .ss_btnDownload
+                margin-top: 35px
+                background-color: $white
+                border: 2px solid $verylightgray
+                i 
+                    margin-right: 15px
+            .ss_btnDownload:hover
+                background-color: $verylightgray
+
+
+
+        
 
 @media (min-width: $screen-sm-min) 
 

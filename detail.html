@@ -78,13 +78,27 @@
         <script src="js/magazine.controllers.js"></script>
         <script src="js/user.controllers.js"></script>
         <script>
+            function listRecommendedMagazines(){
+                $.ajax({
+                    url: 'http://localhost:43210/magazines',
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        console.log(res);
+                        for(var i = 0; i < res.length; i++){
+                            console.log(res[i].name);
+                            $('.ss_recommended-content').append('<div class="row ss_recommended-item"><h5>' + res[i].name + '</h5></div>'); }
+                    },
+                    function(jqXHR, textStatus, errorThrown) {
+                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+
             $(document).ready(function(){
                 var id = 1;
                 printMagazineInfo(id, 'name','.ss_title');
                 printMagazineInfo(id, 'author','.ss_author');
                 printMagazineInfo(id, 'description','.ss_description');
-                
-            
+                listRecommendedMagazines();
             
             });
         </script>

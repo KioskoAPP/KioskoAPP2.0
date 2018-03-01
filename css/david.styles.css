@@ -92,3 +92,31 @@
   margin-left: 150px;
   margin-right: 50px;
 }
+
+.dra-titulo {
+ text-align: left;
+ margin-top: 25px;
+ margin-left: 30px;
+}
+
+.dra-revista1 {
+ background: rgb(220, 220, 235);
+ width: 100%;
+}
+
+.dra-revista2 {
+background: rgb(167, 167, 189);
+width: 100%;
+}
+
+.dra-revista3 {
+    background: rgb(220, 220, 235);
+    width: 100%;
+}
+
+.dra-revista4 {
+    background: rgb(167, 167, 189);
+    width: 100%;
+}
+
+

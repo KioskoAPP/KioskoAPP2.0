@@ -125,7 +125,7 @@ body {
   .ss_detail-info .ss_detail-cart-icon:visited {
     color: #960000; }
   .ss_detail-info .ss_tags {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 10px;
     overflow: hidden;
     display: inline-block;
@@ -139,13 +139,14 @@ body {
       margin-right: 5px;
       font-size: 1em; }
   .ss_detail-info .ss_info {
-    margin-top: 15px;
+    margin-top: 0px;
     margin-left: 10px; }
     .ss_detail-info .ss_info h3 {
-      margin-bottom: 0 !important;
+      font-family: "PT Sans", sans-serif;
+      margin: 0 !important;
       font-size: 1.5em; }
     .ss_detail-info .ss_info h4 {
-      margin-top: 0 !important;
+      margin-top: 5px !important;
       font-size: 1em;
       color: #C8C8C8; }
   .ss_detail-info .ss_description {

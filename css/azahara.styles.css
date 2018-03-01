@@ -106,6 +106,9 @@
     font-size: 1.2em;
     line-height: 1.2;
   }
+  .abm_tittle {
+    font-weight: bold;
+  }
   .abm_premPhoto {
     padding: 15px;
   }

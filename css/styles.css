@@ -133,7 +133,11 @@
     margin-top: 50px; }
     .ss_detail-info .ss_recommended .ss_recommended-title {
       text-align: center;
-      color: #C8C8C8; } }
+      color: #C8C8C8; }
+    .ss_detail-info .ss_recommended .ss_recommended-item {
+      text-align: center;
+      min-height: 100px;
+      border: 2px solid #eee; } }
 @media (min-width: 768px) {
   /********************************************************** */
   /************************ MENUBAR ************************* */

@@ -76,7 +76,19 @@
     margin-top: 0%;
 }
 
-.imagen {
-    float:center;
-    margin-top:
+.dra-imagen {
+    margin-top: 50px;
+}
+.dra-nombre{
+    text-align: center;
+    float: center;
+
+}
+
+.dra-tyc1 {
+  text-align:center;
+  width:80%;
+  margin-top: 25px;
+  margin-left: 150px;
+  margin-right: 50px;
 }

@@ -33,7 +33,6 @@ function printMagazineInfo(id, attribute, selector){
             type: 'GET',
             dataType: 'json'})
             .then(function(res){
-                console.log('http://10.2.201.158:43210/' + res[0][attribute]);
                 $(selector).css('background-image', 'url(http://10.2.201.158:43210/' + res[0][attribute] + ')');
             },
             function(jqXHR, textStatus, errorThrown) {

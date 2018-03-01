@@ -1,3 +1,6 @@
+h1 {
+  font-family: "Montserrat", sans-serif; }
+
 /**************************    XS    ******************************************************************************************************* */
 @media (max-width: 767px) {
   /************************************************************** */
@@ -5,7 +8,7 @@
   /********************************************************** */
   /************************ MENUBAR ************************* */
   .menu {
-    background-color: #0a0a0a;
+    background-color: #0A0A0A;
     height: 50px; }
     .menu h1 {
       font-size: 1.3em;
@@ -21,7 +24,7 @@
     display: none;
     min-width: 80%;
     max-width: 90%;
-    background-color: #333333;
+    background-color: #0A0A0A;
     z-index: 1; }
 
   .toggle-menu > div {
@@ -84,44 +87,70 @@
 
   .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(0px, 0px);
-    transform: rotate(-45deg) translate(0px, 0px); }
+    transform: rotate(-45deg) translate(0px, 0px);
+    transform-origin: top right; }
 
   .change .bar2 {
     opacity: 0; }
 
   .change .bar3 {
     -webkit-transform: rotate(45deg) translate(0px, 0px);
-    transform: rotate(45deg) translate(0px, 0px); }
+    transform: rotate(45deg) translate(0px, 0px);
+    transform-origin: bottom right; }
 
   /************************************************************** */
   /************************ Detail page ************************* */
   .ss_detail-thumbnail {
-    height: 250px;
+    height: 275px;
     background-position: center center;
     background-size: cover;
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset; }
 
   .ss_detail-info .ss_rating {
-    margin-top: 25px;
+    margin-top: 30px;
     margin-left: 10px; }
     .ss_detail-info .ss_rating .fa-star {
       font-size: 1.5em;
       color: #C8C8C8; }
     .ss_detail-info .ss_rating .checked {
       color: #FFB400; }
+  .ss_detail-info .ss_detail-like-icon {
+    color: #e6e6e6;
+    font-size: 3.2em;
+    margin-top: 10px;
+    margin-right: 15px;
+    float: right; }
+  .ss_detail-info .ss-liked {
+    color: #960000; }
+  .ss_detail-info .ss_detail-cart-icon:visited {
+    color: #960000; }
+  .ss_detail-info .ss_tags {
+    margin-top: 10px;
+    margin-left: 10px;
+    overflow: hidden;
+    display: inline-block;
+    float: none; }
+    .ss_detail-info .ss_tags .ss_tag {
+      color: #C8C8C8;
+      border: 1px solid #C8C8C8;
+      font-style: italic;
+      border-radius: 10px;
+      padding: 0px 5px 0px 5px;
+      margin-right: 5px;
+      font-size: 1em; }
   .ss_detail-info .ss_info {
     margin-top: 15px;
     margin-left: 10px; }
     .ss_detail-info .ss_info h3 {
-      margin: 0 !important;
+      margin-bottom: 0 !important;
       font-size: 1.5em; }
     .ss_detail-info .ss_info h4 {
-      margin: 0;
-      font-size: 1.2em;
+      margin-top: 0 !important;
+      font-size: 1em;
       color: #C8C8C8; }
   .ss_detail-info .ss_description {
     font-family: "PT Sans", sans-serif;
-    margin-top: 25px;
+    margin-top: 10px;
     margin-left: 10px;
     font-size: 1em; }
   .ss_detail-info .ss_options .ss_btnDownload {
@@ -134,24 +163,22 @@
     background-color: #eeeeee; }
   .ss_detail-info .ss_recommended {
     margin-top: 50px; }
-    .ss_detail-info .ss_recommended .ss_recommended-content .ss_recommended-title {
-      text-align: center;
+    .ss_detail-info .ss_recommended .ss_recommended-title {
+      text-align: center !important;
       color: #C8C8C8; }
     .ss_detail-info .ss_recommended .ss_recommended-content .ss_recommended-item {
-      text-align: center;
-      border: 2px solid #eee; }
+      text-align: center; }
       .ss_detail-info .ss_recommended .ss_recommended-content .ss_recommended-item img {
         position: relative;
-        padding-left: -15px;
-        padding-right: -15px;
+        display: block;
         width: 100%; }
-      .ss_detail-info .ss_recommended .ss_recommended-content .ss_recommended-item h5 {
-        margin: 0 !important;
+      .ss_detail-info .ss_recommended .ss_recommended-content .ss_recommended-item i {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        color: red; } }
+        color: white;
+        font-size: 3em; } }
 /**************************    SM    ******************************************************************************************************* */
 @media (min-width: 768px) {
   /********************************************************** */

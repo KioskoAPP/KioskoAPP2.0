@@ -1,40 +1,116 @@
-.borderFormul {
-  border-top: 0;
-  border-bottom-width: 2px;
-  border-bottom-color: #646464;
+/**** TAMAÑOS PANTALLA ******/
+/****** COLORES ********/
+/******** SOMBRAS **********/
+.paragraphFont {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
 }
+.borderFormul {
+  border-bottom-color: #646464;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom-width: 2px;
+}
+.abm_btn {
+  box-shadow: 2px 2px 5px #646464;
+  text-shadow: 1px 1px 2px #646464;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.gradBtn {
+  background: #f0f9ff;
+  background: -moz-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+  background: -webkit-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+  background: linear-gradient(to bottom, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f9ff', endColorstr='#a1dbff', GradientType=0);
+}
+/**********************************/
+/********* MEDIAQUERYS V. XS ********/
 @media (max-width: 767px) {
+  /******** BOTONES **********/
+  .abm_premBtn,
+  .abm_myAdress,
+  .abm_myCreditCards {
+    box-shadow: 2px 2px 5px #646464;
+    text-shadow: 1px 1px 2px #646464;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .abm_bePremBtn {
+    box-shadow: 2px 2px 5px #646464;
+    text-shadow: 1px 1px 2px #646464;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 50%;
+    height: 50px;
+  }
+  .abm_gradBtn {
+    background: #f0f9ff;
+    background: -moz-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+    background: -webkit-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+    background: linear-gradient(to bottom, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f9ff', endColorstr='#a1dbff', GradientType=0);
+  }
+  /******* ADJUST PAGE ********/
   .abm_userPhoto {
     margin-top: 5%;
     margin-bottom: 2.5%;
     width: 50%;
-  }
-  .abm_premBtn,
-  .abm_bePremBtn {
-    margin-top: 2.5%;
-    margin-bottom: 5%;
+    box-shadow: 2px 2px 5px #646464;
   }
   .abm_form-group {
     margin-left: 15%;
   }
   .abm_form-control {
     margin-left: 25%;
-    border-top: 0;
-    border-bottom-width: 2px;
     border-bottom-color: #646464;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom-width: 2px;
   }
-  .abm_myAdress,
-  .abm_myCreditCards {
-    margin-top: 5%;
+  /******* PREMIUM PAGE ********/
+  .abm_premCoverImage {
+    position: relative;
     margin-bottom: 5%;
+    opacity: 0.75;
+  }
+  .abm_premMainText > h3 {
+    margin: 0;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    text-align: center;
+  }
+  .abm_premMainText > h4 {
+    margin: 0;
+    margin-top: 4%;
+    margin-bottom: 2.5%;
   }
   .abm_premMainText > p {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
     margin-bottom: 5%;
+    margin-left: 7.5%;
+    font-size: 1.2em;
+    line-height: 1.2;
   }
   .abm_premPhoto {
     padding: 15px;
   }
   .abm_premMiniPhotos {
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom: 3%;
   }
 }

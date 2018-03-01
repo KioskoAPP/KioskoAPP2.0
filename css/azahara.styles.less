@@ -1,8 +1,10 @@
+/**** TAMAÑOS PANTALLA ******/
 @screen-xs-max: 767px;
 @screen-sm-min: 768px;
 @screen-md-min: 992px;
 @screen-lg-min: 1170px;
 
+/****** COLORES ********/
 @white: rgba(255,255,255,1);
 @verylightgray: #eeeeee;
 @lightgray: #C8C8C8;
@@ -11,26 +13,79 @@
 @black: #0A0A0A;
 @orange: #FFB400;
 @darkorange: rgb(219, 132, 0);
+ 
+
+/******** SOMBRAS **********/
+@boxShadow: 2px 2px 5px @darkgray;
+@textDarkShadow: 1px 1px 2px @darkgray;
+@textLightShadow: 1px 1px 2px @lightgray;
+
+
+.paragraphFont{
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+}
 
 .borderFormul{
-    border-top: 0;
-    border-bottom-width: 2px;
     border-bottom-color: @darkgray;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom-width: 2px;
+}
+
+.abm_btn{
+    box-shadow: @boxShadow;
+    text-shadow: @textDarkShadow;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.gradBtn{
+    background: rgb(240,249,255);
+    background: -moz-linear-gradient(top, rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 );
 }
 
 
+/**********************************/
+
+
+/********* MEDIAQUERYS V. XS ********/
 @media (max-width: @screen-xs-max) {
+
+/******** BOTONES **********/
+    .abm_premBtn, .abm_myAdress, .abm_myCreditCards{
+        .abm_btn;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .abm_bePremBtn{
+        .abm_btn;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 50%;
+        height: 50px;
+    }
+
+    .abm_gradBtn{
+        .gradBtn
+    }
+
+/******* ADJUST PAGE ********/
     .abm_userPhoto{
         margin-top: 5%;
         margin-bottom: 2.5%;
         width: 50%;
+        box-shadow: @boxShadow;
     }
-
-    .abm_premBtn, .abm_bePremBtn{
-        margin-top: 2.5%;
-        margin-bottom: 5%;
-    }
-
 
     .abm_form-group{
         margin-left: 15%;
@@ -39,23 +94,45 @@
     .abm_form-control{
        margin-left: 25%;
        .borderFormul
-        }
+    }
 
-    .abm_myAdress, .abm_myCreditCards{
-        margin-top: 5%;
+/******* PREMIUM PAGE ********/
+    .abm_premCoverImage{
+        position: relative;
         margin-bottom: 5%;
+        opacity: 0.75;
+    }
+
+    .abm_premMainText > h3{
+        margin: 0;
+        margin-top: 5%;
+        margin-bottom: 4%;
+        text-align: center;
+    }
+    .abm_premMainText > h4 {
+        margin: 0;
+        margin-top: 4%;
+        margin-bottom: 2.5%;
     }
 
     .abm_premMainText > p{
-       margin-bottom: 5%;
-    }
+        .paragraphFont;
+        margin-bottom: 5%;
+        margin-left: 7.5%;
+        font-size: 1.2em;
+        line-height: 1.2;
+     }
+ 
 
     .abm_premPhoto{
         padding: 15px;
     }
 
     .abm_premMiniPhotos{
-        margin-top: 10%;
+        margin-top: 5%;
+        margin-bottom: 3%;
     }
+
+
 
 }

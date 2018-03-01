@@ -7,13 +7,12 @@
         <main class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 ss_detail-thumbnail">
-                    <i class="ss_flag-icon"></i>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 ss_detail-info">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-6">
                             <div class="ss_rating">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -22,7 +21,11 @@
                                 <span class="fa fa-star"></span>
                             </div>
                         </div>
+                        <div class="col-xs-6">
+                            <i class="glyphicon glyphicon-heart ss_detail-like-icon"></i>
+                        </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_info">
@@ -32,12 +35,16 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-12">
-                            <div class="ss_tags">
-                            
+                            <div class="col-xs-12">
+                                <div class="ss_tags">
+                                    <i class="ss_tag">sociedad</i>
+                                    <i class="ss_tag">arte</i>
+                                    <i class="ss_tag">diseño</i>
+                                    <i class="ss_tag">cosmopolita</i>
+                                    <i class="ss_tag">joven</i>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_description">
@@ -80,23 +87,27 @@
         <script>
             function listRecommendedMagazines(){
                 $.ajax({
-                    url: 'http://localhost:43210/magazines',
+                    url: 'http://10.2.201.158:43210/magazines',
                     data: null,
                     type: 'GET',
                     dataType: 'json'})
                     .then(function(res){
-                        console.log(res);
                         for(var i = 0; i < res.length; i++){
-                            console.log(res[i].name);
-                            $('.ss_recommended-content').append('<div class="row ss_recommended-item"><h5>' + res[i].name + '</h5></div>'); }
+                            // console.log(res[i].name);
+                            var recommendedItem = "<div class='row ss_recommended-item'><div class='col-xs-12'><div class='row'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></div><i class='glyphicon glyphicon-eye-open'></i></div></div>";
+                            $('.ss_recommended-content').append(recommendedItem); }
                     },
                     function(jqXHR, textStatus, errorThrown) {
                         console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
-
+            function toggleLike(){
+                $('.glyphicon-heart').toggleClass('ss-liked');
+            }
             $(document).ready(function(){
-                var id = 1;
+                var id = 8;
+                $('.glyphicon-heart').click(toggleLike);
+                printMagazineInfo(id, 'thumbnail','.ss_detail-thumbnail');
                 printMagazineInfo(id, 'name','.ss_title');
-                printMagazineInfo(id, 'author','.ss_author');
+                printMagazineInfo(id, 'owner','.ss_author');
                 printMagazineInfo(id, 'description','.ss_description');
                 listRecommendedMagazines();
             

@@ -7,7 +7,6 @@
         <main class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 ss_detail-thumbnail">
-                    <i class="ss_flag-icon"></i>
                 </div>
             </div>
             <div class="row">
@@ -80,23 +79,24 @@
         <script>
             function listRecommendedMagazines(){
                 $.ajax({
-                    url: 'http://localhost:43210/magazines',
+                    url: 'http://10.2.201.158:43210/magazines',
                     data: null,
                     type: 'GET',
                     dataType: 'json'})
                     .then(function(res){
-                        console.log(res);
                         for(var i = 0; i < res.length; i++){
-                            console.log(res[i].name);
-                            $('.ss_recommended-content').append('<div class="row ss_recommended-item"><h5>' + res[i].name + '</h5></div>'); }
+                            // console.log(res[i].name);
+                            var recommendedItem = "<div class='row ss_recommended-item'><div class='col-xs-12'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''><h5>" + res[i].name + "</h5></div></div>";
+                            $('.ss_recommended-content').append(recommendedItem); }
                     },
                     function(jqXHR, textStatus, errorThrown) {
                         console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
 
             $(document).ready(function(){
-                var id = 1;
+                var id = 13;
+                printMagazineInfo(id, 'thumbnail','.ss_detail-thumbnail');
                 printMagazineInfo(id, 'name','.ss_title');
-                printMagazineInfo(id, 'author','.ss_author');
+                printMagazineInfo(id, 'owner','.ss_author');
                 printMagazineInfo(id, 'description','.ss_description');
                 listRecommendedMagazines();
             

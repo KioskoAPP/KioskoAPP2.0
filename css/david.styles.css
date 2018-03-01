@@ -76,7 +76,11 @@
     margin-top: 0%;
 }
 
-.imagen {
-    float:center;
-    margin-top:
+.dra-imagen {
+    margin-top: 50px;
 }
+.dra-nombre{
+    text-align: center;
+
+}
+

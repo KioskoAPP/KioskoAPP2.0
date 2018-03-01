@@ -1,6 +1,6 @@
 function getMagazines(){
     $.ajax({
-        url: 'http://localhost:43210/magazines',
+        url: 'http://10.2.201.158:43210/magazines',
         data: null,
         type: 'GET',
         dataType: 'json'})
@@ -13,7 +13,7 @@ function getMagazines(){
             
 function getMagazine(id){
     $.ajax({
-        url: 'http://localhost:43210/magazines?id='+ id,
+        url: 'http://10.2.201.158:43210/magazines?id='+ id,
         data: null,
         type: 'GET',
         dataType: 'json'})
@@ -26,7 +26,7 @@ function getMagazine(id){
 
 function printMagazineInfo(id, attribute, selector){
     $.ajax({
-        url: 'http://localhost:43210/magazines?id='+ id,
+        url: 'http://10.2.201.158:43210/magazines?id='+ id,
         data: null,
         type: 'GET',
         dataType: 'json'})

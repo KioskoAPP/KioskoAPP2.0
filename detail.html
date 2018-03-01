@@ -12,26 +12,29 @@
             <div class="row">
                 <div class="col-xs-12 ss_detail-info">
                     <div class="row">
-                        <div class="col-xs-6">
-                            <div class="ss_rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="ss_rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="ss_info">
+                                        <h3 class="ss_title"></h3>
+                                        <a href=""><h4 class="ss_author"></h4></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xs-6">
-                            <i class="glyphicon glyphicon-heart ss_detail-like-icon"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="ss_info">
-                                <h3 class="ss_title"></h3>
-                                <h4 class="ss_author"></h4>
-                            </div>
+                        <div class="col-xs-4">
+                                <i class="glyphicon glyphicon-heart ss_detail-like-icon"></i>
                         </div>
                     </div>
                     <div class="row">
@@ -54,8 +57,11 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_options">
-                                <button class="btn ss_btnDownload col-xs-offset-3 col-xs-6 ">
+                                <button class="btn ss_btnDownload col-xs-offset-2 col-xs-8">
                                     <i class="glyphicon glyphicon-inbox"></i>Descargar
+                                </button>
+                                <button class="btn ss_btnShoppingCart col-xs-offset-2 col-xs-8">
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>Comprar
                                 </button>
                             </div>
                         </div>
@@ -85,6 +91,7 @@
         <script src="js/magazine.controllers.js"></script>
         <script src="js/user.controllers.js"></script>
         <script>
+            var magazine;
             function listRecommendedMagazines(){
                 $.ajax({
                     url: 'http://10.2.201.158:43210/magazines',
@@ -100,8 +107,23 @@
                     function(jqXHR, textStatus, errorThrown) {
                         console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
             function toggleLike(){
-                $('.glyphicon-heart').toggleClass('ss-liked');
-            }
+                $('.glyphicon-heart').toggleClass('ss-liked'); }
+                function getMagazine(id){
+                    $.ajax({
+                        url: 'http://10.2.201.158:43210/magazines?id='+ id,
+                        data: null,
+                        type: 'GET',
+                        dataType: 'json'})
+                        .then(function(res){
+                            magazine = res;
+                        },
+                        function(jqXHR, textStatus, errorThrown) {
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+            
+                            function addTags() {
+                                for(var i = 0; i < this.magazine.length; i++){
+                                    console.log(this.magazine[i]);
+                            } }
             $(document).ready(function(){
                 var id = 8;
                 $('.glyphicon-heart').click(toggleLike);

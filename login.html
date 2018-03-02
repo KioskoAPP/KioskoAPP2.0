@@ -80,15 +80,8 @@
                             if(res.success === true){
                                 location.href = '/home.html';
                             }else{
-                                console.log("El usuario no es valido");
-                                console.log(email);
-                                console.log(pass)
-                            }
-                            
-                            //dump(req.responseText);
-                    }else{
-                            //dump("Error loading page\n");
-                    };}
+                                console.log("El usuario no es valido"); }
+                    }else{};}
                 
                 req.send(null);
             },

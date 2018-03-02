@@ -38,7 +38,7 @@
 .abm_btn{
     box-shadow: @boxShadow;
     text-shadow: @textDarkShadow;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 1.5em;
 }
@@ -52,17 +52,25 @@
 }
 
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/**********************************/
 /**********************************/
 
 
-/********* MEDIAQUERYS V. XS ********/
+/********* MEDIAQUERIES V. XS ********/
 @media (max-width: @screen-xs-max) {
 
 /******** BOTONES **********/
-    .abm_premBtn, .abm_myAdress, .abm_myCreditCards{
+    .abm_premBtn, .abm_myAdressBtn, .abm_myCreditCardsBtn, .abm_newAdressBtn{
         .abm_btn;
         margin-top: 5%;
         margin-bottom: 5%;
+        white-space: normal;
+        font-weight: 400;
+        font-size: 1.2em;
     }
 
     .abm_bePremBtn{
@@ -71,8 +79,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -100%);
-        width: 50%;
-        height: 50px;
+        white-space: normal;
+        font-weight: 600;
+        font-size: 1.3em;
     }
 
     .abm_gradBtn{
@@ -104,15 +113,17 @@
     }
 
     .abm_premMainText > h3{
-        margin: 0;
         margin-top: 5%;
-        margin-bottom: 4%;
+        margin-bottom: 7.5%;
         text-align: center;
+        font-weight: 700;
     }
+
     .abm_premMainText > h4 {
         margin: 0;
         margin-top: 4%;
-        margin-bottom: 2.5%;
+        margin-bottom: 3%;
+        font-weight: 600;
     }
 
     .abm_premMainText > p{
@@ -120,21 +131,23 @@
         margin-bottom: 5%;
         margin-left: 7.5%;
         font-size: 1.2em;
+        font-weight: 500;
         line-height: 1.2;
      }
 
      .abm_tittle{
-        font-weight: bold;
-    }
-
-    .abm_premPhoto{
-        padding: 15px;
+        font-weight: 900;
     }
 
     .abm_premMiniPhotos{
         margin-top: 5%;
         margin-bottom: 3%;
     }
+
+    /**** MIS DIRECCIONES PAGE ****/
+
+
+
 
 
 }

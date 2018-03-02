@@ -107,15 +107,3 @@
     line-height: 1.8;
   }
 }
-<<<<<<< HEAD
-footer {
-  position: relative;
-  bottom: 0;
-}
-@media (max-height: 800px) {
-  footer {
-    position: relative;
-  }
-}
-=======
->>>>>>> bdee032860d14be5554556748b02c5d4e804a8d2

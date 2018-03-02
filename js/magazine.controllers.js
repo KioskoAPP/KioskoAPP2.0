@@ -24,28 +24,19 @@ function getMagazine(id){
         function(jqXHR, textStatus, errorThrown) {
             console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
 
-function printMagazineInfo(id, attribute, selector){
-    if(attribute==='thumbnail'){
-        $.ajax({
-            // barra + id
-            url: 'http://10.2.201.158:43210/magazines?id='+ id,
-            data: null,
-            type: 'GET',
-            dataType: 'json'})
-            .then(function(res){
-                $(selector).css('background-image', 'url(http://10.2.201.158:43210/' + res[0][attribute] + ')');
-            },
-            function(jqXHR, textStatus, errorThrown) {
-                console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); });
-    }else{
-        $.ajax({
-            url: 'http://10.2.201.158:43210/magazines?id='+ id,
-            data: null,
-            type: 'GET',
-            dataType: 'json'})
-            .then(function(res){
-                $(selector).html(res[0][attribute]);
-            },
-            function(jqXHR, textStatus, errorThrown) {
-                console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+function printMagazineAttribute(magazine, attribute, selector){
+    switch(attribute) {
+        case 'thumbnail':
+           $(selector).css('background-image', 'url(http://10.2.201.158:43210/' + magazine[attribute] + ')');
+        break;
+        case 'tags':
+            for(var i = 0; i < magazine[attribute].length; i++){
+                $(selector).append("<i class='ss_tag'>" + magazine[attribute][i] + '</i>');
+            }
+        break;
+        default:
+            $(selector).html(magazine[attribute]);
+        break;
+    }
+   
 } 

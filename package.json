@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/KioskoAPP/KioskoAPP2.0#readme",
   "dependencies": {
+    "jquery-bar-rating": "^1.2.2",
     "manager": "^1.0.9",
     "node": "^9.5.0",
     "package": "^1.0.1"

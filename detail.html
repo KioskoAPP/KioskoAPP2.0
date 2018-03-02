@@ -6,8 +6,7 @@
         <header class="menu"></header>
         <main class="container-fluid">
             <div class="row">
-                <div class="col-xs-12 ss_detail-thumbnail">
-                </div>
+                <div class="col-xs-12 ss_detail-thumbnail"></div>
             </div>
             <div class="row">
                 <div class="col-xs-12 ss_detail-info">
@@ -16,11 +15,13 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="ss_rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
+                                        <select id="example" >
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -34,24 +35,17 @@
                             </div>
                         </div>
                         <div class="col-xs-4">
-                                <i class="glyphicon glyphicon-heart ss_detail-like-icon"></i>
+                            <i class="glyphicon glyphicon-heart ss_detail-like-icon"></i>
                         </div>
                     </div>
                     <div class="row">
                             <div class="col-xs-12">
-                                <div class="ss_tags">
-                                    <i class="ss_tag">sociedad</i>
-                                    <i class="ss_tag">arte</i>
-                                    <i class="ss_tag">diseño</i>
-                                    <i class="ss_tag">cosmopolita</i>
-                                    <i class="ss_tag">joven</i>
-                                </div>
+                                <div class="ss_tags"></div>
                             </div>
                         </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="ss_description">
-                            </div>
+                            <div class="ss_description"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -74,16 +68,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12 ss_recommended-content">
-                                    
-                                </div>
+                                <div class="col-xs-12 ss_recommended-content"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-          <button class="btn">Mi boton</button>
         </main>
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -92,8 +82,8 @@
         <script src="js/main.js"></script>
         <script src="js/magazine.controllers.js"></script>
         <script src="js/user.controllers.js"></script>
+        <script src="js/jquery.barrating.min.js"></script>
         <script>
-            var magazine;
             function listRecommendedMagazines(){
                 $.ajax({
                     url: 'http://10.2.201.158:43210/magazines',
@@ -102,58 +92,34 @@
                     dataType: 'json'})
                     .then(function(res){
                         for(var i = 0; i < res.length; i++){
-                            // console.log(res[i].name);
-                            var recommendedItem = "<div class='row ss_recommended-item'><div class='col-xs-12'><div class='row'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></div><i class='glyphicon glyphicon-eye-open'></i></div></div>";
-                            $('.ss_recommended-content').append(recommendedItem); }
+                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div class='col-xs-12'><div class='row'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></div><i class='glyphicon glyphicon-eye-open'></i></div></div>"); }
                     },
                     function(jqXHR, textStatus, errorThrown) {
                         console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+
             function toggleLike(){
                 $('.glyphicon-heart').toggleClass('ss-liked'); }
-                function getMagazine(id){
-                    $.ajax({
-                        url: 'http://10.2.201.158:43210/magazines?id='+ id,
-                        data: null,
-                        type: 'GET',
-                        dataType: 'json'})
-                        .then(function(res){
-                            magazine = res;
-                        },
-                        function(jqXHR, textStatus, errorThrown) {
-                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
-            }
 
-            function addTags(id) {
-                console.log("sdd");
-                    $.ajax({
-                        url: 'http://10.2.201.158:43210/magazines?id='+ id,
-                        data: null,
-                        type: 'GET',
-                        dataType: 'json'})
-                        .then(function(res){
-                            magazine = res;
-                            console.dir(magazine);
+            $(document).ready(function(){
+                var id = 1;
+                $.ajax({
+                    url: 'http://10.2.201.158:43210/magazines?id='+ id,
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        var magazine = res[0];
+                        $('.glyphicon-heart').click(toggleLike);
+                        printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
+                        printMagazineAttribute(magazine, 'name','.ss_title');
+                        printMagazineAttribute(magazine, 'owner','.ss_author');
+                        printMagazineAttribute(magazine, 'description','.ss_description');
+                        printMagazineAttribute(magazine, 'tags','.ss_tags');
+                        $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
+                        listRecommendedMagazines();
                         },
                         function(jqXHR, textStatus, errorThrown) {
-                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
-            }
-                
-                // for(var i = 0; i < this.magazine.length; i++){
-                //     console.log(this.magazine[i]);} 
-            
-            $(document).ready(function(){
-                var id = 7;
-                $('.glyphicon-heart').click(toggleLike);
-                printMagazineInfo(id, 'thumbnail','.ss_detail-thumbnail');
-                printMagazineInfo(id, 'name','.ss_title');
-                printMagazineInfo(id, 'owner','.ss_author');
-                printMagazineInfo(id, 'description','.ss_description');
-                listRecommendedMagazines();
-                addTags(id);
-                
-            
-            });
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); });
         </script>
-        
     </body>
 </html>

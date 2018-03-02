@@ -3,35 +3,36 @@
     <head><title>KIOSKO</title></head>
     <body>
         <header class="menu"></header>
-
-        <!-- CAROUSEL PRINCIPAL -->
-
-        <div id="carousel-principal" class="carousel slide" data-ride="carousel">
+      
+        <main>
+        <!-- CAROUSEL PRINCIPAL LG-MD-SM -->
+        
+        <div id="carousel-lg-md" class="carousel slide hidden-xs" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#carousel-principal" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-principal" data-slide-to="1"></li>
-            <li data-target="#carousel-principal" data-slide-to="2"></li>
+            <li data-target="#carousel-lg-md" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-lg-md" data-slide-to="1"></li>
+            <li data-target="#carousel-lg-md" data-slide-to="2"></li>
           </ol>
         
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img src="/images/home-carousel/GQ232.jpg" alt="...">
+              <img src="/images/home-carousel/GQ232.jpg" alt="GQ CONNOR MCGREGOR">
               <div class="carousel-caption">
                 <h3><a href="detail.html" style="color:white; text-decoration:none;">GQ CONNOR MCGREGOR</a></h3>
                 <p>A YOUNG AND EVER AND FOREVER MAGAZINE FOR ANYONE THAT BELIEVES IN THE YOUTH SPIRIT.</p>
               </div>
             </div>
             <div class="item">
-              <img src="/images/home-carousel/NEO2.jpg" alt="...">
+              <img src="/images/home-carousel/NEO2.jpg" alt="NEO2 I KNOW ITS OVER">
               <div class="carousel-caption">
                 <h3><a href="detail.html" style="color:white; text-decoration:none;">NEO2 I KNOW ITS OVER</a></h3>
                 <p>NOTICIAS CIENTÍFICAS EN QUO, LA REVISTA PARA MENTES INQUIETAS. ARTÍCULOS E IMÁGENES IMPACTANTES DE CIENCIA, SALUD, TECNOLOGÍA Y NATURALEZA.</p>
               </div>
             </div>
             <div class="item">
-              <img src="/images/home-carousel/vein.jpg" alt="...">
+              <img src="/images/home-carousel/vein.jpg" alt="VEIN ARVIDA BISTROM">
               <div class="carousel-caption">
                 <h3><a href="detail.html" style="color:white; text-decoration:none;">VEIN ARVIDA BISTROM</a></h3>
                 <p>ESQUIRE ES LA REVISTA PARA HOMBRES INFLUYENTES, CON CONSEJOS DE ESTILO Y PLANES PARA EL HOMBRE CONTEMPORÁNEO.</p>
@@ -40,21 +41,67 @@
           </div>
         
           <!-- Controls -->
-          <a class="left carousel-control" href="#carousel-principal" role="button" data-slide="prev">
+          <a class="left carousel-control" href="#carousel-lg-md" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#carousel-principal" role="button" data-slide="next">
+          <a class="right carousel-control" href="#carousel-lg-md" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
 
+        <!-- CAROUSEL PRINCIPAL XS -->
+        <div id="carousel-xs" class="carousel slide hidden-md hidden-lg hidden-sm" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-xs" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-xs" data-slide-to="1"></li>
+            <li data-target="#carousel-xs" data-slide-to="2"></li>
+          </ol>
+        
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="/images/home-carousel/min1.jpg" alt="...">
+              <div class="carousel-caption">
+                <h3><a href="detail.html" style="color:white; text-decoration:none;">GQ CONNOR MCGREGOR</a></h3>
+                <p>A YOUNG AND EVER AND FOREVER MAGAZINE FOR ANYONE THAT BELIEVES IN THE YOUTH SPIRIT.</p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="/images/home-carousel/min2.jpg" alt="...">
+              <div class="carousel-caption">
+                <h3><a href="detail.html" style="color:white; text-decoration:none;">NEO2 I KNOW ITS OVER</a></h3>
+                <p>NOTICIAS CIENTÍFICAS EN QUO, LA REVISTA PARA MENTES INQUIETAS. ARTÍCULOS E IMÁGENES IMPACTANTES DE CIENCIA, SALUD, TECNOLOGÍA Y NATURALEZA.</p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="/images/home-carousel/min3.jpg" alt="...">
+              <div class="carousel-caption">
+                <h3><a href="detail.html" style="color:white; text-decoration:none;">VEIN ARVIDA BISTROM</a></h3>
+                <p>ESQUIRE ES LA REVISTA PARA HOMBRES INFLUYENTES, CON CONSEJOS DE ESTILO Y PLANES PARA EL HOMBRE CONTEMPORÁNEO.</p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-xs" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-xs" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
 
-        <div class="container" style="padding-top:2%;">
-            <h3>Descubre las últimas tendencias</h3>
+        <!-- DESCUBRE LG-MD-SM -->
+
+        <div class="container hidden-xs" style="padding-top:2%;">
+            <h3>Tendencias</h3>
             <div class="row">
-              <div class="col-md-12" style="padding:2%;">
+              <div class="col-md-12" style="padding-top:2%;">
                 <div class="carousel slide multi-item-carousel" id="theCarousel">
                   <div class="carousel-inner" >
                     <div class="item active">
@@ -91,14 +138,115 @@
             </div>
           </div>
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- Our JS scripts -->
-        <script src="js/main.js"></script>
-        <script src="js/multiple.carousel.js"></script>
+           <!-- DESCUBRE XS -->
+
+
+          <div class="container-fluid hidden-sm hidden-md hidden-lg">
+            
+            <div class="row">
+                <div class="col-xs-12 ss_detail-info">
+                    
+                    <div class="row">
+                        <div class="col-xs-12 ss_recommended">
+                            <div class="row">
+                                <div class="col-xs-12 ss_recommended-title">
+                                    <p>Seleccionado para ti</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 ss_recommended-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+
+
+        </main>
+          <!-- FOOTER -->
+          
+          <footer></footer>
+         
+        <div id="cookie_directive_container" class="container hidden-xs">
+              <nav class="navbar navbar-default navbar-fixed-top">
+    
+                  <div class="container">
+                  <div class="navbar-inner navbar-content-center" id="cookie_accept">
+                      <a href="#" class="btn pull-right glyphicon glyphicon-remove"></a>
+                      <p class="text-muted credit">
+                          Éste sitio web usa cookies, si permanece aquí acepta su uso. 
+                          Puede leer más sobre el uso de cookies en nuestra <a href="terminosycondiciones.html">política de privacidad</a>.
+                      </p>
+                      <br>
+    
+                  </div>
+                </div>
+    
+              </nav>
+            </div>    
+
+          
+          
+            <!-- jQuery -->
+      
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         
+            <!-- Latest compiled and minified JavaScript -->
+        
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        
+        
+        
+            <!-- Our JS scripts -->
+        <script src="js/main.js"></script>
+        <script src="js/jj_multicarouselmd-xs.js"></script>
+        <script src="js/jj_cookie.js"></script>
+        <script src="js/magazine.controllers.js"></script>
+        <script src="js/user.controllers.js"></script>
+        <script src="js/jquery.barrating.min.js"></script>
+        <script>
+            function listRecommendedMagazines(){
+                $.ajax({
+                    url: 'http://10.2.201.158:43210/magazines',
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        for(var i = 0; i < res.length; i++){
+                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div class='col-xs-12'><div class='row'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></div><i class='glyphicon glyphicon-eye-open'></i></div></div>"); }
+                    },
+                    function(jqXHR, textStatus, errorThrown) {
+                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+
+            function toggleLike(){
+                $('.glyphicon-heart').toggleClass('ss-liked'); }
+
+            $(document).ready(function(){
+                var id = 8;
+                $.ajax({
+                    url: 'http://10.2.201.158:43210/magazines?id='+ id,
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        var magazine = res[0];
+                        $('.glyphicon-heart').click(toggleLike);
+                        printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
+                        printMagazineAttribute(magazine, 'name','.ss_title');
+                        printMagazineAttribute(magazine, 'owner','.ss_author');
+                        printMagazineAttribute(magazine, 'description','.ss_description');
+                        printMagazineAttribute(magazine, 'tags','.ss_tags');
+                        $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
+                        listRecommendedMagazines();
+                        },
+                        function(jqXHR, textStatus, errorThrown) {
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); });
+        </script>
        
     </body>
+
+
 </html>

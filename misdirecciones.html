@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <header class="menu"></header>
+
+    <main class="container-fluid">
+
+        <!-- DIRECCIONES GUARDADAS POR EL USUARIO -->
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 abm_myAdressTittle">
+                <h3>Mis direcciones</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div id="userAddress" class="col-xs-10 col-xs-offset-1 abm_myAdressDir1 userAddress">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 ">
+                
+            </div>
+        </div>
+
+        <!-- FORMULARIO PARA AÑADIR NUEVAS DIRECCIONES -->
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 abm_addressFormulContainer">
+                <form>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="form-group">
+                                <label for="Address">NOMBRE DIRECCIÓN</label>
+                                <input type="text" class="form-control" id="Address" placeholder=" 'Casa'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="form-group">
+                                <label for="streetName">Dirección postal</label>
+                                <input type="text" class="form-control" id="streetName" placeholder=" Dirección">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-1">
+                            <div class="form-group">
+                                <label for="number">Nº, piso, letra,..</label>
+                                <input type="text" class="form-control" id="number" placeholder="Nº, piso, letra,..">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="cityName">Población</label>
+                                <input type="text" class="form-control" id="cityName" placeholder="Población">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-1">
+                            <div class="form-group">
+                                <label for="postCodeName">Código Postal</label>
+                                <input type="text" class="form-control" id="postCodeName" placeholder="Código Postal">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="countryName">País</label>
+                                <input type="text" class="form-control" id="countryName" placeholder="País">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BOTÓN AÑADIR NUEVAS DIRECCIONES -->
+                    <div class="row">
+                        <button id="abm_newAdress" class="col-xs-6 col-xs-offset-3 btn abm_newAdressBtn" type="button">Añadir dirección</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- Our JS scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/abm.js"></script>
+
+</body>
+
+</html>

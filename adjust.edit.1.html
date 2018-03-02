@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <header class="menu"></header>
+
+    <main class="container-fluid">
+
+        <!-- FOTO DEL USUARIO -->
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <img src="assets/images/jon.jpg" alt="Foto del usuario" class="img-circle abm_userPhoto center-block">
+            </div>
+        </div>
+
+        <!-- BOTÓN "Pásate a PREMIUM" -->
+        <div class="row">
+                <div class="col-xs-12">
+                    <input id= "abm_premBtn" class="btn center-block abm_premBtn" type="button" value="Pásate a PREMIUM">
+                </div>
+        </div>
+        
+        <!-- ICONO "EDITAR" -->
+        <div class="row">
+                <div class="col-xs-1 "><a href="adjust.edit.html" class="glyphicon glyphicon-pencil" style="color:black;"></a>
+                </div>
+        </div>
+
+
+         <!--  "EDICIÓN" -->
+
+        <div class="container-fluid">
+                <h1>Biblioteca</h1>
+                <img id="trabajandoAJAX" src="/imagenes/ajaxloading.gif" alt="Cargando ...">
+                <div id="listado">
+                </div>
+                <form class="form-horizontal">
+                    <div class="form-group has-error">
+                        <label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Código:</label>
+                        <div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">
+                            <input class="form-control " type="number" name="id" id="id">
+                        </div>
+                        <div id="err_id" class="text-danger">Obligatorio</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Título:</label>
+                        <div class="col-xs-12 col-sm-8 col-md-10 col-lg-11">
+                            <input class="form-control" type="text" name="titulo" id="titulo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="autor" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Autor:</label>
+                        <div class="col-xs-12 col-sm-8 col-md-10 col-lg-11">
+                            <input class="form-control" type="text" name="autor" id="autor">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numPag" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Nº Páginas:</label>
+                        <div class="col-xs-12 col-sm-8 col-md-10 col-lg-11">
+                            <input class="form-control" type="number" name="numPag" id="numPag">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btn btn-success" value="Enviar" id="btnEnviar">
+                        <input type="button" class="btn btn-link" value="Volver" id="btnVolver">
+                        <a href="#" class="btn btn-info">
+                            <span class="glyphicon glyphicon-ok"></span> Volver</a>
+                    </div>
+                </form>
+            </div>
+
+            <!--  "DATOS PERSONALES" -->
+
+
+        <!-- FORMULARIO PARA VER LOS DATOS PERSONALES DEL USUARIO -->
+        <form>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group abm_form-group">
+                        <label for="exampleInputdataName">NOMBRE</label>
+                        <input type="text" class="form-control abm_form-control" id="dataName" placeholder="Nombre">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group abm_form-group">
+                        <label for="exampleInputdataLastName">APELLIDOS</label>
+                        <input type="text" class="form-control abm_form-control" id="dataLastName" placeholder="Apellidos">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group abm_form-group">
+                        <label for="exampleInputEmail">EMAIL </label>
+                        <input type="email" class="form-control abm_form-control" id="exampleInputEmail" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group abm_form-group">
+                        <label for="exampleInputPassword">CONTRASEÑA</label>
+                        <input type="password" class="form-control abm_form-control" id="exampleInputPassword" placeholder="Contraseña">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group abm_form-group">
+                        <label for="exampleInputBirthdate">FECHA DE NACIMIENTO</label>
+                        <input type="date" class="form-control abm_form-control" id="exampleInputBirthdate">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        
+            
+
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Our JS scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/abm.js"></script>
+
+
+    <script src="js/comun.js"></script>
+    <script>
+        function listar() {
+            $.get('http://localhost:43210/biblioteca', function (envios) {
+                var rslt = $('<div class="panel panel-default" />');
+                $('#listado').empty();
+                //.append(rslt);
+                for (var i = 0; i < envios.length; ++i) {
+                    var tr = $('<div class="panel panel-default" />');
+                    tr.append($('<div class="panel-heading"><input type="button" class="btn btn-link" value="' + envios[i].titulo + '" onclick="ver(' + envios[i].id + ');"></div>'));
+                    var cuerpo = $('<div class="panel-body"></div>');
+                    cuerpo.append($('<p><b>Autor:</b>' + envios[i].autor + '</p>'))
+                    var td = $('<p/>');
+                    td.addClass('btn-group');
+                    td.append($('<input type="button" class="btn btn-info" value="Ver" onclick="ver(' + envios[i].id + ');">'));
+                    td.append($('<button class="btn btn-success" onclick="editar(' + envios[i].id + ');"><span class="glyphicon glyphicon-pencil"></span></button>'));
+                    td.append($('<button class="btn btn-danger" onclick="borrar(' + envios[i].id + ');"><span class="glyphicon glyphicon-trash"></span></button>'));
+                    cuerpo.append(td);
+                    tr.append(cuerpo);
+                    $('#listado').append(tr);
+                }
+            }, 'json');
+        }
+        function listar_old() {
+            $.get('http://localhost:43210/biblioteca', function (envios) {
+                var rslt = $('<table class="table table-striped table-hover"><tr class="info"><th>Título</th><th><input type="button" class="btn btn-success" value="Añadir" onclick="añadir()"></th></tr></table>');
+                $('#listado').empty().append(rslt);
+                for (var i = 0; i < envios.length; ++i) {
+                    var tr = $('<tr/>');
+                    if (envios[i].titulo.length > 20)
+                        tr.addClass('danger');
+                    tr.append($('<td><input type="button" class="btn btn-link" value="' + envios[i].titulo + '" onclick="ver(' + envios[i].id + ');"></td>'));
+                    var td = $('<td/>');
+                    td.addClass('btn-group');
+                    td.append($('<input type="button" class="btn btn-info" value="Ver" onclick="ver(' + envios[i].id + ');">'));
+                    td.append($('<button class="btn btn-success" onclick="editar(' + envios[i].id + ');"><span class="glyphicon glyphicon-pencil"></span></button>'));
+                    td.append($('<button class="btn btn-danger" onclick="borrar(' + envios[i].id + ');"><span class="glyphicon glyphicon-trash"></span></button>'));
+                    tr.append(td);
+                    rslt.append(tr);
+                }
+            }, 'json');
+        }
+        function añadir() {
+            $('#listado').hide();
+            $('form').show().each(function (i, item) {
+                item.reset();
+            });
+            $('#btnEnviar').on('click', enviarNuevo);
+        }
+        function editar(id) {
+            $.ajax({
+                url: 'http://localhost:43210/biblioteca/' + id,
+                dataType: 'json',
+            }).then(
+                function (resp) {
+                    for (var name in resp) {
+                        $('[name="' + name + '"]').val(resp[name]);
+                    }
+                    $('#listado').hide();
+                    $('form').show();
+                    $('#btnEnviar').on('click', enviarModificado);
+                }
+            )
+        }
+
+        function borrar(id) {
+            if (!window.confirm("¿Estas seguro?")) return;
+            $.ajax({
+                url: 'http://localhost:43210/biblioteca/' + id,
+                method: 'DELETE',
+                dataType: 'json',
+            }).then(
+                function (resp) {
+                    volver();
+                },
+                function (jqXHR, textStatus, errorThrown) {
+                    $('errorMsg').html(
+                        '<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+                }
+            )
+        }
+
+        function ver(id) {
+            $.ajax({
+                url: 'http://localhost:43210/biblioteca/' + id,
+                dataType: 'json',
+            }).then(
+                function (resp) {
+                    var rslt = '<p>';
+                    rslt += 'Código: ' + resp.id + '<br>' +
+                        'Título: ' + resp.titulo + '<br>' +
+                        'Autor: ' + resp.autor + '<br>' +
+                        'Nº Páginas: ' + resp.numPag;
+                    rslt += '</p>';
+                    rslt += '<input type="button" value="Volver" onclick="volver()">';
+
+                    $('#listado').html(rslt);
+                }
+            )
+        }
+
+
+        function enviarNuevo() {
+            var datos = $('form').serializeArray();
+            var envio = {};
+            datos.forEach(function (item) {
+                envio[item.name] = item.value;
+            });
+            $.ajax({
+                url: 'http://localhost:43210/biblioteca',
+                method: 'POST',
+                dataType: 'json',
+                data: envio
+            }).then(
+                function () {
+                    $('#btnEnviar').off('click', enviarNuevo);
+                    volver();
+                },
+                function (jqXHR, textStatus, errorThrown) {
+                    $('errorMsg').html(
+                        '<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+                }
+            );
+        }
+
+        function enviarModificado() {
+            var datos = $('form').serializeArray();
+            var envio = {};
+            datos.forEach(function (item) {
+                envio[item.name] = item.value;
+            });
+            $.ajax({
+                url: 'http://localhost:43210/biblioteca',
+                method: 'PUT',
+                dataType: 'json',
+                data: envio
+            }).then(
+                function () {
+                    $('#btnEnviar').off('click', enviarModificado);
+                    volver();
+                },
+                function (jqXHR, textStatus, errorThrown) {
+                    $('errorMsg').html(
+                        '<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+                }
+            );
+        }
+
+        function volver() {
+            listar();
+            $('#listado').show();
+            $('form').hide();
+        }
+        $(document).ready(function () {
+            listar();
+            $('form').hide();
+            $('#btnVolver').click(volver);
+            $(document)
+                .ajaxStart(function () {
+                    $('#trabajandoAJAX').show();
+                }).ajaxStop(function () {
+                    $('#trabajandoAJAX').hide();
+                });
+        });
+    </script>
+    
+</body>
+</html>

@@ -31,7 +31,7 @@ function printMagazineAttribute(magazine, attribute, selector){
         break;
         case 'tags':
             for(var i = 0; i < magazine[attribute].length; i++){
-                $(selector).append("<i class='ss_tag'>" + magazine[attribute][i] + '</i>');
+                $(selector).append("<i class='ss_tag'><a href=''>" + magazine[attribute][i] + '</a></i>');
             }
         break;
         default:

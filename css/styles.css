@@ -5,30 +5,38 @@ body {
 @media (max-width: 767px) {
   /************************************************************** */
   /************************   GENERAL   ************************* */
+  main {
+    margin-top: 50px !important; }
+
   /********************************************************** */
   /************************ MENUBAR ************************* */
-  .menu {
+  .menu nav {
+    height: 50px;
     background-color: #0A0A0A;
-    height: 50px; }
-    .menu h1 {
-      font-size: 1.3em;
-      margin: 0;
-      padding: 15px;
-      text-align: center; }
-      .menu h1 a {
-        text-decoration: none;
-        color: white; }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; }
+  .menu h1 {
+    font-size: 1.3em;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    width: calc(100% - 100px);
+    float: left; }
+    .menu h1 a {
+      text-decoration: none;
+      color: white; }
 
   .toggle-menu {
     position: relative;
     display: none;
     min-width: 80%;
     max-width: 90%;
-    background-color: #0A0A0A;
-    z-index: 1; }
-
-  .toggle-menu > div {
-    display: inline-block; }
+    background-color: #0A0A0A; }
+    .toggle-menu > div {
+      display: inline-block; }
 
   .toggle-menu_items-list {
     float: left; }
@@ -59,7 +67,7 @@ body {
     display: inline-block;
     float: left;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 7.5px;
     margin-left: 25px; }
 
   .menu-profileInfo_container img {
@@ -115,29 +123,44 @@ body {
     .ss_detail-info .ss_rating .checked {
       color: #FFB400; }
   .ss_detail-info .ss_detail-like-icon {
-    color: #e6e6e6;
+    color: white;
+    text-shadow: 0px 0px 2px #0A0A0A;
     font-size: 3.5em;
     margin-top: 20px;
     margin-right: 10px;
     float: right; }
+  .ss_detail-info .ss_detail-like-icon:hover {
+    text-shadow: 0px 0px 15px rgba(50, 50, 50, 0.5); }
   .ss_detail-info .ss-liked {
-    color: #960000; }
+    text-shadow: none;
+    color: #af0000; }
+  .ss_detail-info .ss-liked:hover {
+    text-shadow: 0px 0px 10px rgba(175, 0, 0, 0.5); }
   .ss_detail-info .ss_detail-cart-icon:visited {
-    color: #960000; }
+    color: #af0000; }
   .ss_detail-info .ss_tags {
-    margin-top: 15px;
+    margin-top: 20px;
     margin-left: 10px;
     overflow: hidden;
     display: inline-block;
     float: none; }
     .ss_detail-info .ss_tags .ss_tag {
-      color: #C8C8C8;
       border: 1px solid #C8C8C8;
       font-style: italic;
       border-radius: 10px;
       padding: 0px 5px 0px 5px;
       margin-right: 5px;
       font-size: 1em; }
+      .ss_detail-info .ss_tags .ss_tag > a {
+        color: #C8C8C8; }
+      .ss_detail-info .ss_tags .ss_tag > a:link {
+        text-decoration: none; }
+    .ss_detail-info .ss_tags .ss_tag:hover {
+      background-color: #C8C8C8; }
+      .ss_detail-info .ss_tags .ss_tag:hover > a {
+        color: white; }
+      .ss_detail-info .ss_tags .ss_tag:hover > a:link {
+        font-decoration: none; }
   .ss_detail-info .ss_info {
     margin-top: 0px;
     margin-left: 10px; }
@@ -146,9 +169,11 @@ body {
       font-family: "PT Sans", sans-serif;
       font-size: 1.5em; }
     .ss_detail-info .ss_info h4 {
-      margin: 5px 0 0 0;
-      font-size: 1em;
-      color: #C8C8C8; }
+      margin: 0; }
+      .ss_detail-info .ss_info h4 a {
+        font-size: 0.75em;
+        color: #C8C8C8;
+        text-decoration: none; }
   .ss_detail-info .ss_description {
     font-family: "PT Sans", sans-serif;
     margin-top: 10px;
@@ -163,7 +188,8 @@ body {
       .ss_detail-info .ss_options .ss_btnDownload i {
         margin-right: 15px; }
     .ss_detail-info .ss_options .ss_btnDownload:hover {
-      background-color: #eeeeee; }
+      background-color: #eeeeee;
+      box-shadow: 0px 0px 15px rgba(230, 230, 230, 0.75); }
     .ss_detail-info .ss_options .ss_btnShoppingCart {
       margin-top: 35px;
       background-color: white;
@@ -171,7 +197,8 @@ body {
       .ss_detail-info .ss_options .ss_btnShoppingCart i {
         margin-right: 15px; }
     .ss_detail-info .ss_options .ss_btnShoppingCart:hover {
-      background-color: #eeeeee; }
+      background-color: #eeeeee;
+      box-shadow: 0px 0px 15px rgba(230, 230, 230, 0.75); }
   .ss_detail-info .ss_recommended {
     margin-top: 50px; }
     .ss_detail-info .ss_recommended .ss_recommended-title {

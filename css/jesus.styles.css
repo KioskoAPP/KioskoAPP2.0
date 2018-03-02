@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .fill {
   width: 100%;
   height: 100%;
@@ -37,3 +38,107 @@
 .multi-item-carousel .carouse-control.right {
   background-image: none;
 }
+=======
+#cookie_accept {
+  padding-top: 1%;
+}
+/* MULTI CAROUSEL MD-XS 
+
+.multi-item-carousel{
+  .carousel-inner{
+    > .item{
+      transition: 500ms ease-in-out left;
+    }
+    .active{
+      &.left{
+        left:-20%;
+      }
+      &.right{
+        left:20%;
+      }
+    }
+    .next{
+      left: 20%;
+    }
+    .prev{
+      left: -20%;
+    }
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      > .item{
+        // use your favourite prefixer here
+        transition: 500ms ease-in-out left;
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+  .carouse-control{
+    &.left, &.right{
+      background-image: none;
+    }
+  }
+}*/
+/* FOOTER */
+footer {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+  margin-top: 80px;
+}
+footer .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+footer p.footer-links {
+  font-size: 1em;
+  color: #ffffff;
+  margin: 0 0 2%;
+  padding: 0;
+  text-align: center;
+}
+footer p.footer-links a {
+  padding-right: 10%;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+  color: inherit;
+}
+footer .footer-right {
+  float: right;
+  margin-right: 2%;
+  max-width: 180px;
+}
+footer .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+@media (max-width: 600px) {
+  footer .footer-left,
+  footer .footer-right {
+    text-align: center;
+  }
+  footer .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  footer .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
+>>>>>>> aefee5a364c86fe2f9128bb17a26331e2499c26a

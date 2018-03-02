@@ -29,7 +29,7 @@
                                 <div class="col-xs-12">
                                     <div class="ss_info">
                                         <h3 class="ss_title"></h3>
-                                        <a href=""><h4 class="ss_author"></h4></a>
+                                       <h4 class="ss_author"> <a href=""></a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                 $('.glyphicon-heart').toggleClass('ss-liked'); }
 
             $(document).ready(function(){
-                var id = 1;
+                var id = 8;
                 $.ajax({
                     url: 'http://10.2.201.158:43210/magazines?id='+ id,
                     data: null,
@@ -112,7 +112,7 @@
                         $('.glyphicon-heart').click(toggleLike);
                         printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
                         printMagazineAttribute(magazine, 'name','.ss_title');
-                        printMagazineAttribute(magazine, 'owner','.ss_author');
+                        printMagazineAttribute(magazine, 'owner','.ss_author > a');
                         printMagazineAttribute(magazine, 'description','.ss_description');
                         printMagazineAttribute(magazine, 'tags','.ss_tags');
                         $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);

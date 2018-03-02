@@ -1,71 +1,53 @@
 // Botón de "Pásate a premium" //
 function goToPrem(){
-    location.href='/premium.html'
+    location.href='/premium.html';
 }
-
-$(document).ready(function() {
-    $('#abm_premBtn').click(goToPrem);
-
-});
 
 // Botón de "Obtén premium" //
 function goToBePrem(){
     location.href='/payment.html'
 }
 
-$(document).ready(function() {
-    $('#abm_bePremBtn').click(goToBePrem);
-
-});
-
-
-
 // Botón de "Mis direcciones" //
 function goToDir(){
     location.href='/misdirecciones.html'
 }
-
-$(document).ready(function() {
-    $('#abm_myAdress').click(goToDir);
-
-});
-
 
 // Botón de "Mis tarjetas" //
 function goToCreditCards(){
     location.href='/mistarjetas.html'
 }
 
-$(document).ready(function() {
-    $('#abm_myCreditCards').click(goToCreditCards);
-});
+// Función para mostrar las direcciones del usuario
+function seeUserAddresss(object){
+    console.log("hola")
+    for (i=0; i<object.length; i++){
 
+        var userAddress = '<h4>' + Address + '</h4>' + '<br>' + '<p>' + streetName + ', '+ number + '.' + '<br>' + postCodeName + ' ' + cityName + ' (' + countryName + ').' + '</p>';
+        console.log(userAddress);
+    }
+    
+    $('#abm_myAdressDir1').html(userAddress);
+}
 
-
-
-
-/*******************************************
-FUNCIÓN PARA MOSTRAR LOS DATOS DEL USUARIO *******************************************/
-
-/*function ver(idLibro) {
+function getUserAddresses(id){
     $.ajax({
-        url: 'http://localhost:43210/libros/' + idLibro,
-        dataType: 'json',
-    }).then(
-        function (resp) {
-            var rslt = '<p>';
-            rslt += 'ID: ' + resp.idLibro + '<br>' +
-                'Título: ' + resp.titulo + '<br>' +
-                'Autor: ' + resp.autor + '<br>' +
-                'País: ' + resp.pais + '<br>' +
-                'Fecha: ' + resp.fecha + '<br>' +
-                'Páginas: ' + resp.paginas + '<br>' +
-                'Wiki: ' + resp.wiki + '<br>' ;
-            rslt += '</p>';
-            rslt += '<input type="button" value="Volver" onclick="volver()">';
+        url: 'http://10.2.201.33:43210/usuarios?_id' + id,
+        data: '_id = ' + id,
+        type: 'GET',
+        dataType: 'json'})
+        .then(function(res){
+            console.log(res);
+        },
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); });  }
 
-            $('#listado').html(rslt);
-            $('#btnAñadir').hide();
-        }
-    )
-}*/
+
+$(document).ready(function() {
+    $('#abm_premBtn').click(goToPrem);
+    $('#abm_bePremBtn').click(goToBePrem);
+    $('#abm_myAdress').click(goToDir);
+    $('#abm_myCreditCards').click(goToCreditCards);
+    $('#abm_newAdress').click(seeUserAddresss);
+    getUserAddresses(1);
+});

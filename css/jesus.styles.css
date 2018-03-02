@@ -40,18 +40,10 @@
       }
     }
   }
-<<<<<<< HEAD
   .carouse-control{
     &.left, &.right{
       background-image: none;
     }
-=======
-  
-  /* non-related styling:*/
-  body{
-    /*background: #333;*/
-    /*color: #ddd;*/
->>>>>>> 78cd5c2c5c29f3e641e93d2f860728882583a46e
   }
 }*/
 /* FOOTER */

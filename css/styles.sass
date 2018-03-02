@@ -20,13 +20,20 @@ body
     /***************************************************************/
     /************************   GENERAL   **************************/
     main 
+        margin-top: 50px!important
         // background-color: rgba(51,51,51,1 )
 
     /***********************************************************/
     /************************ MENUBAR **************************/
-    .menu 
-        background-color: $black
-        height: 50px
+    .menu
+        nav 
+            height: 50px
+            background-color: $black
+            position: fixed
+            top: 0
+            width: 100%
+            z-index: 5
+
         h1 
             font-size: 1.3em
             margin: 0
@@ -139,7 +146,6 @@ body
                 color: $lightgray
             .checked
                 color: $orange
-
         .ss_detail-like-icon
             color: $white
             text-shadow: 0px 0px 2px $black
@@ -148,7 +154,7 @@ body
             margin-right: 10px
             float: right
         .ss_detail-like-icon:hover
-            color: white
+            text-shadow: 0px 0px 15px rgba(50,50,50,0.5)
         .ss-liked
             color: rgba(150,0,0,1)
         .ss_detail-cart-icon:visited
@@ -203,15 +209,17 @@ body
                     margin-right: 15px
             .ss_btnDownload:hover
                 background-color: $verylightgray
+                box-shadow: 0px 0px 15px rgba(230,230,230,0.75)
 
             .ss_btnShoppingCart
-                    margin-top: 35px
-                    background-color: $white
-                    border: 2px solid $verylightgray
-                    i 
-                        margin-right: 15px
+                margin-top: 35px
+                background-color: $white
+                border: 2px solid $verylightgray
+                i 
+                    margin-right: 15px
             .ss_btnShoppingCart:hover
-                    background-color: $verylightgray
+                background-color: $verylightgray
+                box-shadow: 0px 0px 15px rgba(230,230,230,0.75)
         .ss_recommended
             margin-top: 50px
             .ss_recommended-title

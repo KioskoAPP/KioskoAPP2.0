@@ -1,0 +1,83 @@
+[
+    {
+        "id": "1",
+        "name": "February 2014",
+        "owner": "BRUMMELL",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "tags": [],
+        "thumbnail": "assets/images/february2014_brummell_thumbnail.jpg" },
+    {
+        "id": "2",
+        "name": "February 2014 No26",
+        "owner": "DIY",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/26_diy_thumbnail.jpg" },
+
+    { 
+        "id": "3",
+        "name": "Ibrahim Çelikkol No9",
+        "owner": "BEMAN",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/9_beman_thumbnail.jpg" },
+    { 
+        "id": "4",
+        "name": "No87",
+        "owner": "EYE",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/no87_eye_thumbnail.jpg" },
+    { 
+        "id": "5",
+        "name": "4 · Junio · 2012",
+        "owner": "FORBES",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/04062012_forbes_thumbnail.jpg" },
+    { 
+        "id": "6",
+        "name": "1 · Octubre · 2014 - No3661",
+        "owner": "HOLA",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/3661_hola_thumbnail.jpg" },
+    { 
+        "id": "7",
+        "name": "Febrero",
+        "owner": "HUNTER",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/febrero_hunter_thumbnail.jpg" },
+    { 
+        "id": "8",
+        "name": "Junio 2017 No21",
+        "owner": "JOT DOWN",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/21_jotdown_thumbnail.jpg" },
+    { 
+        "id": "9",
+        "name": "Mayo 2015 No1",
+        "owner": "TOMATICKET",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/1_tomaticket_thumbnail.jpg" },
+    { 
+        "id": "10",
+        "name": "Person of the Year - Puttin",
+        "owner": "TIME",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/putin2007_time_thumbnail.jpg" },
+    { 
+        "id": "11",
+        "name": "JBalvin JUL2016",
+        "owner": "UMOMAGAZINE",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/jbalvinjul2016_umo_thumbnail.jpg" },
+    { 
+        "id": "12",
+        "name": "Spring Preview 2014 No87",
+        "owner": "V MAGAZINE",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/87_vmagazine_thumbnail.jpg" },
+    { 
+        "id": "13",
+        "name": "The Spring 2018",
+        "owner": "WONDERLAND",
+        "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
+        "thumbnail": "assets/images/spring2018_wonderland_thumbnail.jpg" }
+        
+    ]

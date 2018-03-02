@@ -120,12 +120,27 @@
                             magazine = res;
                         },
                         function(jqXHR, textStatus, errorThrown) {
-                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
+            }
+
+            function addTags(id) {
+                console.log("sdd");
+                    $.ajax({
+                        url: 'http://10.2.201.158:43210/magazines?id='+ id,
+                        data: null,
+                        type: 'GET',
+                        dataType: 'json'})
+                        .then(function(res){
+                            magazine = res;
+                            console.dir(magazine);
+                        },
+                        function(jqXHR, textStatus, errorThrown) {
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
+            }
+                
+                // for(var i = 0; i < this.magazine.length; i++){
+                //     console.log(this.magazine[i]);} 
             
-                            function addTags() {
-                                for(var i = 0; i < this.magazine.length; i++){
-                                    console.log(this.magazine[i]);
-                            } }
             $(document).ready(function(){
                 var id = 7;
                 $('.glyphicon-heart').click(toggleLike);
@@ -134,6 +149,8 @@
                 printMagazineInfo(id, 'owner','.ss_author');
                 printMagazineInfo(id, 'description','.ss_description');
                 listRecommendedMagazines();
+                addTags(id);
+                
             
             });
         </script>

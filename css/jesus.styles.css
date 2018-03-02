@@ -1,13 +1,5 @@
-.jj_fill {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  opacity: 0.9;
-  top: 50px;
+#cookie_accept {
+  padding-top: 1%;
 }
 /* MULTI CAROUSEL MD-XS 
 
@@ -68,6 +60,7 @@ footer p.footer-links {
   color: #ffffff;
   margin: 0 0 2%;
   padding: 0;
+  text-align: center;
 }
 footer p.footer-links a {
   padding-right: 10%;
@@ -78,7 +71,7 @@ footer p.footer-links a {
 }
 footer .footer-right {
   float: right;
-  margin-top: 6px;
+  margin-right: 2%;
   max-width: 180px;
 }
 footer .footer-right a {

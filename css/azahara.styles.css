@@ -1,9 +1,6 @@
 /**** TAMAÑOS PANTALLA ******/
 /****** COLORES ********/
 /******** SOMBRAS **********/
-body {
-  font-family: 'Montserrat', sans-serif;
-}
 .paragraphFont {
   margin: 0;
   padding: 0;
@@ -19,7 +16,7 @@ body {
 .abm_btn {
   box-shadow: 2px 2px 5px #646464;
   text-shadow: 1px 1px 2px #646464;
-  border-radius: 25px;
+  border-radius: 20px;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -30,6 +27,9 @@ body {
   background: linear-gradient(to bottom, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f9ff', endColorstr='#a1dbff', GradientType=0);
 }
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 /**********************************/
 /**********************************/
 /********* MEDIAQUERIES V. XS ********/
@@ -37,10 +37,11 @@ body {
   /******** BOTONES **********/
   .abm_premBtn,
   .abm_myAdressBtn,
-  .abm_myCreditCardsBtn {
+  .abm_myCreditCardsBtn,
+  .abm_newAdressBtn {
     box-shadow: 2px 2px 5px #646464;
     text-shadow: 1px 1px 2px #646464;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 1.5em;
     margin-top: 5%;
@@ -52,7 +53,7 @@ body {
   .abm_bePremBtn {
     box-shadow: 2px 2px 5px #646464;
     text-shadow: 1px 1px 2px #646464;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 1.5em;
     position: absolute;

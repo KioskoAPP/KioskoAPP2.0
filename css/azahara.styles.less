@@ -20,9 +20,6 @@
 @textDarkShadow: 1px 1px 2px @darkgray;
 @textLightShadow: 1px 1px 2px @lightgray;
 
-body {
-    font-family: 'Montserrat', sans-serif;
-}
 
 .paragraphFont{
     margin: 0;
@@ -41,7 +38,7 @@ body {
 .abm_btn{
     box-shadow: @boxShadow;
     text-shadow: @textDarkShadow;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 1.5em;
 }
@@ -54,6 +51,11 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 );
 }
 
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 /**********************************/
 /**********************************/
 
@@ -62,7 +64,7 @@ body {
 @media (max-width: @screen-xs-max) {
 
 /******** BOTONES **********/
-    .abm_premBtn, .abm_myAdressBtn, .abm_myCreditCardsBtn{
+    .abm_premBtn, .abm_myAdressBtn, .abm_myCreditCardsBtn, .abm_newAdressBtn{
         .abm_btn;
         margin-top: 5%;
         margin-bottom: 5%;

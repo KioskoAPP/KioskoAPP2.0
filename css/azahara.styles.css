@@ -32,8 +32,8 @@
 @media (max-width: 767px) {
   /******** BOTONES **********/
   .abm_premBtn,
-  .abm_myAdress,
-  .abm_myCreditCards {
+  .abm_myAdressBtn,
+  .abm_myCreditCardsBtn {
     box-shadow: 2px 2px 5px #646464;
     text-shadow: 1px 1px 2px #646464;
     border-radius: 25px;
@@ -41,6 +41,7 @@
     font-size: 1.5em;
     margin-top: 5%;
     margin-bottom: 5%;
+    white-space: normal;
   }
   .abm_bePremBtn {
     box-shadow: 2px 2px 5px #646464;

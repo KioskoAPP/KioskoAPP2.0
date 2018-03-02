@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/KioskoAPP/KioskoAPP2.0/issues"
   },
-  "homepage": "https://github.com/KioskoAPP/KioskoAPP2.0#readme"
+  "homepage": "https://github.com/KioskoAPP/KioskoAPP2.0#readme",
+  "dependencies": {
+    "manager": "^1.0.9",
+    "node": "^9.5.0",
+    "package": "^1.0.1"
+  }
 }

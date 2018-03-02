@@ -37,6 +37,8 @@ function printMagazineInfo(id, attribute, selector){
             },
             function(jqXHR, textStatus, errorThrown) {
                 console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); });
+    } if else {
+
     }else{
         $.ajax({
             url: 'http://10.2.201.158:43210/magazines?id='+ id,

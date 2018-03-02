@@ -116,16 +116,16 @@ body {
       color: #FFB400; }
   .ss_detail-info .ss_detail-like-icon {
     color: #e6e6e6;
-    font-size: 3.2em;
-    margin-top: 15px;
-    margin-right: 15px;
+    font-size: 3.5em;
+    margin-top: 20px;
+    margin-right: 10px;
     float: right; }
   .ss_detail-info .ss-liked {
     color: #960000; }
   .ss_detail-info .ss_detail-cart-icon:visited {
     color: #960000; }
   .ss_detail-info .ss_tags {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 10px;
     overflow: hidden;
     display: inline-block;
@@ -142,11 +142,11 @@ body {
     margin-top: 0px;
     margin-left: 10px; }
     .ss_detail-info .ss_info h3 {
+      margin: 10px 0 0 0;
       font-family: "PT Sans", sans-serif;
-      margin: 0 !important;
       font-size: 1.5em; }
     .ss_detail-info .ss_info h4 {
-      margin-top: 5px !important;
+      margin: 5px 0 0 0;
       font-size: 1em;
       color: #C8C8C8; }
   .ss_detail-info .ss_description {
@@ -154,14 +154,24 @@ body {
     margin-top: 10px;
     margin-left: 10px;
     font-size: 1em; }
-  .ss_detail-info .ss_options .ss_btnDownload {
-    margin-top: 35px;
-    background-color: white;
-    border: 2px solid #eeeeee; }
-    .ss_detail-info .ss_options .ss_btnDownload i {
-      margin-right: 15px; }
-  .ss_detail-info .ss_options .ss_btnDownload:hover {
-    background-color: #eeeeee; }
+  .ss_detail-info .ss_options {
+    font-size: 1.5em; }
+    .ss_detail-info .ss_options .ss_btnDownload {
+      margin-top: 35px;
+      background-color: white;
+      border: 2px solid #eeeeee; }
+      .ss_detail-info .ss_options .ss_btnDownload i {
+        margin-right: 15px; }
+    .ss_detail-info .ss_options .ss_btnDownload:hover {
+      background-color: #eeeeee; }
+    .ss_detail-info .ss_options .ss_btnShoppingCart {
+      margin-top: 35px;
+      background-color: white;
+      border: 2px solid #eeeeee; }
+      .ss_detail-info .ss_options .ss_btnShoppingCart i {
+        margin-right: 15px; }
+    .ss_detail-info .ss_options .ss_btnShoppingCart:hover {
+      background-color: #eeeeee; }
   .ss_detail-info .ss_recommended {
     margin-top: 50px; }
     .ss_detail-info .ss_recommended .ss_recommended-title {

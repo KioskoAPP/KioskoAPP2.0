@@ -141,29 +141,10 @@
 
 
           <div class="container-fluid hidden-sm hidden-md hidden-lg">
-            <div class="row">
-                <div class="col-xs-12 ss_detail-thumbnail"></div>
-            </div>
+            
             <div class="row">
                 <div class="col-xs-12 ss_detail-info">
                     
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="ss_description"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="ss_options">
-                                <button class="btn ss_btnDownload col-xs-offset-2 col-xs-8">
-                                    <i class="glyphicon glyphicon-inbox"></i>Descargar
-                                </button>
-                                <button class="btn ss_btnShoppingCart col-xs-offset-2 col-xs-8">
-                                    <i class="glyphicon glyphicon-shopping-cart"></i>Comprar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-xs-12 ss_recommended">
                             <div class="row">
@@ -213,7 +194,7 @@
       
               <p>KIOSKO SPAIN 2018</p>
 
-              <div id="cookie_directive_container" class="container">
+              <div id="cookie_directive_container" class="container hidden-xs">
                 <nav class="navbar navbar-default navbar-fixed-top">
     
                     <div class="container">
@@ -237,7 +218,7 @@
       
         
 
-        <!-- jQuery -->
+          <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -245,7 +226,47 @@
         <script src="js/main.js"></script>
         <script src="js/jj_multicarouselmd-xs.js"></script>
         <script src="js/jj_cookie.js"></script>
-        
+        <script src="js/magazine.controllers.js"></script>
+        <script src="js/user.controllers.js"></script>
+        <script src="js/jquery.barrating.min.js"></script>
+        <script>
+            function listRecommendedMagazines(){
+                $.ajax({
+                    url: 'http://10.2.201.158:43210/magazines',
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        for(var i = 0; i < res.length; i++){
+                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div class='col-xs-12'><div class='row'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></div><i class='glyphicon glyphicon-eye-open'></i></div></div>"); }
+                    },
+                    function(jqXHR, textStatus, errorThrown) {
+                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
+
+            function toggleLike(){
+                $('.glyphicon-heart').toggleClass('ss-liked'); }
+
+            $(document).ready(function(){
+                var id = 8;
+                $.ajax({
+                    url: 'http://10.2.201.158:43210/magazines?id='+ id,
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        var magazine = res[0];
+                        $('.glyphicon-heart').click(toggleLike);
+                        printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
+                        printMagazineAttribute(magazine, 'name','.ss_title');
+                        printMagazineAttribute(magazine, 'owner','.ss_author');
+                        printMagazineAttribute(magazine, 'description','.ss_description');
+                        printMagazineAttribute(magazine, 'tags','.ss_tags');
+                        $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
+                        listRecommendedMagazines();
+                        },
+                        function(jqXHR, textStatus, errorThrown) {
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); });
+        </script>
        
     </body>
 

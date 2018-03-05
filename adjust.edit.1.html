@@ -29,7 +29,7 @@
 
 
          <!--  "EDICIÓN DATOS DE USUARIO"  -->
-
+         <div id="form">
         <div class="container-fluid">
                 <div id="listado">
                 </div>
@@ -83,7 +83,7 @@
                                 </div>
                 </form>
             </div>
-         
+        </div>
     </main>
 
 
@@ -113,7 +113,9 @@
                     cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Contraseña</label></div>'))
                     cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].pass + '</div></div>'))    
                     cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Fecha de Nacimiento</label></div>'))
-                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].birthDate + '</div></div>'))                      
+                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].birthDate + '</div></div>'))    
+                    cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">ID</label></div>'))
+                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2]._id + '</div></div>'))                   
                     var td = $('<p/>');
                     td.addClass('btn-group');
                     td.append($('<button class="btn btn-success glyphicon glyphicon-pencil" onclick="editar(' + envios[2]._id + ');"></button>'));
@@ -135,7 +137,7 @@
                         $('[name="' + name + '"]').val(resp[name]);
                     }
                     $('#listado').hide();
-                    $('form').show();
+                    $('#form').show();
                     $('#btnEnviar').on('click', enviarModificado);
                 }
             )

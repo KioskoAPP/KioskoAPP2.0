@@ -1,1 +1,127 @@
+<<<<<<< HEAD
 [{"_id":"0","name":"Nombre","lastName":"Apellidos","email":"prueba@prueba.com","pass":"Nombre","birthDate":"dd/mm/aaaa","completAddress":[{"Address":"Nombre dirección","streetName":"Nombre calle","number":"Número","cityName":"Nombre ciudad","postCodeName":"Código postal","countryName":"País"}]},{"_id":"1","name":"Amalia","lastName":"Abastos","email":"amaliaabastos@prueba.com","pass":"Amalia","birthDate":"01/01/1980","completAddress":[{"Address":"Casa","streetName":"Calle del Divino Valles","number":"11-1","cityName":"Madrid","postCodeName":"28045","countryName":"España"}]},{"_id":"2","name":"Francisco","lastName":"Palacio","email":"franciscopalacio@prueba.com","pass":"Francisco","birthDate":"13/05/1960","completAddress":[{"Address":"Trabajo Paco","streetName":"Carrer de Pedro Cámara","number":"45","cityName":"Valencia","postCodeName":"46026","countryName":"España"}]},{"_id":"4","name":"Rafael","lastName":"Secada","email":"rafaelsecada@prueba.com","pass":"Rafael","birthDate":"09/10/1975","addresses":[{"Address":"Casa","streetName":"Calle MAteos Gago","number":"26 1A","cityName":"Sevilla","postCodeName":"41004","countryName":"España"},{"Address":"Trabajo","streetName":"Avenida Mar Mediterráneo","number":"45","cityName":"Alcalá de Guadaira","postCodeName":"41500","countryName":"España"}]},{"_id":"5","name":"Pilar","lastName":"Saelices","email":"pilarsaelices@prueba.com","pass":"Pilar","birthDate":"30/06/1983","completAddress":[{"Address":"Casa","streetName":"Avenida de Portugal","number":"135 5º izqda","cityName":"Salamanca","postCodeName":"37006","countryName":"España"}]},{"_id":"6","name":"María","lastName":"Noboa","email":"marianoboa@prueba.com","pass":"Maria","birthDate":"29/08/1950","completAddress":[{"Address":"Casa Mari","streetName":"Calle Uría","number":"14-16","cityName":"Oviedo","postCodeName":"33003","countryName":"España"}]},{"_id ":" 1"}]
+=======
+[
+    {
+        "_id": "0",
+        "name": "Amalia",
+        "lastName": "Abastos",
+        "email": "amaliaabastos@prueba.com",
+        "pass": "Amalia",
+        "birthDate": "01/01/1980",
+        "completAddress": [
+            {
+                "Address": "Casa",
+                "streetName": "Calle del Divino Valles",
+                "number": "11-1",
+                "cityName": "Madrid",
+                "postCodeName": "28045",
+                "countryName": "España"
+            }
+        ],
+        "liked": []
+    },
+    {
+        "_id": "1",
+        "name": "Javier",
+        "lastName": "Suarez Sanchez",
+        "email": "javier@javier.com",
+        "pass": "javier",
+        "birthDate": "22/09/1990",
+        "completAddress": [
+            {
+                "Address": "Mi direccion",
+                "streetName": "calle pedro callejo",
+                "number": "15",
+                "cityName": "Madrid",
+                "postCodeName": "28038",
+                "countryName": "España"
+            }
+        ],
+        "liked": []
+    },
+    {
+        "_id": "2",
+        "name": "Francisco",
+        "lastName": "Palacio",
+        "email": "franciscopalacio@prueba.com",
+        "pass": "Francisco",
+        "birthDate": "13/05/1960",
+        "completAddress": [
+            {
+                "Address": "Trabajo Paco",
+                "streetName": "Carrer de Pedro Cámara",
+                "number": "45",
+                "cityName": "Valencia",
+                "postCodeName": "46026",
+                "countryName": "España"
+            }
+        ],
+        "liked": []
+    },
+    {
+        "_id": "4",
+        "name": "Rafael",
+        "lastName": "Secada",
+        "email": "rafaelsecada@prueba.com",
+        "pass": "Rafael",
+        "birthDate": "09/10/1975",
+        "addresses": [
+            {
+                "Address": "Casa",
+                "streetName": "Calle MAteos Gago",
+                "number": "26 1A",
+                "cityName": "Sevilla",
+                "postCodeName": "41004",
+                "countryName": "España"
+            },
+            {
+                "Address": "Trabajo",
+                "streetName": "Avenida Mar Mediterráneo",
+                "number": "45",
+                "cityName": "Alcalá de Guadaira",
+                "postCodeName": "41500",
+                "countryName": "España"
+            }
+        ],
+        "liked": []
+    },
+    {
+        "_id": "5",
+        "name": "Pilar",
+        "lastName": "Saelices",
+        "email": "pilarsaelices@prueba.com",
+        "pass": "Pilar",
+        "birthDate": "30/06/1983",
+        "completAddress": [
+            {
+                "Address": "Casa",
+                "streetName": "Avenida de Portugal",
+                "number": "135 5º izqda",
+                "cityName": "Salamanca",
+                "postCodeName": "37006",
+                "countryName": "España"
+            }
+        ]
+    },
+    {
+        "_id": "6",
+        "name": "María",
+        "lastName": "Noboa",
+        "email": "marianoboa@prueba.com",
+        "pass": "Maria",
+        "birthDate": "29/08/1950",
+        "completAddress": [
+            {
+                "Address": "Casa Mari",
+                "streetName": "Calle Uría",
+                "number": "14-16",
+                "cityName": "Oviedo",
+                "postCodeName": "33003",
+                "countryName": "España"
+            }
+        ],
+        "liked": []
+    }
+]
+>>>>>>> d9a6fda8d51b8608c560e8fd3d3e267d3edc7427

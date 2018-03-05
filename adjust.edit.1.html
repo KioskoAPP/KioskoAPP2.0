@@ -137,7 +137,7 @@
                         $('[name="' + name + '"]').val(resp[name]);
                     }
                     $('#listado').hide();
-                    $('#form').show();
+                    $('form').show();
                     $('#btnEnviar').on('click', enviarModificado);
                 }
             )
@@ -172,6 +172,7 @@
             $('#listado').show();
             $('form').hide();
         }
+        
         $(document).ready(function () {
             listar();
             $('form').hide();

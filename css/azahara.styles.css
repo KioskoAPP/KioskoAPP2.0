@@ -71,6 +71,23 @@ body {
     background: linear-gradient(to bottom, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f9ff', endColorstr='#a1dbff', GradientType=0);
   }
+  .abm_registerBtn,
+  .abm_loginBtn {
+    box-shadow: 2px 2px 5px #646464;
+    text-shadow: 1px 1px 2px #646464;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    white-space: normal;
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+  /******** INDEX ************/
+  .menuIndex {
+    background-color: #333333;
+  }
   /******* ADJUST PAGE ********/
   .abm_userPhoto {
     margin-top: 5%;

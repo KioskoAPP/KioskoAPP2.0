@@ -40,7 +40,7 @@
         </div>
         <div class="dra">
             <p>¿No tienes cuenta?
-                <a href="resister.html"> Regístrate</a>
+                <a href="register.html"> Regístrate</a>
             </p>
         </div>
     </div>
@@ -61,14 +61,14 @@
         var userObject = 'name=' + email + '&password=' + pass;
 
         $.ajax({
-            url: 'http://10.2.201.158:43210/login',
+            url: 'http://localhost:43210/login',
             data: userObject,
             type: 'POST',
             dataType: 'json'})
             .then(function(res){
                 localStorage.setItem('token', res.token);
                 var req = new XMLHttpRequest();
-                req.open('GET', 'http://10.2.201.158:3000/detail.html', true);
+                req.open('GET', 'http://localhost:3000/home.html', true);
                 req.setRequestHeader('Authorization', res.token);
                 req.onreadystatechange = function (aEvt) {
                     if (req.readyState == 4) {

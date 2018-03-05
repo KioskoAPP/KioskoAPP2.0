@@ -88,7 +88,7 @@
 .dra-tyc1 {
   text-align:left;
   width:80%;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-left: 60px;
   margin-right: 60px;
 }
@@ -142,4 +142,15 @@ width: 100%;
     margin-right: 250px;
     margin-left: 150px;
     margin-top: 50px;
+}
+
+.dra-tyc2 {
+margin-top: 150px;
+text-align: center;
+
+}
+
+.dra-privacidad {
+    margin-left: 100px;
+    margin-right: 100px
 }

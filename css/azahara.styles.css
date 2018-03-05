@@ -92,18 +92,28 @@ body {
     position: fixed;
     top: 0;
   }
+  .abm_index_text {
+    background: url("../assets/images/man-791049_1920.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
   .abm_indexTittle {
+    margin-top: 10%;
     margin-bottom: 5%;
     text-align: center;
     color: #333333;
     font-size: 3em;
     font-weight: 900;
   }
-  .abm_index_text {
-    background: url("../assets/images/man-791049_1920.jpg") #000;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+  .abm_indexMainText {
+    margin-bottom: 20%;
+  }
+  .abm_indexMainText > p {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
     color: #0A0A0A;
   }
   /******* ADJUST PAGE ********/
@@ -160,11 +170,36 @@ body {
     margin-bottom: 3%;
   }
   /**** MIS DIRECCIONES PAGE ****/
+  .abm_myAdressTittle {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  .abm_myAdressTittle > h3 {
+    text-align: center;
+  }
+  .abm_myAdressDir1 h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-decoration: underline;
+    padding-left: 5%;
+  }
   .abm_addressFormulContainer {
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
     border-color: #C8C8C8;
     padding-top: 2.5%;
+  }
+  .abm_userAddress {
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-bottom: 2%;
+    margin-bottom: 10%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #646464;
+    padding-top: 2.5%;
+    background-color: #C8C8C8;
   }
 }

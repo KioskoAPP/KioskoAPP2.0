@@ -1,6 +1,6 @@
 [
     {
-        "_id": "0",
+        "id": "0",
         "name": "Amalia",
         "lastName": "Abastos",
         "email": "amaliaabastos@prueba.com",
@@ -16,10 +16,10 @@
                 "countryName": "España"
             }
         ],
-        "liked": []
+        "liked": ["1","2","3","4"]
     },
     {
-        "_id": "1",
+        "id": "1",
         "name": "Javier",
         "lastName": "Suarez Sanchez",
         "email": "javier@javier.com",
@@ -35,10 +35,10 @@
                 "countryName": "España"
             }
         ],
-        "liked": []
+        "liked": ["1","2","3","4"]
     },
     {
-        "_id": "2",
+        "id": "2",
         "name": "Francisco",
         "lastName": "Palacio",
         "email": "franciscopalacio@prueba.com",
@@ -54,10 +54,10 @@
                 "countryName": "España"
             }
         ],
-        "liked": []
+        "liked": ["1","2","3","4"]
     },
     {
-        "_id": "4",
+        "id": "4",
         "name": "Rafael",
         "lastName": "Secada",
         "email": "rafaelsecada@prueba.com",
@@ -81,10 +81,10 @@
                 "countryName": "España"
             }
         ],
-        "liked": []
+        "liked": ["1","2","3","4"]
     },
     {
-        "_id": "5",
+        "id": "5",
         "name": "Pilar",
         "lastName": "Saelices",
         "email": "pilarsaelices@prueba.com",
@@ -99,10 +99,11 @@
                 "postCodeName": "37006",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked" : ["1","2","3","4"]
     },
     {
-        "_id": "6",
+        "id": "6",
         "name": "María",
         "lastName": "Noboa",
         "email": "marianoboa@prueba.com",
@@ -118,6 +119,6 @@
                 "countryName": "España"
             }
         ],
-        "liked": []
+        "liked" : ["1","2","3","4"]
     }
 ]

@@ -92,18 +92,28 @@ body {
     position: fixed;
     top: 0;
   }
+  .abm_index_text {
+    background: url("../assets/images/man-791049_1920.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
   .abm_indexTittle {
+    margin-top: 10%;
     margin-bottom: 5%;
     text-align: center;
     color: #333333;
     font-size: 3em;
     font-weight: 900;
   }
-  .abm_index_text {
-    background: url("../assets/images/man-791049_1920.jpg") #000;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+  .abm_indexMainText {
+    margin-bottom: 20%;
+  }
+  .abm_indexMainText > p {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
     color: #0A0A0A;
   }
   /******* ADJUST PAGE ********/

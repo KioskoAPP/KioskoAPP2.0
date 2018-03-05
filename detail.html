@@ -84,6 +84,9 @@
         <script src="js/user.controllers.js"></script>
         <script src="js/jquery.barrating.min.js"></script>
         <script>
+            function gotoDetail(e){
+                console.log("hola");
+            }
             function listRecommendedMagazines(){
                 $.ajax({
                     url: 'http://10.2.201.158:43210/magazines',
@@ -92,24 +95,31 @@
                     dataType: 'json'})
                     .then(function(res){
                         for(var i = 0; i < res.length; i++){
-                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div class='col-xs-12'><div class='row'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></div><i class='glyphicon glyphicon-eye-open'></i></div></div>"); }
+                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div data-id='" + res[i].id + "'class='col-xs-12'><div class='row'><a href='http://10.2.201.158:3000/detail.html?id=" +  res[i].id + "'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></a></div><i class='glyphicon glyphicon-eye-open'></i></div></div>");
+                        }
+                        
                     },
                     function(jqXHR, textStatus, errorThrown) {
-                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
-
-            function toggleLike(){
+                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); });
+            }
+            function toggleLike(e){
                 $('.glyphicon-heart').toggleClass('ss-liked'); }
+    
 
             $(document).ready(function(){
-                var id = 2;
+                var magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
+                if(location.search.split('?')[1].split('&')[1]) {
+                    var user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
+                
                 $.ajax({
-                    url: 'http://10.2.201.158:43210/magazines?id='+ id,
+                    url: 'http://10.2.201.158:43210/magazines?id='+ magazine_id,
                     data: null,
                     type: 'GET',
                     dataType: 'json'})
                     .then(function(res){
                         var magazine = res[0];
-                        $('.glyphicon-heart').click(toggleLike);
+                        $('.glyphicon-heart').click({id: magazine_id}, toggleLike);
+                        
                         printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
                         printMagazineAttribute(magazine, 'name','.ss_title');
                         printMagazineAttribute(magazine, 'owner','.ss_author > a');

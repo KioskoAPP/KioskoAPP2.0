@@ -1,11 +1,13 @@
 function menuBar(x) {
     x.classList.toggle("change");
     switch(window.getComputedStyle(document.getElementById('toggle-menu'),'display').getPropertyValue('display')) {
-        case 'inline-block':
+        default:
             document.getElementById('toggle-menu').style.setProperty('display', 'none');
+            $('nav h1').show();
         break;
         case 'none':
             document.getElementById('toggle-menu').style.setProperty('display', 'inline-block');
+            $('nav h1').hide();
         break; } }
 
 

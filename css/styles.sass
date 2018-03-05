@@ -47,10 +47,10 @@ body
                 color: $white
 
     .toggle-menu
-        position: relative
+        position: absolute
+        top: 50px
+        left: 0
         display: none
-        min-width: 80%
-        max-width: 90%
         background-color: $black
         > div
             display: inline-block
@@ -115,17 +115,13 @@ body
         transition: 0.4s
 
     .change .bar1 
-        -webkit-transform: rotate(-45deg) translate(0px, 0px)
-        transform: rotate(-45deg) translate(0px, 0px)
-        transform-origin: top right
+        transform: translate(0px, 8.75px) rotate(-45deg) 
 
     .change .bar2 
         opacity: 0
 
     .change .bar3 
-        -webkit-transform: rotate(45deg) translate(0px, 0px)
-        transform: rotate(45deg) translate(0px, 0px)
-        transform-origin: bottom right
+        transform: translate(0px, -8.75px) rotate(45deg)
 
     
 
@@ -252,32 +248,38 @@ body
         
 /**************************    SM    ********************************************************************************************************/
 @media (min-width: $screen-sm-min) 
-
-   
+    main 
+        margin-top: 100px
     /***********************************************************/
     /************************ MENUBAR **************************/
-    .menu 
-        background-color: #333333
-        height: 50px
-        h1 
-            font-size: 1.3em
+    .menu
+        nav 
+            height: 100px
+            background-color: $black
+            position: fixed
+            top: 0
+            width: 100%
+            z-index: 100
+
+        h1
+            font-size: 3.75em
             margin: 0
-            padding: 15px
-            text-align: center
-            a 
+            padding-top: 20px
+            padding-bottom: 15px
+            padding-left: 50px
+            width: calc(100% - 100px)
+            float: left
+            a
                 text-decoration: none
                 color: $white
 
     .toggle-menu
         position: relative
         display: none
-        min-width: 80%
-        max-width: 90%
-        background-color: #333333
-        z-index: 1
-
-    .toggle-menu > div
-        display: inline-block
+        margin-top: 100px
+        background-color: $black
+        > div
+            display: inline-block
 
     .toggle-menu_items-list 
         float: left
@@ -288,8 +290,10 @@ body
             color: #C8C8C8
             margin: 20px 75px 20px 70px
             text-decoration: none
+
         a:hover 
             color: #ffffff
+
         i
             margin-right: 15px
 
@@ -308,7 +312,7 @@ body
         display: inline-block
         float: left
         cursor: pointer
-        margin-top: 10px
+        margin-top: 20px
         margin-left: 25px
 
     .menu-profileInfo_container
@@ -329,22 +333,22 @@ body
     .bar1,
     .bar2,
     .bar3 
-        width: 25px
-        height: 3px
+        width: 50px
+        height: 5px
         background-color: rgba(240,240,240,1)
-        margin: 6px 0
+        margin: 10px 0
         transition: 0.4s
 
-    .change .bar1 
-        -webkit-transform: rotate(-45deg) translate(0px, 0px)
-        transform: rotate(-45deg) translate(0px, 0px)
+    .change .bar1
+        transform: translateY(14.8px) rotate(-45deg)
 
     .change .bar2 
         opacity: 0
 
     .change .bar3 
-        -webkit-transform: rotate(45deg) translate(0px, 0px)
-        transform: rotate(45deg) translate(0px, 0px)
+        transform: translateY(-14.8px) rotate(45deg)
+        
+        
 
         
     /***************************************************************/
@@ -404,15 +408,24 @@ body
    
     /***********************************************************/
     /************************ MENUBAR **************************/
-    .menu 
-        background-color: #333333
-        height: 50px
+    .menu
+        nav 
+            height: 100px
+            background-color: $black
+            position: fixed
+            top: 0
+            width: 100%
+            z-index: 100
+
         h1 
-            font-size: 1.3em
+            font-size: 3.75em
             margin: 0
-            padding: 15px
-            text-align: center
-            a 
+            padding-top: 20px
+            padding-bottom: 15px
+            padding-left: 50px
+            width: calc(100% - 100px)
+            float: left
+            a
                 text-decoration: none
                 color: $white
 
@@ -421,14 +434,13 @@ body
         display: none
         min-width: 80%
         max-width: 90%
-        background-color: #333333
-        z-index: 1
-
-    .toggle-menu > div
-        display: inline-block
+        background-color: $black
+        > div
+            display: inline-block
 
     .toggle-menu_items-list 
         float: left
+
         a 
             display: block
             font-family: 'Raleway', sans-serif
@@ -436,8 +448,10 @@ body
             color: #C8C8C8
             margin: 20px 75px 20px 70px
             text-decoration: none
+
         a:hover 
             color: #ffffff
+
         i
             margin-right: 15px
 
@@ -456,7 +470,7 @@ body
         display: inline-block
         float: left
         cursor: pointer
-        margin-top: 10px
+        margin-top: 7.5px
         margin-left: 25px
 
     .menu-profileInfo_container
@@ -486,6 +500,7 @@ body
     .change .bar1 
         -webkit-transform: rotate(-45deg) translate(0px, 0px)
         transform: rotate(-45deg) translate(0px, 0px)
+        transform-origin: top right
 
     .change .bar2 
         opacity: 0
@@ -493,6 +508,7 @@ body
     .change .bar3 
         -webkit-transform: rotate(45deg) translate(0px, 0px)
         transform: rotate(45deg) translate(0px, 0px)
+        transform-origin: bottom right
 
         
     /***************************************************************/

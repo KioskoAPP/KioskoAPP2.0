@@ -102,18 +102,18 @@
                 var rslt = $('<div class="panel panel-default" />');
                 $('#listado').empty();
                 //.append(rslt);
-                for (var i = 0; i < envios.length; ++i) {
-                    var tr = $('<div class="panel panel-default" />');
-                    tr.append($('<div class="row"></div>'));
-                    var cuerpo = $('<div class="form-group abm_form-group"></div>');
-                    cuerpo.append($('<label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Nombre</label>'))
-                    cuerpo.append($('<div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].name + '</div>'))
-                    cuerpo.append($('<label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Apellidos</label>'))
-                    cuerpo.append($('<div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].lastName + '</div>'))             
-                    cuerpo.append($('<label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Contraseña</label>'))
-                    cuerpo.append($('<div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].pass + '</div>'))    
-                    cuerpo.append($('<label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Fecha de Nacimiento</label>'))
-                    cuerpo.append($('<div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].birthDate + '</div>'))                      
+                for (var i = 0; i < 1; ++i) {
+                    var tr = $('<div/>');
+                    tr.append($('<div/>'));
+                    var cuerpo = $('<form/>');
+                    cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Nombre</label></div>'))
+                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].name + '</div></div>'))
+                    cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Apellidos</label></div>'))
+                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].lastName + '</div></div>'))             
+                    cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Contraseña</label></div>'))
+                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].pass + '</div></div>'))    
+                    cuerpo.append($('<div class="row"><label for="id" class="col-xs-12 col-sm-4 col-md-2 col-lg-1">Fecha de Nacimiento</label></div>'))
+                    cuerpo.append($('<div class="row"><div class="col-xs-12 col-sm-4 col-md-10 col-lg-11">' + envios[2].birthDate + '</div></div>'))                      
                     var td = $('<p/>');
                     td.addClass('btn-group');
                     td.append($('<button class="btn btn-success" onclick="editar(' + envios[2].id + ');"><span class="glyphicon glyphicon-pencil"></span></button>'));
@@ -123,6 +123,7 @@
                 }
             }, 'json');
         }
+       
         function añadir() {
             $('#listado').hide();
             $('form').show().each(function (i, item) {

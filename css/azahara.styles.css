@@ -125,4 +125,11 @@ body {
     margin-bottom: 3%;
   }
   /**** MIS DIRECCIONES PAGE ****/
+  .abm_addressFormulContainer {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #C8C8C8;
+    padding-top: 2.5%;
+  }
 }

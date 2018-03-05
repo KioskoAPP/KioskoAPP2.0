@@ -2,12 +2,25 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticiones Asincronas</title>
+    <style>
+        #trabajandoAJAX {
+            display: none;
+            position: fixed;
+            left: 45%;
+            top: 45%;
+        }
+    </style>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header class="menu"></header>
+    <div id="menuPrincipal"></div>
     <div class="container-fluid">
         <h1>Mantenimiento de persona</h1>
+        <img id="trabajandoAJAX" src="/imagenes/ajaxloading.gif" alt="Cargando ...">
         <div id="listado">
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -30,19 +43,19 @@
                             <div class="form-group">
                                 <label>
                                     <b>Nombre</b>:
-                                    <input class="form-control" type="text" name="name">
+                                    <input class="form-control" type="text" name="nombre">
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
                                     <b>Apellidos</b>:
-                                    <input class="form-control" type="text" name="lastName">
+                                    <input class="form-control" type="text" name="apellidos">
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>
                                     <b>Edad</b>:
-                                    <input class="form-control" type="number" name="birthDate">
+                                    <input class="form-control" type="number" name="edad">
                                 </label>
                             </div>
                         </form>
@@ -55,29 +68,25 @@
             </div>
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Our JS scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/abm.js"></script>
+    <div id="PiePrincipal"></div>
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/comun.js"></script>
     <script>
         function listar() {
-            $.get('http://localhost:43210/usuarios', function (personas) {
+            $.get('http://localhost:43210/personas', function (personas) {
                 var rslt = $('<table class="table table-striped table-hover"><tr><th>Código</th><th>Nombre</th><th>Edad</th><th><input class="btn" type="button" value="Añadir" onclick="añadir()"></th></tr></table>');
                 $('#listado').empty().append(rslt);
                 for (var i = 0; i < 1; ++i) {
                     var tr = $('<tr/>');
-                    tr.append($('<td>' + personas[i].id + '</td>'));
-                    tr.append($('<td>' + personas[i].name + ' ' + personas[i].lastName + '</td>'));
-                    tr.append($('<td>' + personas[i].birthDate + '</td>'));
+                    tr.append($('<td>' + personas[1].id + '</td>'));
+                    tr.append($('<td>' + personas[1].nombre + ' ' + personas[1].apellidos + '</td>'));
+                    tr.append($('<td>' + personas[1].edad + '</td>'));
                     var td = $('<td/>');
                     td.addClass('btn-group');
-                    td.append($('<input class="btn" type="button" value="Ver" onclick="ver(' + personas[i].id + ');">'));
-                    td.append($('<input class="btn" type="button" value="Editar" onclick="editar(' + personas[i].id + ');">'));
-                    td.append($('<input class="btn" type="button" value="Borrar" onclick="borrar(' + personas[i].id + ');">'));
+                    td.append($('<input class="btn" type="button" value="Ver" onclick="ver(' + personas[1].id + ');">'));
+                    td.append($('<input class="btn" type="button" value="Editar" onclick="editar(' + personas[1].id + ');">'));
+                    td.append($('<input class="btn" type="button" value="Borrar" onclick="borrar(' + personas[1].id + ');">'));
                     tr.append(td);
                     rslt.append(tr);
                 }
@@ -91,7 +100,7 @@
         }
         function editar(id) {
             $.ajax({
-                url: 'http://localhost:43210/usuarios/' + id,
+                url: 'http://localhost:43210/personas/' + id,
                 dataType: 'json',
             }).then(
                 function (resp) {
@@ -109,7 +118,7 @@
         function borrar(id) {
             if (!window.confirm("¿Estas seguro?")) return;
             $.ajax({
-                url: 'http://localhost:43210/usuarios/' + id,
+                url: 'http://localhost:43210/personas/' + id,
                 method: 'DELETE',
                 dataType: 'json',
             }).then(
@@ -125,17 +134,23 @@
 
         function ver(id) {
             $.ajax({
-                url: 'http://localhost:43210/usuarios/' + id,
+                url: 'http://localhost:43210/personas/' + id,
                 dataType: 'json',
             }).then(
                 function (resp) {
                     var rslt = '<p>';
                     rslt += 'ID: ' + resp.id + '<br>' +
-                        'Nombre: ' + resp.name + '<br>' +
-                        'Apellidos: ' + resp.lastName + '<br>' +
-                        'Edad: ' + resp.birthDate;
+                        'Nombre: ' + resp.nombre + '<br>' +
+                        'Apellidos: ' + resp.apellidos + '<br>' +
+                        'Edad: ' + resp.edad;
                     rslt += '</p>';
-                   
+                    if (resp.telefonos && resp.telefonos.length > 1) {
+                        rslt += '<h6>Telefono</h6><ul>';
+                        resp.telefonos.forEach(function (tlf) {
+                            rslt += '<li>' + tlf + '</li>';
+                        });
+                        rslt += '</ul>';
+                    }
                     rslt += '<input type="button" value="Volver" onclick="volver()">';
 
                     $('#listado').html(rslt);
@@ -151,7 +166,7 @@
                 persona[item.name] = item.value;
             });
             $.ajax({
-                url: 'http://localhost:43210/usuarios',
+                url: 'http://localhost:43210/personas',
                 method: 'POST',
                 dataType: 'json',
                 data: persona
@@ -174,7 +189,7 @@
                 persona[item.name] = item.value;
             });
             $.ajax({
-                url: 'http://localhost:43210/usuarios',
+                url: 'http://localhost:43210/personas',
                 method: 'PUT',
                 dataType: 'json',
                 data: persona

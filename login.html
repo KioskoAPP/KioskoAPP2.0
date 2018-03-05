@@ -68,7 +68,7 @@
             .then(function(res){
                 localStorage.setItem('token', res.token);
                 var req = new XMLHttpRequest();
-                req.open('GET', 'http://10.2.201.158:3000/home.html', true);
+                req.open('GET', 'http://localhost:3000/home.html', true);
                 req.setRequestHeader('Authorization', res.token);
                 req.onreadystatechange = function (aEvt) {
                     if (req.readyState == 4) {

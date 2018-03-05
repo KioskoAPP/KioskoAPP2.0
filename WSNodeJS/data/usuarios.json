@@ -1,24 +1,6 @@
 [
     {
         "_id": "0",
-        "name": "Nombre",
-        "lastName": "Apellidos",
-        "email": "prueba@prueba.com",
-        "pass": "Nombre",
-        "birthDate": "dd/mm/aaaa",
-        "completAddress": [
-            {
-                "Address": "Nombre dirección",
-                "streetName": "Nombre calle",
-                "number": "Número",
-                "cityName": "Nombre ciudad",
-                "postCodeName": "Código postal",
-                "countryName": "País"
-            }
-        ]
-    },
-    {
-        "_id": "1",
         "name": "Amalia",
         "lastName": "Abastos",
         "email": "amaliaabastos@prueba.com",
@@ -33,7 +15,27 @@
                 "postCodeName": "28045",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": []
+    },
+    {
+        "_id": "1",
+        "name": "Javier",
+        "lastName": "Suarez Sanchez",
+        "email": "javier@javier.com",
+        "pass": "javier",
+        "birthDate": "22/09/1990",
+        "completAddress": [
+            {
+                "Address": "Mi direccion",
+                "streetName": "calle pedro callejo",
+                "number": "15",
+                "cityName": "Madrid",
+                "postCodeName": "28038",
+                "countryName": "España"
+            }
+        ],
+        "liked": []
     },
     {
         "_id": "2",
@@ -51,7 +53,8 @@
                 "postCodeName": "46026",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": []
     },
     {
         "_id": "4",
@@ -77,7 +80,8 @@
                 "postCodeName": "41500",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": []
     },
     {
         "_id": "5",
@@ -113,6 +117,7 @@
                 "postCodeName": "33003",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": []
     }
 ]

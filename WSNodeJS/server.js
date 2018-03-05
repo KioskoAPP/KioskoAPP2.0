@@ -100,7 +100,7 @@ const lstServicio = [
   { url: '/biblioteca', pk: 'id', fich: __dirname + '/data/biblioteca.json', readonly: false },
   { url: '/vehiculos', pk: 'id', fich: __dirname + '/data/vehiculos.json', readonly: false },
   { url: '/marcas', pk: 'marca', fich: __dirname + '/data/marcas-modelos.json', readonly: false },
-  { url: '/usuarios', pk: 'email', fich: __dirname + '/data/usuarios.json', readonly: false },
+  { url: '/usuarios', pk: 'id', fich: __dirname + '/data/usuarios.json', readonly: false },
   { url: '/magazines', pk: 'id', fich: __dirname + '/data/magazines.json', readonly: false }
 
 ]

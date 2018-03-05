@@ -6,10 +6,10 @@
         <header class="menu"></header>
         <main class="container-fluid">
             <div class="row">
-                <div class="col-xs-12 ss_detail-thumbnail"></div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 ss_detail-info">
+                <div class="col-xs-12 col-md-offset-1 col-md-5 ss_detail-thumbnail">
+                    <i class="fa fa-search-plus"></i>
+                </div>
+                <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-5 ss_detail-info">
                     <div class="row">
                         <div class="col-xs-8">
                             <div class="row">
@@ -51,15 +51,17 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_options">
-                                <button class="btn ss_btnDownload col-xs-offset-2 col-xs-8">
+                                <button class="btn ss_btnDownload col-xs-offset-2 col-xs-8 col-sm-4">
                                     <i class="glyphicon glyphicon-inbox"></i>Descargar
                                 </button>
-                                <button class="btn ss_btnShoppingCart col-xs-offset-2 col-xs-8">
+                                <button class="btn ss_btnShoppingCart col-xs-offset-2 col-xs-8 col-sm-4">
                                     <i class="glyphicon glyphicon-shopping-cart"></i>Comprar
                                 </button>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-xs-12">
                     <div class="row">
                         <div class="col-xs-12 ss_recommended">
                             <div class="row">
@@ -85,42 +87,63 @@
         <script src="js/user.controllers.js"></script>
         <script src="js/jquery.barrating.min.js"></script>
         <script>
+            var magazine_id;
+            var user_id;
             function gotoDetail(e){
-                console.log("hola");
-            }
+                console.log("hola"); }
+
             function listRecommendedMagazines(){
                 $.ajax({
-                    url: 'http://10.2.201.158:43210/magazines',
+                    url: 'http://localhost:43210/magazines',
                     data: null,
                     type: 'GET',
                     dataType: 'json'})
                     .then(function(res){
                         for(var i = 0; i < res.length; i++){
-                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div data-id='" + res[i].id + "'class='col-xs-12'><div class='row'><a href='http://10.2.201.158:3000/detail.html?id=" +  res[i].id + "'><img src='http://10.2.201.158:43210/" +  res[i].thumbnail + "' alt''></a></div><i class='glyphicon glyphicon-eye-open'></i></div></div>");
+                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div data-id='" + res[i].id + "'class='col-xs-12'><div class='row'><a href='http://10.2.201.158:3000/detail.html?id=" +  res[i].id + "'><img src='http://localhost:43210/" +  res[i].thumbnail + "' alt''></a></div><i class='glyphicon glyphicon-eye-open'></i></div></div>");
                         }
                         
                     },
                     function(jqXHR, textStatus, errorThrown) {
-                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); });
-            }
-            function toggleLike(e){
-                $('.glyphicon-heart').toggleClass('ss-liked'); }
-    
+                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
 
-            $(document).ready(function(){
-                var magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
-                if(location.search.split('?')[1].split('&')[1]) {
-                    var user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
-                
+            function toggleLike(){
+
                 $.ajax({
-                    url: 'http://10.2.201.158:43210/magazines?id='+ magazine_id,
+                    url: 'http://localhost:43210/usuarios?id='+ user_id,
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json'})
+                    .then(function(res){
+                        var user = res[0];
+                        $('.glyphicon-heart').toggleClass('ss-liked');
+                        // for(var i = 0; i < res[0].liked.length; i++){
+                        //     if(res[0].liked[i] == magazine_id){
+                        //         $('.glyphicon-heart').toggleClass('ss-liked', false);
+                        //         console.log("enconctrado asi que a borrar");
+                        //         res[0].liked.splice(res[0].liked[i],1);
+                        //     }else{
+                        //         $('.glyphicon-heart').toggleClass('ss-liked', true);
+                        //         console.log("no encontrado asi que a true");
+                        //         res[0].liked.push(magazine_id);
+                        //     }
+                        // }
+                    },
+                    function(jqXHR, textStatus, errorThrown) {
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
+            }
+    
+            $(document).ready(function(){
+                magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
+                if(location.search.split('?')[1].split('&')[1]) {
+                    user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
+                $.ajax({
+                    url: 'http://localhost:43210/magazines?id='+ magazine_id,
                     data: null,
                     type: 'GET',
                     dataType: 'json'})
                     .then(function(res){
                         var magazine = res[0];
-                        $('.glyphicon-heart').click({id: magazine_id}, toggleLike);
-                        
                         printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
                         printMagazineAttribute(magazine, 'name','.ss_title');
                         printMagazineAttribute(magazine, 'owner','.ss_author > a');
@@ -128,9 +151,31 @@
                         printMagazineAttribute(magazine, 'tags','.ss_tags');
                         $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
                         listRecommendedMagazines();
-                        },
-                        function(jqXHR, textStatus, errorThrown) {
-                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); });
+                        $('.glyphicon-heart').click(toggleLike);
+                        
+                        
+                    },
+                    function(jqXHR, textStatus, errorThrown) {
+                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); })
+                    .done(function(){
+                        $.ajax({
+                            url: 'http://localhost:43210/usuarios?id='+ user_id,
+                            type: 'GET',
+                            dataType: 'json'})
+                            .then(function(res){
+                                var user = res[0];
+                                for(var i = 0; i < res[0].liked.length; i++){
+                                    if(magazine_id == res[0].liked[i]){
+                                        console.log("esta");
+                                        $('.glyphicon-heart').toggleClass('ss-liked', true);
+                                    }
+                                }
+                            },
+                            function(jqXHR, textStatus, errorThrown) {
+                                 console.log('<p class="error">ERROR2: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
+                        });
+                });
+                
         </script>
     </body>
 </html>

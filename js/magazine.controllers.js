@@ -10,7 +10,6 @@ function getMagazines(){
         function(jqXHR, textStatus, errorThrown) {
             console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); });  }
 
-            
 function getMagazine(id){
     $.ajax({
         url: 'http://localhost:43210/magazines?id='+ id,

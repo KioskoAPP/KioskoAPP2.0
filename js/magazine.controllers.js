@@ -1,6 +1,6 @@
 function getMagazines(){
     $.ajax({
-        url: 'http://10.2.201.158:43210/magazines',
+        url: 'http://localhost:43210/magazines',
         data: null,
         type: 'GET',
         dataType: 'json'})
@@ -13,7 +13,7 @@ function getMagazines(){
             
 function getMagazine(id){
     $.ajax({
-        url: 'http://10.2.201.158:43210/magazines?id='+ id,
+        url: 'http://localhost:43210/magazines?id='+ id,
         data: null,
         type: 'GET',
         dataType: 'json'})
@@ -27,7 +27,7 @@ function getMagazine(id){
 function printMagazineAttribute(magazine, attribute, selector){
     switch(attribute) {
         case 'thumbnail':
-           $(selector).css('background-image', 'url(http://10.2.201.158:43210/' + magazine[attribute] + ')');
+           $(selector).css('background-image', 'url(http://localhost:43210/' + magazine[attribute] + ')');
         break;
         case 'tags':
             for(var i = 0; i < magazine[attribute].length; i++){

@@ -21,6 +21,7 @@
   "dependencies": {
     "jquery-bar-rating": "^1.2.2",
     "manager": "^1.0.9",
+    "modernizr": "^3.6.0",
     "node": "^9.5.0",
     "package": "^1.0.1"
   }

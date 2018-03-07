@@ -86,12 +86,13 @@
         <script src="js/magazine.controllers.js"></script>
         <script src="js/user.controllers.js"></script>
         <script src="js/jquery.barrating.min.js"></script>
-        <script src="js/magazine.class.js"></script>
-        <script>
+        <script type="module" src="js/magazine.class.js"></script>
+        <script type="module" src="js/user.class.js"></script>
+        <script type="module">
+            import { User } from './js/user.class.js';
+            
             var magazine_id;
             var user_id;
-            function gotoDetail(e){
-                console.log("hola"); }
 
             function toggleLike(){
 
@@ -120,7 +121,6 @@
             }
     
             $(document).ready(function(){
-                
                 magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
                 if(location.search.split('?')[1].split('&')[1]) {
                     user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
@@ -137,7 +137,7 @@
                         printMagazineAttribute(magazine, 'description','.ss_description');
                         printMagazineAttribute(magazine, 'tags','.ss_tags');
                         $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
-                        Magazine.getRecommendedMagazines(user_id);
+                        User.getRecommendedMagazines(user_id);
                         $('.glyphicon-heart').click(toggleLike);
                         
                     },

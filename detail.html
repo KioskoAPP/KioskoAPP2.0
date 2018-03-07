@@ -86,26 +86,12 @@
         <script src="js/magazine.controllers.js"></script>
         <script src="js/user.controllers.js"></script>
         <script src="js/jquery.barrating.min.js"></script>
+        <script src="js/magazine.class.js"></script>
         <script>
             var magazine_id;
             var user_id;
             function gotoDetail(e){
                 console.log("hola"); }
-
-            function listRecommendedMagazines(){
-                $.ajax({
-                    url: 'http://localhost:43210/magazines',
-                    data: null,
-                    type: 'GET',
-                    dataType: 'json'})
-                    .then(function(res){
-                        for(var i = 0; i < res.length; i++){
-                            $('.ss_recommended-content').append("<div class='row ss_recommended-item'><div data-id='" + res[i].id + "'class='col-xs-12'><div class='row'><a href='http://10.2.201.158:3000/detail.html?id=" +  res[i].id + "'><img src='http://localhost:43210/" +  res[i].thumbnail + "' alt''></a></div><i class='glyphicon glyphicon-eye-open'></i></div></div>");
-                        }
-                        
-                    },
-                    function(jqXHR, textStatus, errorThrown) {
-                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
 
             function toggleLike(){
 
@@ -134,6 +120,7 @@
             }
     
             $(document).ready(function(){
+                
                 magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
                 if(location.search.split('?')[1].split('&')[1]) {
                     user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
@@ -150,9 +137,8 @@
                         printMagazineAttribute(magazine, 'description','.ss_description');
                         printMagazineAttribute(magazine, 'tags','.ss_tags');
                         $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
-                        listRecommendedMagazines();
+                        Magazine.getRecommendedMagazines(user_id);
                         $('.glyphicon-heart').click(toggleLike);
-                        
                         
                     },
                     function(jqXHR, textStatus, errorThrown) {
@@ -166,7 +152,6 @@
                                 var user = res[0];
                                 for(var i = 0; i < res[0].liked.length; i++){
                                     if(magazine_id == res[0].liked[i]){
-                                        console.log("esta");
                                         $('.glyphicon-heart').toggleClass('ss-liked', true);
                                     }
                                 }

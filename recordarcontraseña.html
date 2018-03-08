@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body> 
+    <div class="dra-padreh1">
+        <h1 class="dra-h1">KIOSKO</h1>
+    </div>
+    <div class="dra-i">
+            <h3 class="dra-i">Recordar contraseña</h3>
+        </div>
+    <form action="home.html">
+    <div class="container-fluid">
+        <div class="form-group">
+         <div> <h4>Introduce tu correo electrónico:</h4></div>
+            <div>
+                <input type="email" value="Introduce tu correo electrónico" class="form-control" id="email" placeholder="fulano@hotmail.com"
+                    name="email" required>
+            </div>
+        </div>
+        <div class="form-group">
+        <div> <h4>Introduce tu nueva contraseña:</h4></div>   
+            <div>
+                <input type="password" value="Escribe tu nueva contraseña" class="form-control" id="pwd" placeholder="Introduce tu nueva contraseña"
+                    name="pwd" required>
+            </div>
+        </div>
+        <div class="form-group">
+          <div> <h4>Repite tu nueva contraseña:</h4></div>
+            <div>
+                <input type="password" value="Repite tu nueva contraseña" class="form-control" id="pwd1" placeholder="Introduce tu contraseña de nueva otra vez"
+                    name="pwd" required>
+            </div>
+        </div>
+        <div>
+            <button id="login" type="submit" class="btn btn-block">
+             Envíar
+            </button>
+        </div>
+    </form>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <!-- Our JS scripts -->
+        <script src="js/main.js"></script>
+</body>
+<script>
+    function login() {
+        var email = $('#email').val();
+        var pass = $('#pwd').val();
+        // var userObject = '{ "name" : "' + email + '", "password": "' + pass  + '"}';
+        var userObject = 'name=' + email + '&password=' + pass;
+
+        $.ajax({
+            url: 'http://localhost:43210/login',
+            data: userObject,
+            type: 'POST',
+            dataType: 'json'
+        })
+            .then(function (res) {
+                localStorage.setItem('token', res.token);
+                var req = new XMLHttpRequest();
+                req.open('GET', 'http://localhost:3000/home.html', true);
+                req.setRequestHeader('Authorization', res.token);
+                req.onreadystatechange = function (aEvt) {
+                    if (req.readyState == 4) {
+                        if (req.status == 200)
+                            if (res.success === true) {
+                                location.href = '/home.html';
+                            } else {
+                                console.log("El usuario no es valido");
+                            }
+                    } else { };
+                }
+
+                req.send(null);
+            },
+                function (jqXHR, textStatus, errorThrown) {
+                    console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+                });
+    }
+
+    $(document).ready(function () {
+        $('#login').click(login);
+    });
+
+
+</script>
+
+</html>

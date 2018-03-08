@@ -1,24 +1,6 @@
 [
     {
-        "_id": "0",
-        "name": "Nombre",
-        "lastName": "Apellidos",
-        "email": "prueba@prueba.com",
-        "pass": "Nombre",
-        "birthDate": "dd/mm/aaaa",
-        "completAddress": [
-            {
-                "Address": "Nombre dirección",
-                "streetName": "Nombre calle",
-                "number": "Número",
-                "cityName": "Nombre ciudad",
-                "postCodeName": "Código postal",
-                "countryName": "País"
-            }
-        ]
-    },
-    {
-        "_id": "1",
+        "id": "0",
         "name": "Amalia",
         "lastName": "Abastos",
         "email": "amaliaabastos@prueba.com",
@@ -33,10 +15,33 @@
                 "postCodeName": "28045",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": ["1","2","3","4"],
+        "recommendedMagazines": ["1","2","3","4"]
     },
     {
-        "_id": "2",
+        "id": "1",
+        "name": "Javier",
+        "lastName": "Suarez Sanchez",
+        "email": "javier@javier.com",
+        "pass": "javier",
+        "birthDate": "22/09/1990",
+        "completAddress": [
+            {
+                "Address": "Mi direccion",
+                "streetName": "calle pedro callejo",
+                "number": "15",
+                "cityName": "Madrid",
+                "postCodeName": "28038",
+                "countryName": "España"
+            }
+        ],
+        "liked": ["1","2","3","4"],
+        "recommendedMagazines": ["1","2","3","4"]
+        
+    },
+    {
+        "id": "2",
         "name": "Francisco",
         "lastName": "Palacio",
         "email": "franciscopalacio@prueba.com",
@@ -51,10 +56,12 @@
                 "postCodeName": "46026",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": ["1","2","3","4"],
+        "recommendedMagazines": ["1","2","3","4"]
     },
     {
-        "_id": "4",
+        "id": "4",
         "name": "Rafael",
         "lastName": "Secada",
         "email": "rafaelsecada@prueba.com",
@@ -77,10 +84,12 @@
                 "postCodeName": "41500",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked": ["1","2","3","4"],
+        "recommendedMagazines": ["1","2","3","4"]
     },
     {
-        "_id": "5",
+        "id": "5",
         "name": "Pilar",
         "lastName": "Saelices",
         "email": "pilarsaelices@prueba.com",
@@ -95,10 +104,12 @@
                 "postCodeName": "37006",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked" : ["1","2","3","4"],
+        "recommendedMagazines": ["1","2","3","4"]
     },
     {
-        "_id": "6",
+        "id": "6",
         "name": "María",
         "lastName": "Noboa",
         "email": "marianoboa@prueba.com",
@@ -113,6 +124,8 @@
                 "postCodeName": "33003",
                 "countryName": "España"
             }
-        ]
+        ],
+        "liked" : ["1","2","3","4"],
+        "recommendedMagazines": ["1","2","3","4"]
     }
 ]

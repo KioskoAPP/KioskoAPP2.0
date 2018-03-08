@@ -2,59 +2,62 @@
 <html lang="en">
 
 <head>
-
 </head>
 
+
+
 <body>
-    <div class="dra-padreh1">
-        <h1 class="dra-h1">KIOSKO</h1>
-    </div>
+    <form action="home.html" method="post" class="form-register" onsubmit="return validar();">
+        <div class="dra-padreh1">
+            <h1 class="dra-h1">KIOSKO</h1>
+        </div>
 
-    <div class="container-fluid">
-        <div class="form-group">
+        <div class="container-fluid">
+            <div class="form-group">
 
+                <div>
+                    <input type="email" id="email" class="form-control" placeholder="Introduce tu correo electronico" name="email" maxlength="100">
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="password" id="contraseña" class="form-control" placeholder="Introduce tu contraseña" name="pwd" maxlength="30">
+                </div>
+            </div>
             <div>
-                <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electronico" name="email">
+                <button id="login" type="submit" class="btn btn-block">Entrar</button>
             </div>
-        </div>
-        <div class="form-group">
-            <div>
-                <input type="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña" name="pwd">
-            </div>
-        </div>
-        <div>
-            <button id="login" type="submit" class="btn btn-block">Entrar</button>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-4">
-                <input class="dra-button1" type="submit" value="G+" />
-            </div>
-            <div class=" col-xs-offset-2 col-xs-4">
-                <input class="dra-button2" type="submit" value="F" />
-            </div>
-            <div class="recordarme">
-                <input type="checkbox"> Recordarme
-            </div>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-4">
+                    <input class="dra-button1" type="submit" id="g" value="G+" />
+                </div>
+                <div class=" col-xs-offset-2 col-xs-4">
+                    <input class="dra-button2" type="submit" id="f" value="F" />
+                </div>
+                <div class="recordarme">
+                    <input type="checkbox" id="recordarme"> Recordarme
+                </div>
 
 
+            </div>
+            <div class="dra">
+                <p>¿No tienes cuenta?
+                    <a href="resister.html"> Regístrate</a>
+                </p>
+            </div>
         </div>
-        <div class="dra">
-            <p>¿No tienes cuenta?
-                <a href="resister.html"> Regístrate</a>
-            </p>
-        </div>
-    </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <!-- Our JS scripts -->
-    <script src="js/main.js"></script>
-</body>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <!-- Our JS scripts -->
+        <script src="js/main.js"></script>
+    </form>
+        <script scr="validar.js"></script>
 <script>
-    function login(){
+    function login() {
         var email = $('#email').val();
         var pass = $('#pwd').val();
         // var userObject = '{ "name" : "' + email + '", "password": "' + pass  + '"}';
@@ -64,8 +67,9 @@
             url: 'http://10.2.201.158:43210/login',
             data: userObject,
             type: 'POST',
-            dataType: 'json'})
-            .then(function(res){
+            dataType: 'json'        
+})
+            .then(function (res) {
                 localStorage.setItem('token', res.token);
                 var req = new XMLHttpRequest();
                 req.open('GET', 'http://10.2.201.158:3000/detail.html', true);
@@ -73,23 +77,28 @@
                 req.onreadystatechange = function (aEvt) {
                     if (req.readyState == 4) {
                         if (req.status == 200)
-                            if(res.success === true){
+                            if (res.success === true) {
                                 location.href = '/home.html';
-                            }else{
-                                console.log("El usuario no es valido"); }
-                    }else{};}
-                
+                            } else {
+                                console.log("El usuario no es valido");
+                            }
+                    } else { };
+                }
+
                 req.send(null);
             },
-            function(jqXHR, textStatus, errorThrown) {
-                console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); 
-            });  }
+            function (jqXHR, textStatus, errorThrown) {
+                console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+            });
+    }
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('#login').click(login);
     });
-    
-    
+
+
 </script>
+</body>
+
 
 </html>

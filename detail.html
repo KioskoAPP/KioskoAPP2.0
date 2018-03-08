@@ -28,7 +28,8 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="ss_info">
-                                        <h3 class="ss_title"></h3>
+                                        <h3 class="ss_title">
+                                        </h3>
                                        <h4 class="ss_author"> <a href=""></a></h4>
                                     </div>
                                 </div>
@@ -86,60 +87,56 @@
         <script src="js/magazine.controllers.js"></script>
         <script src="js/user.controllers.js"></script>
         <script src="js/jquery.barrating.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
         <script type="module" src="js/magazine.class.js"></script>
         <script type="module" src="js/user.class.js"></script>
         <script type="module">
             import { User } from './js/user.class.js';
-            
-            var magazine_id;
-            var user_id;
 
-            function toggleLike(){
-
-                $.ajax({
-                    url: 'http://localhost:43210/usuarios?id='+ user_id,
-                    data: null,
-                    type: 'GET',
-                    dataType: 'json'})
-                    .then(function(res){
-                        var user = res[0];
-                        $('.glyphicon-heart').toggleClass('ss-liked');
-                        // for(var i = 0; i < res[0].liked.length; i++){
-                        //     if(res[0].liked[i] == magazine_id){
-                        //         $('.glyphicon-heart').toggleClass('ss-liked', false);
-                        //         console.log("enconctrado asi que a borrar");
-                        //         res[0].liked.splice(res[0].liked[i],1);
-                        //     }else{
-                        //         $('.glyphicon-heart').toggleClass('ss-liked', true);
-                        //         console.log("no encontrado asi que a true");
-                        //         res[0].liked.push(magazine_id);
-                        //     }
-                        // }
-                    },
-                    function(jqXHR, textStatus, errorThrown) {
-                        console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
-            }
+            function toggleLike(e){
+                    $.ajax({
+                        url: 'http://localhost:43210/usuarios?id='+ e.data.user_id,
+                        dataType: 'json'})
+                        .then(function(res){
+                            var isLiked = false;
+                            for(var i = 0; i < res[0].liked.length; i++){
+                                if(res[0].liked[i]==e.data.magazine_id){
+                                    isLiked = true; } }
+                            if(isLiked){
+                                $('.glyphicon-heart').toggleClass('ss-liked', false);
+                                //Aqui hay que borrar la revista de las liked del usuario
+                            }else{
+                                $('.glyphicon-heart').toggleClass('ss-liked', true);
+                                //Aqui hay que añadir la revista a las liked del usuario
+                            }
+                        },
+                        function(jqXHR, textStatus, errorThrown) {
+                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
+                }
     
             $(document).ready(function(){
-                magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
+               
+                var magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
                 if(location.search.split('?')[1].split('&')[1]) {
-                    user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
+                    var user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
+                $('.glyphicon-heart').click({'magazine_id': magazine_id, 'user_id': user_id}, toggleLike);
                 $.ajax({
                     url: 'http://localhost:43210/magazines?id='+ magazine_id,
-                    data: null,
-                    type: 'GET',
                     dataType: 'json'})
                     .then(function(res){
-                        var magazine = res[0];
-                        printMagazineAttribute(magazine, 'thumbnail','.ss_detail-thumbnail');
-                        printMagazineAttribute(magazine, 'name','.ss_title');
-                        printMagazineAttribute(magazine, 'owner','.ss_author > a');
-                        printMagazineAttribute(magazine, 'description','.ss_description');
-                        printMagazineAttribute(magazine, 'tags','.ss_tags');
-                        $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
-                        User.getRecommendedMagazines(user_id);
-                        $('.glyphicon-heart').click(toggleLike);
+                        var title_template = "{{title}}";
+                        var owner_template = "{{owner}}";
+                        var description_template = "{{description}}";
+                        $('.ss_detail-thumbnail').css('background-image', 'url(http://localhost:43210/' + res[0].thumbnail + ')');
+                        $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', res[0].rating);
+                        $('.ss_title').html(Mustache.render(title_template, {title: res[0].title}));
+                        $('.ss_author').html(Mustache.render(owner_template, {owner: res[0].owner}));
+                        $('.ss_description').html(Mustache.render(description_template, {description: res[0].description}));
+                        for(var i = 0; i < res[0].tags.length; i++){
+                            $('.ss_tags').append("<i class='ss_tag'><a href=''>" + res[0].tags[i] + '</a></i>'); }
                         
+                        User.getRecommendedMagazines(user_id);
+                        //Aqui habria que imprimir el listado de revistas recomendadas con Mustache
                     },
                     function(jqXHR, textStatus, errorThrown) {
                         console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); })
@@ -162,5 +159,6 @@
                 });
                 
         </script>
+        
     </body>
 </html>

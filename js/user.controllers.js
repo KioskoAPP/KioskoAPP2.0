@@ -1,3 +1,5 @@
+//Comprobar lo que falta por implementar en user.class y borrar este documento
+
 function getUsers(){
     $.ajax({
         url: 'http://localhost:43210/users',

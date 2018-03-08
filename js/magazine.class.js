@@ -1,7 +1,7 @@
-
 var Magazine = new (
     function() {
         var obj = this;
+
         // Get all magazines
         obj.getMagazines = function() {
             return new Promise(function (resolve, reject) {
@@ -10,14 +10,11 @@ var Magazine = new (
                     dataType: 'json',
                 }).then(
                     function (resp) {
-                        resolve(resp);
-                    },
+                        resolve(resp); },
                     function (jqXHR, textStatus, errorThrown) {
-                        reject(jqXHR, textStatus, errorThrown);
-                    }
-                );
-            });
-        };
+                        reject(jqXHR, textStatus, errorThrown); } ); }); };
+
+
         // Get one magazine
         obj.getMagazine = function(magazine_id) {
             return new Promise(function (resolve, reject) {
@@ -26,14 +23,11 @@ var Magazine = new (
                     dataType: 'json',
                 }).then(
                     function (resp) {
-                        resolve(resp);
-                    },
+                        resolve(resp); },
                     function (jqXHR, textStatus, errorThrown) {
-                        reject(jqXHR, textStatus, errorThrown);
-                    }
-                );
-            });
-        };
+                        reject(jqXHR, textStatus, errorThrown); } ); }); };
+
+
         // Get one magazine
         obj.addMagazine = function(magazine) {
             return new Promise(function (resolve, reject) {
@@ -44,14 +38,11 @@ var Magazine = new (
                     data: magazine
                 }).then(
                     function (resp) {
-                        resolve(resp);
-                    },
+                        resolve(resp); },
                     function (jqXHR, textStatus, errorThrown) {
-                        reject(jqXHR, textStatus, errorThrown);
-                    }
-                );
-            });
-        };
+                        reject(jqXHR, textStatus, errorThrown); } ); }); };
+
+
         // Update one magazine
         obj.updateMagazine = function(magazine) {
             return new Promise(function (resolve, reject) {
@@ -62,15 +53,10 @@ var Magazine = new (
                     data: magazine
                 }).then(
                     function (resp) {
-                        resolve(resp);
-                    },
+                        resolve(resp); },
                     function (jqXHR, textStatus, errorThrown) {
-                        reject(jqXHR, textStatus, errorThrown);
-                    }
-                );
-            });
-        };
-    }
-)();
+                        reject(jqXHR, textStatus, errorThrown); } ); }); };
+
+})();
 
 export var Magazine;

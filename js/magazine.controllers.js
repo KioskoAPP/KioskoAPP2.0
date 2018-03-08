@@ -1,3 +1,5 @@
+//Comprobar lo que falta por implementar en magazine.class y borrar este documento
+
 function getMagazines(){
     $.ajax({
         url: 'http://localhost:43210/magazines',
@@ -22,20 +24,3 @@ function getMagazine(id){
         },
         function(jqXHR, textStatus, errorThrown) {
             console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); }
-
-function printMagazineAttribute(magazine, attribute, selector){
-    switch(attribute) {
-        case 'thumbnail':
-           $(selector).css('background-image', 'url(http://localhost:43210/' + magazine[attribute] + ')');
-        break;
-        case 'tags':
-            for(var i = 0; i < magazine[attribute].length; i++){
-                $(selector).append("<i class='ss_tag'><a href=''>" + magazine[attribute][i] + '</a></i>');
-            }
-        break;
-        default:
-            $(selector).html(magazine[attribute]);
-        break;
-    }
-   
-} 

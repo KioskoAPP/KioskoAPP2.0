@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "name": "February 2014",
+        "title": "February 2014",
         "owner": "BRUMMELL",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -10,7 +10,7 @@
         "rating": 4 },
     {
         "id": "2",
-        "name": "February 2014 No26",
+        "title": "February 2014 No26",
         "owner": "DIY",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -20,7 +20,7 @@
 
     { 
         "id": "3",
-        "name": "Ibrahim Çelikkol No9",
+        "title": "Ibrahim Çelikkol No9",
         "owner": "BEMAN",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -29,7 +29,7 @@
         "rating": 4  },
     { 
         "id": "4",
-        "name": "No87",
+        "title": "No87",
         "owner": "EYE",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -38,7 +38,7 @@
         "rating": 4  },
     { 
         "id": "5",
-        "name": "4 · Junio · 2012",
+        "title": "4 · Junio · 2012",
         "owner": "FORBES",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -47,7 +47,7 @@
         "rating": 4  },
     { 
         "id": "6",
-        "name": "1 · Octubre · 2014 - No3661",
+        "title": "1 · Octubre · 2014 - No3661",
         "owner": "HOLA",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -56,7 +56,7 @@
         "rating": 4  },
     { 
         "id": "7",
-        "name": "Febrero",
+        "title": "Febrero",
         "owner": "HUNTER",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -65,7 +65,7 @@
         "rating": 4  },
     { 
         "id": "8",
-        "name": "Junio 2017 No21",
+        "title": "Junio 2017 No21",
         "owner": "JOT DOWN",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -74,7 +74,7 @@
         "rating": 4  },
     { 
         "id": "9",
-        "name": "Mayo 2015 No1",
+        "title": "Mayo 2015 No1",
         "owner": "TOMATICKET",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -83,7 +83,7 @@
         "rating": 4  },
     { 
         "id": "10",
-        "name": "Person of the Year - Puttin",
+        "title": "Person of the Year - Puttin",
         "owner": "TIME",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -92,7 +92,7 @@
         "rating": 4  },
     { 
         "id": "11",
-        "name": "JBalvin JUL2016",
+        "title": "JBalvin JUL2016",
         "owner": "UMOMAGAZINE",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -101,7 +101,7 @@
         "rating": 4  },
     { 
         "id": "12",
-        "name": "Spring Preview 2014 No87",
+        "title": "Spring Preview 2014 No87",
         "owner": "V MAGAZINE",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
@@ -110,7 +110,7 @@
         "rating": 4  },
     { 
         "id": "13",
-        "name": "The Spring 2018",
+        "title": "The Spring 2018",
         "owner": "WONDERLAND",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],

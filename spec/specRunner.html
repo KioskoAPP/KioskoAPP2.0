@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="Inicia" onclick="inicia()">Inicia</button>
+    <button id="Para" onclick="para()">Para</button>
+    <button id="Cotilla" onclick="cotilla()">Cotilla</button>
+</body>
+<script src="PlayerSpec.js"></script>
+<script src="SpecHelper.js"></script>
+<script>
+    function inicia() {
+        p.play();
+    }
+    function para() {
+        p.pause();
+    }
+    function cotilla() {
+        if(p.isPlaying){
+            document.getElementById("rslt").innerHTML = 'tocando';
+        }else{
+            document.getElementById("rslt").innerHTML = 'parado';
+        }
+    }
+</script>
+</html>

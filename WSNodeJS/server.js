@@ -148,7 +148,7 @@ lstServicio.forEach(servicio => {
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
       var lst = JSON.parse(data)
       var ele = lst.find(ele => ele[servicio.pk] == req.params.id)
-      console.log(ele)
+      //console.log(ele)
       res.cookie('XSRF-TOKEN', '123456790ABCDEF')
       res.end(JSON.stringify(ele))
     })
@@ -175,6 +175,7 @@ lstServicio.forEach(servicio => {
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
       var lst = JSON.parse(data)
       var ele = req.body
+     
       var ind = lst.findIndex(row => row[servicio.pk] == ele.id)
       if (ind == -1) {
         res.status(404).end()
@@ -191,6 +192,7 @@ lstServicio.forEach(servicio => {
   app.put(servicio.url + '/:id', function (req, res) {
     if (!isAutenticated(servicio.readonly, req, res)) return
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
+      
       var lst = JSON.parse(data)
       var ele = req.body
       var ind = lst.findIndex(row => row[servicio.pk] == req.params.id)

@@ -92,26 +92,30 @@
         <script type="module" src="js/user.class.js"></script>
         <script type="module">
             import { User } from './js/user.class.js';
+            import { Magazine } from './js/magazine.class.js';
 
             function toggleLike(e){
-                    $.ajax({
-                        url: 'http://localhost:43210/usuarios?id='+ e.data.user_id,
-                        dataType: 'json'})
-                        .then(function(res){
-                            var isLiked = false;
-                            for(var i = 0; i < res[0].liked.length; i++){
-                                if(res[0].liked[i]==e.data.magazine_id){
-                                    isLiked = true; } }
-                            if(isLiked){
-                                $('.glyphicon-heart').toggleClass('ss-liked', false);
-                                //Aqui hay que borrar la revista de las liked del usuario
-                            }else{
-                                $('.glyphicon-heart').toggleClass('ss-liked', true);
-                                //Aqui hay que añadir la revista a las liked del usuario
-                            }
-                        },
-                        function(jqXHR, textStatus, errorThrown) {
-                            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
+                User.findLikedMagazine(e.data.user_id).then(function(res){
+                    var isLiked = false;
+                    for(var i = 0; i < res.liked.length; i++){
+                        if(res.liked[i]==e.data.magazine_id){
+                            isLiked = true; } }
+                    if(isLiked){
+                        $('.glyphicon-heart').toggleClass('ss-liked', false);
+                        //Aqui hay que borrar la revista de las liked del usuario
+                        User.getUser(e.data.user_id).then(
+                            res.liked.splice(1, res.liked.indexOf(e.data.magazine_id)),
+                            User.updateUser(res),
+                         );
+                    
+
+                        // Magazine.updateMagazine();
+                    }else{
+                        $('.glyphicon-heart').toggleClass('ss-liked', true);
+                        //Aqui hay que añadir la revista a las liked del usuario
+                    }
+                });
+                    
                 }
     
             $(document).ready(function(){
@@ -135,27 +139,12 @@
                         for(var i = 0; i < res[0].tags.length; i++){
                             $('.ss_tags').append("<i class='ss_tag'><a href=''>" + res[0].tags[i] + '</a></i>'); }
                         
-                        User.getRecommendedMagazines(user_id);
+                        User.getUserRecommendedMagazines(user_id);
                         //Aqui habria que imprimir el listado de revistas recomendadas con Mustache
                     },
                     function(jqXHR, textStatus, errorThrown) {
                         console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); })
-                    .done(function(){
-                        $.ajax({
-                            url: 'http://localhost:43210/usuarios?id='+ user_id,
-                            type: 'GET',
-                            dataType: 'json'})
-                            .then(function(res){
-                                var user = res[0];
-                                for(var i = 0; i < res[0].liked.length; i++){
-                                    if(magazine_id == res[0].liked[i]){
-                                        $('.glyphicon-heart').toggleClass('ss-liked', true);
-                                    }
-                                }
-                            },
-                            function(jqXHR, textStatus, errorThrown) {
-                                 console.log('<p class="error">ERROR2: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>'); }); 
-                        });
+                    
                 });
                 
         </script>

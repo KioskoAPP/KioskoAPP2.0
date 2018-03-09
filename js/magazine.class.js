@@ -33,8 +33,8 @@ var Magazine = new (
             return new Promise(function (resolve, reject) {
                 $.ajax({
                     url: 'http://localhost:43210/magazines',
-                    dataType: 'json',
                     method: 'POST',
+                    dataType: 'json',
                     data: magazine
                 }).then(
                     function (resp) {
@@ -47,9 +47,9 @@ var Magazine = new (
         obj.updateMagazine = function(magazine) {
             return new Promise(function (resolve, reject) {
                 $.ajax({
-                    url: 'http://localhost:43210/magazines/',
-                    dataType: 'json',
+                    url: 'http://localhost:43210/magazines/' + magazine.id,
                     method: 'PUT',
+                    dataType: 'json',
                     data: magazine
                 }).then(
                     function (resp) {

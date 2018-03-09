@@ -16,8 +16,18 @@
                 "countryName": "España"
             }
         ],
-        "liked": ["1","2","3","4"],
-        "recommendedMagazines": ["1","2","3","4"]
+        "liked": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "recommendedMagazines": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ]
     },
     {
         "id": "1",
@@ -36,29 +46,48 @@
                 "countryName": "España"
             }
         ],
-        "liked": ["1","2","3","4"],
-        "recommendedMagazines": ["1","2","3","4"]
-        
+        "liked": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "recommendedMagazines": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ]
     },
     {
         "id": "2",
-        "name": "Francisco",
-        "lastName": "Palacio",
-        "email": "franciscopalacio@prueba.com",
-        "pass": "Francisco",
-        "birthDate": "13/05/1960",
+        "name": "Javier",
+        "lastName": "Suarez Sanchez",
+        "email": "javier@javier.com",
+        "pass": "javier",
+        "birthDate": "22/09/1990",
         "completAddress": [
             {
-                "Address": "Trabajo Paco",
-                "streetName": "Carrer de Pedro Cámara",
-                "number": "45",
-                "cityName": "Valencia",
-                "postCodeName": "46026",
+                "Address": "Mi direccion",
+                "streetName": "calle pedro callejo",
+                "number": "15",
+                "cityName": "Madrid",
+                "postCodeName": "28038",
                 "countryName": "España"
             }
         ],
-        "liked": ["1","2","3","4"],
-        "recommendedMagazines": ["1","2","3","4"]
+        "liked": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "recommendedMagazines": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ]
     },
     {
         "id": "4",
@@ -86,7 +115,12 @@
             }
         ],
         "liked": [],
-        "recommendedMagazines": ["1","2","3","4"]
+        "recommendedMagazines": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ]
     },
     {
         "id": "5",
@@ -105,8 +139,18 @@
                 "countryName": "España"
             }
         ],
-        "liked" : ["1","2","3","4"],
-        "recommendedMagazines": ["1","2","3","4"]
+        "liked": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "recommendedMagazines": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ]
     },
     {
         "id": "6",
@@ -125,7 +169,17 @@
                 "countryName": "España"
             }
         ],
-        "liked" : ["1","2","3","4"],
-        "recommendedMagazines": ["1","2","3","4"]
+        "liked": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "recommendedMagazines": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ]
     }
 ]

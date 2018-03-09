@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-        <script src="validar1"></script>
+
 </head>
 
 <body>
-           
+
     <header class="menu"></header>
 
     <form action="adress.html" method="post" class="form-register" onsubmit="return validar();">
@@ -34,11 +34,11 @@
         </div>
         <div class="form-group">
             <label for="exampleInputName2">Código Postal</label>
-            <input type="text" class="form-control" id="exampleInputName3" placeholder="XXXXX">
+            <input type="number" class="form-control" id="exampleInputName3" placeholder="XXXXX" maxlength="5">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail2">País</label>
-            <input type="email" class="form-control" id="exampleInputEmail4" placeholder="país">
+            <input type="text" class="form-control" id="exampleInputEmail4" placeholder="país">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary">Guardar</button>
@@ -60,6 +60,8 @@
         crossorigin="anonymous"></script>
     <!-- Our JS scripts -->
     <script src="js/main.js"></script>
+    <script src="validar1"></script>
+
 </body>
 
 </html>

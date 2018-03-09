@@ -1,0 +1,32 @@
+{
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/eventlistener",
+    "test/geolocation",
+    "test/css/animations",
+    "test/css/backgroundblendmode",
+    "test/css/backgroundcliptext",
+    "test/css/backgroundrepeat",
+    "test/css/backgroundsize",
+    "test/css/backgroundsizecover",
+    "test/css/borderimage",
+    "test/css/borderradius",
+    "test/css/boxshadow",
+    "test/css/chunit",
+    "test/css/columns",
+    "test/css/cssgrid",
+    "test/css/gradients",
+    "test/css/mediaqueries",
+    "test/css/opacity",
+    "test/css/textshadow",
+    "test/css/transforms",
+    "test/forms/formattribute",
+    "test/forms/inputnumber-l10n",
+    "test/forms/placeholder",
+    "test/forms/validation",
+    "test/textarea/maxlength"
+  ]
+}

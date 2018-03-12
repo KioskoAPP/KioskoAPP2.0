@@ -5,16 +5,16 @@ function milogin() {
     var userObject = 'email=' + email + '&pass=' + pass;
 
     $.ajax({
-        url: 'http://localhost:43210/usuarios?'+userObject,
+        url: 'http://localhost:43210/usuarios?' + userObject,
         type: 'get',
         dataType: 'json'
     })
         .then(function (res) {
-            if(res.length > 0){
-            window.location.href="home.html";
+            if (res.length > 0) {
+                window.location.href = "home.html";
             }
             else {
-                alert ("usuario o contraseña invalido");
+                alert("usuario o contraseña invalido");
             }
         },
         function (jqXHR, textStatus, errorThrown) {
@@ -60,9 +60,90 @@ function validarregistro() {
     return true;
 }
 function sendregistro() {
-    if (validarregistro()) 
-    document.getElementById("frmresgistrar").submit();
+    if (validarregistro())
+        document.getElementById("frmresgistrar").submit();
 }
+
+
+
+
+
+    function milogin() {
+        var Adress = $('#Adress').val();
+        var streetName = $('#streetName').val();
+        var number = $('#number').val();
+        var cityName = $('cityName').val();
+        var postCodeName = $('postCodeName');
+        var countryName = $('countryName');
+
+        // var userObject = '{ "name" : "' + email + '", "password": "' + pass  + '"}';
+        var userObject = 'email=' + email + '&pass=' + pass;
+
+        $.ajax({
+            url: 'http://localhost:43210/usuarios?' + userObject,
+            type: 'get',
+            dataType: 'json'
+        })
+            .then(function (res) {
+                if (res.length > 0) {
+                    window.location.href = "home.html";
+                }
+                else {
+                    alert("usuario o contraseña invalido");
+                }
+            },
+            function (jqXHR, textStatus, errorThrown) {
+                console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+            });
+    }
+
+
+function validar {
+    var Address, streetName, number, cityName, postCodeName, countryName;
+    Adress = document.getElementById("Adress").value;
+    streetName = document.getElementById("Adress").value;
+    number = document.getElementById("number").value;
+    cityName = document.getElementById("cityName").value;
+    postCodeName = document.getElementById("postCodeName").value;
+    countryName = document.getElementById("countryName").value;
+}
+
+if (Adress === "" || streetName === "" || number === "" || cityName === "" || postCodeName === "" || countryName === "") {
+    alert("Ambos campos son obligatorios");
+    return false;
+}
+else if (Adress.length > 100) {
+    alert("La direccion es muy larga");
+    return false;
+}
+
+else if (streetName > 100) {
+    alert("El nombre de la calle es muy largo");
+    return false;
+}
+
+else if (number > 10) {
+    alert("El número es muy largo");
+    return false;
+}
+
+else if (cityName > 100) {
+    alert("El nombre de la ciudad es muy largo");
+    return false;
+}
+
+else if (postCodeName > 5) {
+    alert("El código postal es muy largo");
+    return false;
+}
+
+else if (countryName > 30) {
+    alert("El nombre del país es muy largo");
+    return false;
+}
+
+
+
 
 
 

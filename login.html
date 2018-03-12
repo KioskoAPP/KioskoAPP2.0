@@ -7,7 +7,7 @@
 
 
 <body>
-    <form action="home" method="post" class="form-register" id="formlogin">
+    <form action="http://localhost:3000/home.html" method="get" class="form-register" id="formlogin">
         <div class="dra-padreh1">
             <h1 class="dra-h1">KIOSKO</h1>
         </div>
@@ -73,7 +73,7 @@
                 .then(function (res) {
                     localStorage.setItem('token', res.token);
                     var req = new XMLHttpRequest();
-                    req.open('GET', 'http://localhost:3000/home', true);
+                    req.open('GET', 'http://localhost:3000/home.html', true);
                     req.setRequestHeader('Authorization', res.token);
                     req.onreadystatechange = function (aEvt) {
                         if (req.readyState == 4) {

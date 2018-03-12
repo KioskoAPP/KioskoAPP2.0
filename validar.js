@@ -35,10 +35,6 @@ function validarregistro() {
     }
     return true;
 }
-function sendregistro() {
-    if (validarregistro()) 
-    document.getElementById("frmresgistrar").submit();
-}
 
 
 

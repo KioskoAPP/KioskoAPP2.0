@@ -5,8 +5,8 @@ var jwt = require('jsonwebtoken')
 
 const PUERTO = 43210;
 const APP_SECRET = 'mysecureapp'
-const USERNAME = 'admin'
-const PASSWORD = 'P@$$w0rd'
+const USERNAME = 'javier@kiosko.com'
+const PASSWORD = 'Pa$$w0rd'
 
 var app = express()
 
@@ -108,6 +108,7 @@ const lstServicio = [
 lstServicio.forEach(servicio => {
   app.get(servicio.url, function (req, res) {
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
+      console.log(data)
       let lst = JSON.parse(data)
       if (Object.keys(req.query).length > 0) {
         if ('_search' in req.query) {
@@ -128,7 +129,7 @@ lstServicio.forEach(servicio => {
       }
       let cmp = req.query._sort ? req.query._sort : servicio.pk;
       let dir = 1;
-      if(cmp.startsWith("-")) {
+      if (cmp.startsWith("-")) {
         cmp = cmp.substring(1);
         dir = -1;
       }
@@ -139,7 +140,6 @@ lstServicio.forEach(servicio => {
         lst = lst.slice(page * rows, page * rows + rows)
       }
       let rslt = JSON.stringify(lst);
-      console.log(rslt)
       res.cookie('XSRF-TOKEN', '123456790ABCDEF')
       res.end(rslt)
     })
@@ -150,21 +150,34 @@ lstServicio.forEach(servicio => {
       var ele = lst.find(ele => ele[servicio.pk] == req.params.id)
       //console.log(ele)
       res.cookie('XSRF-TOKEN', '123456790ABCDEF')
-      res.end(JSON.stringify(ele))
+      if (ele)
+        res.end(JSON.stringify(ele))
+      else
+        res.status(404).end()
     })
   })
   app.post(servicio.url, function (req, res) {
     if (!isAutenticated(servicio.readonly, req, res)) return
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
+      console.log(data)
       var lst = JSON.parse(data)
       var ele = req.body
-      if (lst.find(item => item[servicio.pk] == ele[servicio.pk]) == undefined) {
+      if (ele[servicio.pk] == undefined) {
+        res.status(500).end('Falta clave primaria.')
+      } else if (lst.find(item => item[servicio.pk] == ele[servicio.pk]) == undefined) {
+        if (ele[servicio.pk] == 0) {
+          if (lst.length == 0)
+            ele[servicio.pk] = 1;
+          else {
+            let newId = +lst.sort((a, b) => (a[servicio.pk] == b[servicio.pk] ? 0 : (a[servicio.pk] < b[servicio.pk] ? -1 : 1)))[lst.length - 1][servicio.pk];
+            ele[servicio.pk] = newId + 1;
+          }
+        }
         lst.push(ele)
-        console.log(lst)
         fs.writeFile(servicio.fich, JSON.stringify(lst), 'utf8', function (err) {
           res.status(500).end('Error de escritura')
         })
-        res.status(201).end(JSON.stringify(lst))
+        res.status(201).end(JSON.stringify(ele))
       } else {
         res.status(500).end('Clave duplicada.')
       }
@@ -175,13 +188,12 @@ lstServicio.forEach(servicio => {
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
       var lst = JSON.parse(data)
       var ele = req.body
-     
+
       var ind = lst.findIndex(row => row[servicio.pk] == ele.id)
       if (ind == -1) {
         res.status(404).end()
       } else {
         lst[ind] = ele
-        console.log(lst)
         fs.writeFile(servicio.fich, JSON.stringify(lst), 'utf8', function (err) {
           res.status(500).end('Error de escritura')
         })
@@ -192,7 +204,7 @@ lstServicio.forEach(servicio => {
   app.put(servicio.url + '/:id', function (req, res) {
     if (!isAutenticated(servicio.readonly, req, res)) return
     fs.readFile(servicio.fich, 'utf8', function (err, data) {
-      
+
       var lst = JSON.parse(data)
       var ele = req.body
       var ind = lst.findIndex(row => row[servicio.pk] == req.params.id)
@@ -200,7 +212,6 @@ lstServicio.forEach(servicio => {
         res.status(404).end()
       } else {
         lst[ind] = ele
-        console.log(lst)
         fs.writeFile(servicio.fich, JSON.stringify(lst), 'utf8', function (err) {
           res.status(500).end('Error de escritura')
         })
@@ -217,7 +228,6 @@ lstServicio.forEach(servicio => {
         res.status(404).end()
       } else {
         lst.splice(ind, 1)
-        console.log(lst)
         fs.writeFile(servicio.fich, JSON.stringify(lst), 'utf8', function (err) {
           res.status(500).end('Error de escritura')
         })

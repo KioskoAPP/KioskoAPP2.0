@@ -1,8 +1,53 @@
 import { Magazine } from './magazine.class.js';
 
 var User = new (
-    function() {
+    function(email, pass) {
         var obj = this;
+        var user = { id: '',
+                    name:'', 
+                    lastName:'', 
+                    email:'', 
+                    pass:'', 
+                    birthdate:'', 
+                    completeAddress: [{
+                        address:'',
+                        streetName: '',
+                        number: '',
+                        cityName: '',
+                        postCodeName: '',
+                        countryName: ''
+                    }],
+                    liked: [
+                        "2",
+                        "4",
+                        "6"
+                    ],
+                    recommendedmagazine:[
+                        "1",
+                        "2",
+                        "3",
+                        "4"
+                    ] }
+        
+        //Registrar usuario
+        obj.setUser = function(email, pass) {
+            return new Promise(function (resolve, reject) {
+                user.email = email;
+                user.pass = pass;
+                user = [user];
+                $.ajax({
+                    url: 'http://localhost:43210/usuarios/',
+                    method: 'POST',
+                    data: user,
+                    dataType: 'json'
+                }).then(
+                    function (res) {
+                        resolve(res); },
+                    function (jqXHR, textStatus, errorThrown) {
+                        reject(jqXHR, textStatus, errorThrown); });
+            });
+        };
+
         // Get all users
         obj.getUsers = function() {
             return new Promise(function (resolve, reject) {
@@ -29,6 +74,19 @@ var User = new (
                         reject(jqXHR, textStatus, errorThrown); });
             });
         };
+        obj.findUserByEmail = function(email) {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: 'http://localhost:43210/usuarios?email=' + email,
+                    dataType: 'json',
+                }).then(
+                    function (res) {
+                        resolve(res); },
+                    function (jqXHR, textStatus, errorThrown) {
+                        reject(jqXHR, textStatus, errorThrown); });
+            });
+        }
+        
         // Update one user
         obj.updateUser = function(user) {
             return new Promise(function (resolve, reject) {

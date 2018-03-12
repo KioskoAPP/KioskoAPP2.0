@@ -103,33 +103,38 @@
                     $('.glyphicon-heart').toggleClass('ss-liked', true);
                     res.liked.push(e.data.magazine_id);
                     User.updateUser(res); }
-                });
+                },
+                function (jqXHR, textStatus, errorThrown) {
+                        reject(jqXHR, textStatus, errorThrown); });
             }
 
             $(document).ready(function(){
-               
                 var magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
                 if(location.search.split('?')[1].split('&')[1]) {
                     var user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
-                Magazine.getMagazine(magazine_id).then(function(magazine){ 
-                    User.getUser(user_id).then(function(user){
-                        var title_template = "{{title}}";
-                        var owner_template = "{{owner}}";
-                        var description_template = "{{description}}";
-                        $('.ss_detail-thumbnail').css('background-image', 'url(http://localhost:43210/' + magazine.thumbnail + ')');
-                        $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
-                        $('.ss_title').html(Mustache.render(title_template, {title: magazine.title}));
-                        $('.ss_author').html(Mustache.render(owner_template, {owner: magazine.owner}));
-                        $('.ss_description').html(Mustache.render(description_template, {description: magazine.description}));
-                        $('.glyphicon-heart').click({'magazine_id': magazine_id, 'user_id': user_id}, toggleLike);
-                        for(var i = 0; i < magazine.tags.length; i++){
-                            $('.ss_tags').append("<i class='ss_tag'><a href=''>" + magazine.tags[i] + '</a></i>'); }
-                        if(User.finduserRecommendedMagazines(user, magazine.id)){
-                            $('.glyphicon-heart').toggleClass('ss-liked', true);
-                        }else{
-                            $('.glyphicon-heart').toggleClass('ss-liked', false); } }) }); });
-               
-                
+                Magazine.getMagazine(magazine_id).then(
+                    function(magazine){ 
+                        User.getUser(user_id).then(
+                            function(user){
+                                var title_template = "{{title}}";
+                                var owner_template = "{{owner}}";
+                                var description_template = "{{description}}";
+                                $('.ss_detail-thumbnail').css('background-image', 'url(http://localhost:43210/' + magazine.thumbnail + ')');
+                                $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
+                                $('.ss_title').html(Mustache.render(title_template, {title: magazine.title}));
+                                $('.ss_author').html(Mustache.render(owner_template, {owner: magazine.owner}));
+                                $('.ss_description').html(Mustache.render(description_template, {description: magazine.description}));
+                                $('.glyphicon-heart').click({'magazine_id': magazine_id, 'user_id': user_id}, toggleLike);
+                                for(var i = 0; i < magazine.tags.length; i++){
+                                    $('.ss_tags').append("<i class='ss_tag'><a href=''>" + magazine.tags[i] + '</a></i>'); }
+                                if(User.finduserRecommendedMagazines(user, magazine.id)){
+                                    $('.glyphicon-heart').toggleClass('ss-liked', true);
+                                }else{
+                                    $('.glyphicon-heart').toggleClass('ss-liked', false); } },
+                            function (jqXHR, textStatus, errorThrown) {
+                                reject(jqXHR, textStatus, errorThrown); }) },
+                    function (jqXHR, textStatus, errorThrown) {
+                        reject(jqXHR, textStatus, errorThrown); }); });
         </script>
         
     </body>

@@ -1,3 +1,27 @@
+function milogin() {
+    var email = $('#email').val();
+    var pass = $('#contraseña').val();
+    // var userObject = '{ "name" : "' + email + '", "password": "' + pass  + '"}';
+    var userObject = 'email=' + email + '&pass=' + pass;
+
+    $.ajax({
+        url: 'http://localhost:43210/usuarios?'+userObject,
+        type: 'get',
+        dataType: 'json'
+    })
+        .then(function (res) {
+            if(res.length > 0){
+            window.location.href="home.html";
+            }
+            else {
+                alert ("usuario o contraseña invalido");
+            }
+        },
+        function (jqXHR, textStatus, errorThrown) {
+            console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
+        });
+}
+
 function validar() {
     var email, contraseña, login, g, f, recordarme, expresion;
     email = document.getElementById("email").value;
@@ -21,7 +45,7 @@ function validar() {
         alert("La contraseña debe tener menos de 30 caracteres");
         return false;
     }
-    document.getElementById("formlogin").submit();
+    milogin();
     return true;
 }
 
@@ -39,7 +63,6 @@ function sendregistro() {
     if (validarregistro()) 
     document.getElementById("frmresgistrar").submit();
 }
-
 
 
 

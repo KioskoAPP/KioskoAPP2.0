@@ -7,7 +7,7 @@
 
 
 <body>
-    <form action="http://localhost:3000/home.html" method="get" class="form-register" id="formlogin">
+    <form class="form-register" id="formlogin">
         <div class="dra-padreh1">
             <h1 class="dra-h1">KIOSKO</h1>
         </div>
@@ -58,40 +58,6 @@
     </form>
 
     <script>
-        function login() {
-            var email = $('#email').val();
-            var pass = $('#pwd').val();
-            // var userObject = '{ "name" : "' + email + '", "password": "' + pass  + '"}';
-            var userObject = 'name=' + email + '&password=' + pass;
-
-            $.ajax({
-                url: 'http://localhost:43210/login',
-                data: userObject,
-                type: 'POST',
-                dataType: 'json'
-            })
-                .then(function (res) {
-                    localStorage.setItem('token', res.token);
-                    var req = new XMLHttpRequest();
-                    req.open('GET', 'http://localhost:3000/home.html', true);
-                    req.setRequestHeader('Authorization', res.token);
-                    req.onreadystatechange = function (aEvt) {
-                        if (req.readyState == 4) {
-                            if (req.status == 200)
-                                if (res.success === true) {
-                                    location.href = 'home.html';
-                                } else {
-                                    console.log("El usuario no es valido");
-                                }
-                        } else { };
-                    }
-
-                    req.send(null);
-                },
-                function (jqXHR, textStatus, errorThrown) {
-                    console.log('<p class="error">ERROR: ' + jqXHR.status + ': ' + jqXHR.statusText + '</p>');
-                });
-        }
 
         $(document).ready(function () {
             // $('#login').click(login);

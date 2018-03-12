@@ -13,7 +13,7 @@ function validar() {
         return false;
     }
 
-    else if (!expression.test(email)) {
+    else if (!expresion.test(email)) {
         alert("El correo electrónico no es válido");
         return false;
     }
@@ -21,6 +21,7 @@ function validar() {
         alert("La contraseña debe tener menos de 30 caracteres");
         return false;
     }
+    document.getElementById("formlogin").submit();
     return true;
 }
 

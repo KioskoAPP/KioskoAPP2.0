@@ -234,7 +234,14 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: white;
-        font-size: 3em; } }
+        font-size: 3em; }
+
+  /************************************************************** */
+  /************************ DetailView page ************************* */
+  #detailViewContent {
+    margin-top: -50px; }
+    #detailViewContent img {
+      min-width: 100%; } }
 /**************************    SM    ******************************************************************************************************* */
 @media (min-width: 768px) {
   main {
@@ -461,7 +468,14 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: white;
-        font-size: 3em; } }
+        font-size: 3em; }
+
+  /************************************************************** */
+  /************************ DetailView page ************************* */
+  #detailViewContent {
+    margin-top: -100px; }
+    #detailViewContent img {
+      min-width: 100%; } }
 /**************************    MD    ******************************************************************************************************* */
 @media (min-width: 992px) {
   main {

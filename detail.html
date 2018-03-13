@@ -111,7 +111,7 @@
             //Añade la revista a las descargadas por el usuario y lanza la descarga
             function downloadMagazine(e){
                 User.addToDownloads(e.data.user, e.data.magazine.id)
-                window.location = 'http://localhost:43210/' + e.data.magazine.downloadUrl; }
+                 }
             
             //Añade la revista a las comrpadas por el usuario
             function buyMagazine(e){
@@ -119,8 +119,10 @@
 
             //Muestra las revistas recomendadas en la parte de inferior
             function listRecommendedMagazines(){
-                //Hay que implementarlo
+                //Hay que implementarlo 
             }
+            function viewMagazine(e){
+                window.location =  'detailView.html?user=' + e.data.user.id + '&mag=' + e.data.magazine.id; }
 
 
             $(document).ready(function(){
@@ -135,7 +137,7 @@
                                 var owner_template = "{{owner}}";
                                 var description_template = "{{description}}";
                                 $('.ss_detail-thumbnail').css('background-image', 'url(http://localhost:43210/' + magazine.thumbnail + ')');
-                                $('.ss_detail-thumbnail').click();
+                                $('.fa-search-plus').click({'magazine': magazine, 'user': user}, viewMagazine);
                                 $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
                                 $('.ss_title').html(Mustache.render(title_template, {title: magazine.title}));
                                 $('.ss_author').html(Mustache.render(owner_template, {owner: magazine.owner}));

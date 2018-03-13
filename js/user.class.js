@@ -120,13 +120,13 @@ var User = new (
                         reject(jqXHR, textStatus, errorThrown); });
             });
         };
-        obj.finduserRecommendedMagazines = function(user, magazine_id) {
+        obj.findUserRecommendedMagazine = function(user, magazine_id) {
             for(var i = 0; i < user.liked.length; i++){
                 if(user.liked[i]==magazine_id){
                     return true; } }
             return false;
         };
-        obj.findUserDownloadedMagazines = function(user, magazine_id) {
+        obj.findUserDownloadedMagazine = function(user, magazine_id) {
             for(var i = 0; i < user.downloads.length; i++){
                 if(user.downloads[i]==magazine_id){
                     return true; } }
@@ -139,7 +139,7 @@ var User = new (
         };
 
         obj.addToDownloads = function(user, magazine_id){
-            if(!this.findUserDownloadedMagazines(user, magazine_id)){
+            if(!this.findUserDownloadedMagazine(user, magazine_id)){
                 user.downloads.push(magazine_id);
                 this.updateUser(user);  }
                 

@@ -16,22 +16,6 @@ var carrito = new (function () {
             localStorage['CarritoCompra'] = JSON.stringify(obj.lineas);
     }
 
-    /** Funcióna añadir **/
-    obj.add = function (idProducto, name) {
-        var ln = new LineaPedido(idProducto, name);
-        if (obj.lineas.length == 0) {
-            ln.id = 1;
-        } else {
-            var old = obj.lineas.find(function (item) {
-                return item.idProducto == idProducto;
-            });
-
-            ln.id = obj.lineas[obj.lineas.length - 1].id + 1;
-        }
-        obj.lineas.push(ln);
-        carritoAlmacenado();
-    };
-
     /** Función para eliminar UNA LÍNEA **/
     obj.removeLine = function (id) {
         var ind = obj.lineas.findIndex(function (item) {
@@ -55,24 +39,17 @@ var carrito = new (function () {
 })();
 
 
-function CarritoManager(id) {
+function productosEnCarrito(id) {
+    var tmpl = $('#tmplListadoCarrito').html();
+    var rslt = Mustache.render(tmpl, { filas: carrito.lineas });
+    $('#abm_carrito').html(rslt);
+
     var obj = this;
     var listaProductos;
-
-    function productosEnCarrito() {
-        var tmpl = $('#tmplListadoCarrito').html();
-        var rslt = Mustache.render(tmpl, { filas: carrito.lineas });
-        $('#abm_carrito').html(rslt);
-    }    
-
-    obj.Refresca = function () {
-        productosEnCarrito();
-    };
-
     obj.mostrarProductos = function () {
         if (listaProductos) {
-            revistasEnCarrito(listaProductos);
-        } else {
+            productosEnCarrito(listaProductos);
+        } else
             $.ajax({
                 url: 'http://localhost:43210/usuarios/' + id,
                 dataType: 'json',
@@ -80,12 +57,11 @@ function CarritoManager(id) {
                 function (resp) {
                     listaProductos = resp.cart;
                     console.log(listaProductos);
-                    revistasEnCarrito(listaProductos);
+                    productosEnCarrito(listaProductos);
                 },
                 function (jqXHR, textStatus, errorThrown) {
-                    reject(jqXHR, textStatus, errorThrown);
+                    //reject(jqXHR, textStatus, errorThrown);
                 }
             );
-        }
     };
 }

@@ -1,0 +1,19 @@
+<script>
+    var tmplt = {
+        address: "Casa",
+        streetName: "Calle del Divino Valles",
+        addressNumber: "11-1",
+        cityName: "Madrid",
+        postCodeName: "28045",
+        countryName: "España"
+    };
+    function cargarDatos (){
+        var datos = Mustache.render ("<h4>{{address}}</h4><br><p>{{streetName}}, {{addressNumber}}.<br>{{postCodeName}} {{cityName}} ({{countryName}}).");
+        $('#userAddress').html(datos);
+    }
+
+    $(document).ready(function(){
+        cargarDatos();
+    }
+    )
+</script>

@@ -34,10 +34,10 @@ var carrito = new (function () {
 
     /** Función para eliminar UNA LÍNEA **/
     obj.removeLine = function (id) {
-        var ind = obj.lineas.findIndex(function(item){
+        var ind = obj.lineas.findIndex(function (item) {
             return item.id == id;
         });
-        if (ind !== -1){
+        if (ind !== -1) {
             obj.lineas.splice(ind, 1);
             carritoAlmacenado();
         } else {
@@ -52,32 +52,38 @@ var carrito = new (function () {
             localStorage.removeItem('CarritoCompra');
         }
     };
-}) ();
+})();
 
 function productosEnCarrito() {
     var tmpl = $('#tmplListadoCarrito').html();
-    var rslt = Mustache.render(tmpl, {filas: carrito.lineas });
-    $('#ListadoCarrito').html(rslt);
+    var rslt = Mustache.render(tmpl, { filas: carrito.lineas });
+    $('#abm_carrito').html(rslt);
 }
 
-obj.Refresca = function (){
-    productosEnCarrito();
-};
-obj.listarProductos = function (){
-    if (listaProductos){
-        revistasEnCarrito();
-    }else{
-        $.ajax({
-            url: 'http:!!localhost:',
-            dataType: 'json',
-        }).then(
-            function(resp){
-                listaProductos = resp;
-                productosEnCarrito(listaProductos);
-            },
-            function (jqXHR, textStatus, errorThrown){
+function CarritoManager() {
+    var obj = this;
+    var listaProductos;
 
-            }
-        );
+    obj.Refresca = function () {
+        productosEnCarrito();
     };
+
+    obj.listarProductos = function () {
+        if (listaProductos) {
+            revistasEnCarrito(listaProductos);
+        } else {
+            $.ajax({
+                url: 'http://localhost:43210/magazines',
+                dataType: 'json',
+            }).then(
+                function (resp) {
+                    listaProductos = resp;
+                    revistasEnCarrito(listaProductos);
+                },
+                function (jqXHR, textStatus, errorThrown) {
+
+                }
+            );
+        };
+    }
 }

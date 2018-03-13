@@ -10,7 +10,6 @@ function menuBar(x) {
             $('nav h1').hide();
         break; } }
 
-
 $(document).ready(function() {
     //Añade el contenido del documento head.html a la etiqueta head
     $('head').load('../head.html');

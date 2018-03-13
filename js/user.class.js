@@ -28,7 +28,9 @@ var User = new (
                         "3",
                         "4"
                     ],
-                    cart: [] }
+                    cart: [],
+                    downloads: []
+                    }
         
         //Registrar usuario
         obj.setUser = function(email, pass) {
@@ -123,7 +125,25 @@ var User = new (
                 if(user.liked[i]==magazine_id){
                     return true; } }
             return false;
-        }
+        };
+        obj.findUserDownloadedMagazines = function(user, magazine_id) {
+            for(var i = 0; i < user.downloads.length; i++){
+                if(user.downloads[i]==magazine_id){
+                    return true; } }
+            return false;
+        };
+
+        obj.addToCart = function(user, magazine_id){
+            user.cart.push(magazine_id);
+            this.updateUser(user); 
+        };
+
+        obj.addToDownloads = function(user, magazine_id){
+            if(!this.findUserDownloadedMagazines(user, magazine_id)){
+                user.downloads.push(magazine_id);
+                this.updateUser(user);  }
+                
+        };
         
     }
 )();

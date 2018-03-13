@@ -1,1 +1,66 @@
+<<<<<<< HEAD
 [{"id":1,"name":"","lastName":"","email":"asdasdasd@asd.com","pass":"asd","birthdate":"","completeAddress":[{"address":"","streetName":"","number":"","cityName":"","postCodeName":"","countryName":""}],"liked":["2","4","6"],"recommendedmagazine":["1","2","3","4"],"cart":["1","2","2","2","5","5"],"downloads":["3","4","2","5"]},{"id":2,"name":"","lastName":"","email":"adminss@gmail.com","pass":"asd","birthdate":"","completeAddress":[{"address":"","streetName":"","number":"","cityName":"","postCodeName":"","countryName":""}],"liked":["2","4","6"],"recommendedmagazine":["1","2","3","4"],"cart":[],"downloads":[]},{"id":3,"name":"","lastName":"","email":"","pass":"","birthdate":"","completeAddress":[{"address":"","streetName":"","number":"","cityName":"","postCodeName":"","countryName":""}],"liked":["2","4","6"],"recommendedmagazine":["1","2","3","4"],"cart":[],"downloads":[]},{"id":4,"name":"","lastName":"","email":"davidanta120@gmail.com","pass":"123","birthdate":"","completeAddress":[{"address":"","streetName":"","number":"","cityName":"","postCodeName":"","countryName":""}],"liked":["2","4","6"],"recommendedmagazine":["1","2","3","4"],"cart":[],"downloads":[]},{"id":5,"name":"","lastName":"","email":"dacv@gmail.com","pass":"123","birthdate":"","completeAddress":[{"address":"","streetName":"","number":"","cityName":"","postCodeName":"","countryName":""}],"liked":["2","4","6"],"recommendedmagazine":["1","2","3","4"],"cart":[],"downloads":[]}]
+=======
+[
+    {
+        "id": 1,
+        "name": "",
+        "lastName": "",
+        "email": "asdasdasd@asd.com",
+        "pass": "asd",
+        "birthdate": "",
+        "completeAddress": [
+            {
+                "address": "",
+                "streetName": "",
+                "number": "",
+                "cityName": "",
+                "postCodeName": "",
+                "countryName": ""
+            }
+        ],
+        "liked": [
+            "1"
+        ],
+        "recommendedmagazine": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "cart": [
+            "1"
+        ],
+        "downloads": [
+            "1"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "lastName": "",
+        "email": "adminss@gmail.com",
+        "pass": "asd",
+        "birthdate": "",
+        "completeAddress": [
+            {
+                "address": "",
+                "streetName": "",
+                "number": "",
+                "cityName": "",
+                "postCodeName": "",
+                "countryName": ""
+            }
+        ],
+        "liked": [],
+        "recommendedmagazine": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "cart": [],
+        "downloads": []
+    }
+]
+>>>>>>> 4335250c5e30683f0284d204d19057ffbc477469

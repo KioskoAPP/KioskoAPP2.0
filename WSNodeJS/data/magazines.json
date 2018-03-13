@@ -5,8 +5,8 @@
         "owner": "BRUMMELL",
         "description": "Quis nostrud non aliqua elit et eiusmod ex adipisicing eu adipisicing quis nulla mollit. Laboris Lorem cupidatat consequat exercitation veniam ullamco consequat Lorem incididunt sint cillum. Sunt quis officia ad ex do duis anim in. Fugiat irure sunt esse elit culpa proident labore commodo laborum aliquip ea. Ullamco sit laboris commodo commodo. Commodo officia do esse sint id eiusmod sit reprehenderit adipisicing aliquip sint eiusmod.",
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
-        "thumbnail": "assets/images/february2014_brummell_thumbnail.jpg",
-        "downloadUrl": "assets/images/february2014_brummell_thumbnail.jpg",
+        "thumbnail": "./assets/images/february2014_brummell_thumbnail.jpg",
+        "downloadUrl": "./assets/images/february2014_brummell_thumbnail.jpg",
         "rating": 4 },
     {
         "id": "2",

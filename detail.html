@@ -107,6 +107,11 @@
                 function (jqXHR, textStatus, errorThrown) {
                         reject(jqXHR, textStatus, errorThrown); });
             }
+            // function buyMagazine(user, magazine_id){ 
+            //     console.log('buying magazine');
+            //     user.cart.push(magazine_id);
+            //     user.updateUser(user);
+            // }
 
             $(document).ready(function(){
                 var magazine_id = location.search.split('?')[1].split('&')[0].split('=')[1];
@@ -114,7 +119,7 @@
                     var user_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
                 Magazine.getMagazine(magazine_id).then(
                     function(magazine){ 
-                        User.getUser(user_id).then(
+                        var user = User.getUser(user_id).then(
                             function(user){
                                 var title_template = "{{title}}";
                                 var owner_template = "{{owner}}";
@@ -125,12 +130,14 @@
                                 $('.ss_author').html(Mustache.render(owner_template, {owner: magazine.owner}));
                                 $('.ss_description').html(Mustache.render(description_template, {description: magazine.description}));
                                 $('.glyphicon-heart').click({'magazine_id': magazine_id, 'user_id': user_id}, toggleLike);
+                                // $('.ss_btnShoppingCart').click({'user': user, 'magazine_id': magazine_id}, buyMagazine);
                                 for(var i = 0; i < magazine.tags.length; i++){
                                     $('.ss_tags').append("<i class='ss_tag'><a href=''>" + magazine.tags[i] + '</a></i>'); }
                                 if(User.finduserRecommendedMagazines(user, magazine.id)){
                                     $('.glyphicon-heart').toggleClass('ss-liked', true);
                                 }else{
-                                    $('.glyphicon-heart').toggleClass('ss-liked', false); } },
+                                    $('.glyphicon-heart').toggleClass('ss-liked', false); }
+                                 },
                             function (jqXHR, textStatus, errorThrown) {
                                 reject(jqXHR, textStatus, errorThrown); }) },
                     function (jqXHR, textStatus, errorThrown) {

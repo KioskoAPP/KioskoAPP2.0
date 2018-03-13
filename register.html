@@ -49,9 +49,9 @@
                         function(res) {
                             console.dir(res);
                             if(res.length==0){
-                                User.setUser(email, pass).then(function(req,res){
+                                User.setUser(email, pass).then(function(res){
                                     localStorage.setItem('kioskoUser', res);
-                                    location.href='home.html'; });
+                                    location.href='home.html?user=' + res.id; });
                             }else{
                                 $('#advertencia').html('El email que has utilizado ya existe. Use uno diferente.') }
                         });

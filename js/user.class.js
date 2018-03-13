@@ -27,18 +27,19 @@ var User = new (
                         "2",
                         "3",
                         "4"
-                    ] }
+                    ],
+                    cart: [] }
         
         //Registrar usuario
         obj.setUser = function(email, pass) {
             return new Promise(function (resolve, reject) {
                 user.email = email;
                 user.pass = pass;
-                user = [user];
                 $.ajax({
                     url: 'http://localhost:43210/usuarios/',
                     method: 'POST',
-                    data: user,
+                    headers: { 'Content-Type':'application/json' },
+                    data: JSON.stringify(user),
                     dataType: 'json'
                 }).then(
                     function (res) {

@@ -51,7 +51,7 @@
                         if(res.length==0){ 
                             User.setUser(email, pass).then(
                                 function(res){ 
-                                    localStorage.setItem('kioskoUser',res);
+                                    localStorage.setItem('kioskoUser', JSON.stringify(res));
                                     location.href='home.html?user=' + res.id; });
                         }else{ 
                             $('#advertencia').html('El email que has utilizado ya existe.Use uno diferente.'); } 

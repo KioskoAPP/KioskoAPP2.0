@@ -27,7 +27,7 @@
             if(location.search.split('?')[1].split('&')[1]) {
                 magazine_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
             Magazine.getMagazine(magazine_id).then(function(res){
-                $('#detailViewContent img').attr('src', 'http://localhost:43210/' + res.downloadUrl);
+                $('#detailViewContent img').attr('src', 'http://localhost:43210/' + res.detailViewUrl);
             });
 
             

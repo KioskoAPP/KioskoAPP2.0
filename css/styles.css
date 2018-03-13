@@ -239,9 +239,13 @@ body {
   /************************************************************** */
   /************************ DetailView page ************************* */
   #detailViewContent {
-    margin-top: -50px; }
+    margin-top: -50px;
+    background-color: red;
+    width: 100%; }
     #detailViewContent img {
-      min-width: 100%; } }
+      width: 100%;
+      transform: translateY(-100%) rotate(90deg);
+      transform-origin: bottom left; } }
 /**************************    SM    ******************************************************************************************************* */
 @media (min-width: 768px) {
   main {

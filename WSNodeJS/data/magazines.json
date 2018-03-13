@@ -7,6 +7,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "./assets/images/february2014_brummell__thumbnail.jpg",
         "downloadUrl": "./assets/images/february2014_brummell__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4 },
     {
         "id": "2",
@@ -16,6 +17,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/26_diy__thumbnail.jpg",
         "downloadUrl": "assets/images/26_diy__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
 
     { 
@@ -26,6 +28,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/9_beman__thumbnail.jpg",
         "downloadUrl": "assets/images/9_beman__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "4",
@@ -35,6 +38,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/no87_eye__thumbnail.jpg",
         "downloadUrl": "assets/images/no87_eye__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "5",
@@ -44,6 +48,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/04062012_forbes__thumbnail.jpg",
         "downloadUrl": "assets/images/04062012_forbes__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "6",
@@ -53,6 +58,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/3661_hola__thumbnail.jpg",
         "downloadUrl": "assets/images/3661_hola__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "7",
@@ -62,6 +68,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/febrero_hunter__thumbnail.jpg",
         "downloadUrl": "assets/images/febrero_hunter__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "8",
@@ -71,6 +78,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/21_jotdown__thumbnail.jpg",
         "downloadUrl": "assets/images/21_jotdown__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "9",
@@ -80,6 +88,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/1_tomaticket__thumbnail.jpg",
         "downloadUrl": "assets/images/1_tomaticket__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "10",
@@ -89,6 +98,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/putin2007_time__thumbnail.jpg",
         "downloadUrl": "assets/images/putin2007_time__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "11",
@@ -98,6 +108,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/jbalvinjul2016__umo_thumbnail.jpg",
         "downloadUrl": "assets/images/jbalvinjul2016__umo_thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "12",
@@ -107,6 +118,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/87_vmagazine__thumbnail.jpg",
         "downloadUrl": "assets/images/87_vmagazine__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  },
     { 
         "id": "13",
@@ -116,6 +128,7 @@
         "tags": ["sociedad","arte","diseño","cosmopolita","joven"],
         "thumbnail": "assets/images/spring2018_wonderland__thumbnail.jpg",
         "downloadUrl": "assets/images/spring2018_wonderland__thumbnail.jpg",
+        "detailViewUrl": "/assets/images/detailViewExample.jpeg",
         "rating": 4  }
         
     ]

@@ -62,7 +62,7 @@ function validarregistro() {
 <<<<<<< HEAD
 =======
 function sendregistro() {
-    if (validarregistro())
+    if (validarregistro()) 
         document.getElementById("frmresgistrar").submit();
 }
 >>>>>>> 39ba3baa05f6bd5bf5f7fc9cc2d47302b0efca48
@@ -115,6 +115,14 @@ if (Adress === "" || streetName === "" || number === "" || cityName === "" || po
     alert("Ambos campos son obligatorios");
     return false;
 }
+
+valor = document.getElementById("postCodename").value;
+if( isNaN(valor) ) {
+  return false;
+}
+
+
+
 else if (Adress.length > 100) {
     alert("La direccion es muy larga");
     return false;

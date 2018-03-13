@@ -1,0 +1,38 @@
+<script id="tmplListadoCarrito" type="x-tmpl-mustache">
+    <table class="table">
+        <tr>
+            <th>Revista</th>
+            <th>
+                <button class="btn btn-danger btn-xs" onclick="carrito.removeAll();mng.Refresca();">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </th>
+        </tr>
+        {{#filas}}
+        <tr>
+            <th>Revista</th>
+            <th>
+                <button class="btn btn-danger btn-xs" onclick="carrito.removeLine();mng.Refresca();">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </th>
+        </tr>
+        {{/filas}}
+    </table>
+</script>
+
+<script>
+    var mng = new CarritoManager();
+
+    $(document).ready(function () {
+        mng.ListarProductos();
+        mng.Refresca();
+        
+        $(document)
+            .ajaxStart(function () {
+                $('#trabajandoAJAX').show();
+            }).ajaxStop(function () {
+                $('#trabajandoAJAX').hide();
+            });
+    });
+</script>

@@ -31,7 +31,7 @@
     <script src="js/mustache.js"></script>
     <script src="js/abm.js"></script>
     <script src="js/carrito.js"></script>
-    
+
     <script id="tmplListadoCarrito" type="x-tmpl-mustache">
             <table class="table">
                 <tr>
@@ -55,15 +55,19 @@
                 {{/filas}}
             </table>
         </script>
-        
-        <script>
-            var mng = new CarritoManager();
-        
-            $(document).ready(function () {
-                mng.listarProductos();
-                mng.Refresca();             
-            });
-        </script>
+
+    <script>
+
+
+        $(document).ready(function () {
+            var user_id = location.search.split('?')[1].split('&')[0].split('=')[1];
+            if (location.search.split('?')[1].split('&')[1]) {
+                var magazine_id = location.search.split('?')[1].split('&')[1].split('=')[1];
+            }
+            var mng = new CarritoManager(user_id);
+            mng.Refresca();
+        });
+    </script>
 
 </body>
 

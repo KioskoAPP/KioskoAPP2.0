@@ -60,7 +60,7 @@ function productosEnCarrito() {
     $('#abm_carrito').html(rslt);
 }
 
-function CarritoManager() {
+function CarritoManager(id) {
     var obj = this;
     var listaProductos;
 
@@ -73,11 +73,12 @@ function CarritoManager() {
             revistasEnCarrito(listaProductos);
         } else {
             $.ajax({
-                url: 'http://localhost:43210/magazines',
+                url: 'http://localhost:43210/usuarios/' + id,
                 dataType: 'json',
             }).then(
                 function (resp) {
-                    listaProductos = resp;
+                    listaProductos = resp.cart;
+                    console.log(listaProductos);
                     revistasEnCarrito(listaProductos);
                 },
                 function (jqXHR, textStatus, errorThrown) {

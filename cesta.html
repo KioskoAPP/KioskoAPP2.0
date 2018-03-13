@@ -8,12 +8,10 @@
     <header class="menu"></header>
 
     <main class="container-fluid">
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1 abm_carrito">
-                <h2>Cesta</h2>
-                <div class="abm_productosEnCarrito" id="abm_carrito"></div>
+        <h2>Cesta</h2>
 
-            </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 abm_carrito" id="abm_carrito"></div>
         </div>
 
     </main>
@@ -57,14 +55,13 @@
         </script>
 
     <script>
-
-
         $(document).ready(function () {
             var user_id = location.search.split('?')[1].split('&')[0].split('=')[1];
             if (location.search.split('?')[1].split('&')[1]) {
                 var magazine_id = location.search.split('?')[1].split('&')[1].split('=')[1];
             }
             var mng = new CarritoManager(user_id);
+            mng.mostrarProductos();
             mng.Refresca();
         });
     </script>

@@ -54,36 +54,38 @@ var carrito = new (function () {
     };
 })();
 
-function productosEnCarrito() {
-    var tmpl = $('#tmplListadoCarrito').html();
-    var rslt = Mustache.render(tmpl, { filas: carrito.lineas });
-    $('#abm_carrito').html(rslt);
-}
 
-function CarritoManager() {
+function CarritoManager(id) {
     var obj = this;
     var listaProductos;
+
+    function productosEnCarrito() {
+        var tmpl = $('#tmplListadoCarrito').html();
+        var rslt = Mustache.render(tmpl, { filas: carrito.lineas });
+        $('#abm_carrito').html(rslt);
+    }    
 
     obj.Refresca = function () {
         productosEnCarrito();
     };
 
-    obj.listarProductos = function () {
+    obj.mostrarProductos = function () {
         if (listaProductos) {
             revistasEnCarrito(listaProductos);
         } else {
             $.ajax({
-                url: 'http://localhost:43210/magazines',
+                url: 'http://localhost:43210/usuarios/' + id,
                 dataType: 'json',
             }).then(
                 function (resp) {
-                    listaProductos = resp;
+                    listaProductos = resp.cart;
+                    console.log(listaProductos);
                     revistasEnCarrito(listaProductos);
                 },
                 function (jqXHR, textStatus, errorThrown) {
-
+                    reject(jqXHR, textStatus, errorThrown);
                 }
             );
-        };
-    }
+        }
+    };
 }

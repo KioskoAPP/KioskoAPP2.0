@@ -85,6 +85,6 @@ function CarritoManager(id) {
 
                 }
             );
-        };
-    }
+        }
+    };
 }

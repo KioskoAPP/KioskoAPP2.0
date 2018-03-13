@@ -120,9 +120,15 @@ var User = new (
                         reject(jqXHR, textStatus, errorThrown); });
             });
         };
-        obj.findUserRecommendedMagazine = function(user, magazine_id) {
+        obj.findUserLikedMagazine = function(user, magazine_id) {
             for(var i = 0; i < user.liked.length; i++){
                 if(user.liked[i]==magazine_id){
+                    return true; } }
+            return false;
+        };
+        obj.findUserBoughtMagazine = function(user, magazine_id) {
+            for(var i = 0; i < user.cart.length; i++){
+                if(user.cart[i]==magazine_id){
                     return true; } }
             return false;
         };
@@ -134,8 +140,10 @@ var User = new (
         };
 
         obj.addToCart = function(user, magazine_id){
-            user.cart.push(magazine_id);
-            this.updateUser(user); 
+            if(!this.findUserBoughtMagazine(user, magazine_id)){
+                user.cart.push(magazine_id);
+                this.updateUser(user); }
+            
         };
 
         obj.addToDownloads = function(user, magazine_id){

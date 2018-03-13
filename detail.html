@@ -96,7 +96,7 @@
             //Añade o quita la revista de las favoritas
             function toggleLike(e){
                 User.getUser(e.data.user_id).then(function(res){
-                if(User.findUserRecommendedMagazine(res, e.data.magazine_id)){
+                if(User.findUserLikedMagazine(res, e.data.magazine_id)){
                     $('.glyphicon-heart').toggleClass('ss-liked', false);
                     res.liked.splice(res.liked.indexOf(e.data.magazine_id));
                     User.updateUser(res);
@@ -142,7 +142,7 @@
                                 $('.ss_btnDownload').click({'user': user, 'magazine_id': magazine_id}, downloadMagazine);
                                 for(var i = 0; i < magazine.tags.length; i++){
                                     $('.ss_tags').append("<i class='ss_tag'><a href=''>" + magazine.tags[i] + '</a></i>'); }
-                                if(User.findUserRecommendedMagazine(user, magazine.id)){
+                                if(User.findUserLikedMagazine(user, magazine.id)){
                                     $('.glyphicon-heart').toggleClass('ss-liked', true);
                                 }else{
                                     $('.glyphicon-heart').toggleClass('ss-liked', false); }

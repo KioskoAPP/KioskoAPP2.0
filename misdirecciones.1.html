@@ -5,6 +5,7 @@
 </head>
 
 <body>
+        <form class="form-register" id="misdirecciones">
     <header class="menu"></header>
 
     <main class="container-fluid">
@@ -65,7 +66,7 @@
                         <div class="col-xs-4 col-xs-offset-1">
                             <div class="form-group">
                                 <label for="postCodeName">Código Postal</label>
-                                <input type="text" class="form-control" id="postCodeName" placeholder="Código Postal">
+                                <input type="number" class="form-control" id="postCodeName" maxlength="5" placeholder="Código Postal">
                             </div>
                         </div>
                         <div class="col-xs-6">
@@ -79,6 +80,7 @@
                     <div class="row">
                         <button id="abm_newAdress" class="col-xs-6 col-xs-offset-3 btn abm_newAdressBtn" type="button">Añadir dirección</button>
                     </div>
+                    
                 </form>
             </div>
         </div>
@@ -97,7 +99,11 @@
     <!-- Our JS scripts -->
     <script src="js/main.js"></script>
     <script src="js/abm.js"></script>
-
+    <script src="validar.js"></script>
+</form>
 </body>
 
 </html>
+
+
+form

@@ -4,61 +4,48 @@
 <head></head>
 
 <body>
-        <div class="dra-padreh1">
-            <h1 class="dra-h1">KIOSKO</h1>
-        </div>
-        <div class="dra-formulario">
-            <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electronico" name="email">
-            <br>
-            <input type="password" class="form-control" id="contraseña" placeholder="Introduce tu contraseña" name="contraseña">
-            <br>
-            <input type="password" class="form-control" id="contraseña2" placeholder="Repite tu contraseña" name="pwd">
-            <br>
-        </div>
+    <div class="dra-padreh1">
+        <h1 class="dra-h1">KIOSKO</h1>
+    </div>
+    <div class="dra-formulario">
+        <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electronico" name="email">
         <br>
-        <div class="dra-registro">
-            <button id="registrarseBtn"class="btn btn-block">Registrate</button>
-        </div>
-        <div class="testa">
-            <p>Al hacer click en Registrate aceptas los términos y condiciones y la política de privacidad de Kiosko</p>
-        </div>
-        <div id="advertencia" style="text-align: center; color: red;">
-        </div>
-        
+        <input type="password" class="form-control" id="contraseña" placeholder="Introduce tu contraseña" name="contraseña">
+        <br>
+        <input type="password" class="form-control" id="contraseña2" placeholder="Repite tu contraseña" name="pwd">
+        <br>
+    </div>
+    <br>
+    <div class="dra-registro">
+        <button id="registrarseBtn" class="btn btn-block">Registrate</button>
+    </div>
+    <div class="testa">
+        <p>Al hacer click en Registrate aceptas los términos y condiciones y la política de privacidad de Kiosko</p>
+    </div>
+    <div id="advertencia" style="text-align: center; color: red;">
+    </div>
 
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-        <!-- Our JS scripts -->
-        <script src="js/main.js"></script>
-        <script type="module">
-            import { User } from './js/user.class.js';
 
-            $('#registrarseBtn').click(registrarse);
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- Our JS scripts -->
+    <script src="js/main.js"></script>
+    <script type="module">
+    <script src="validarreg.js"></script>
 
-            function registrarse() {
-                var email = $('#email').val();
-                var pass = $('#contraseña').val();
-                var pass2 = $('#contraseña2').val();
-                if(pass === pass2){
-                    User.findUserByEmail(email).then(
-                        function(res) {
-                            console.dir(res);
-                            if(res.length==0){
-                                User.setUser(email, pass).then(function(res){
-                                    localStorage.setItem('kioskoUser', res);
-                                    location.href='home.html?user=' + res.id; });
-                            }else{
-                                $('#advertencia').html('El email que has utilizado ya existe. Use uno diferente.') }
-                        });
-                }
-            }
-        </script>
-   
+    
+         import { User } from './js/user.class.js'; $('#registrarseBtn').click(registrarse); function registrarse() { var email
+    = $('#email').val(); var pass = $('#contraseña').val(); var pass2 = $('#contraseña2').val(); if(pass === pass2){ User.findUserByEmail(email).then(
+    function(res) { console.dir(res); if(res.length==0){ User.setUser(email, pass).then(function(res){ localStorage.setItem('kioskoUser',
+    res); location.href='home.html?user=' + res.id; }); }else{ $('#advertencia').html('El email que has utilizado ya existe.
+    Use uno diferente.') } }); } }
+    </script>
+
 </body>
 
 </html>

@@ -122,33 +122,34 @@
                 var arrayMagazines = [];
                 var p = null;
                 for(var i = 0; i < recommendedMagazines.length; i++) {
-                    console.log(recommendedMagazines.length);
                     if(p){
-                        console.log("parriba " + p);
                         p = p.then(Magazine.getMagazine(recommendedMagazines[i]).then(
                             function(res){
-                                console.dir(res)
-                                arrayMagazines.push(res); }));
+                                return new Promise(function (resolve, reject) {
+                                    resolve(arrayMagazines.push(res), console.log("arriba"), console.dir(arrayMagazines)); 
+                                    reject(jqXHR, textStatus, errorThrown);
+                                });
+                            }));
                     }else{
                         p = Magazine.getMagazine(recommendedMagazines[i]).then(
                             function(res){
-                                console.log(res);
                                 return new Promise(function (resolve, reject) {
-                                    arrayMagazines.push(res); });
-                        }); 
-                    console.log('p' + p); }}
+                                    resolve(arrayMagazines.push(res), console.log("abajo"), console.dir(arrayMagazines)); 
+                                    reject(jqXHR, textStatus, errorThrown);
+                                    });
+                        });  }}
+                
                 if(p){
                     p.then(
                         function(res){
-                            console.log("a" + res);
-                    }); }
-               
-                    
+                            console.log("final");
+                            console.dir(arrayMagazines);
+                            var tmpl = $('#tmplRecommendedMagazinesList').html();
+                            Mustache.render(tmpl, arrayMagazines);
+                    }); 
+                    }
                 
                 
-                var tmpl = $('#tmplRecommendedMagazinesList').html();
-                console.log(recommendedMagazines);
-                Mustache.render(tmpl, recommendedMagazines);
             }
             function viewMagazine(e){
                 window.location =  'detailView.html?id=' + e.data.magazine.id; }
@@ -198,9 +199,9 @@
         </script>
         <script id="tmplRecommendedMagazinesList" type="x-tmpl-mustache">
             <div class="row">
-                {{#recommendedMagazines}}
+                {{#arrayMagazines}}
                 <div class="col-xs-12">asdasd</div>
-                {{/recommendedMagazines}}
+                {{/arrayMagazines}}
             </div>
         </script>
     </body>

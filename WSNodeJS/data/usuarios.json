@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "name": "",
-        "lastName": "",
-        "email": "asdasdasd@asd.com",
-        "pass": "asd",
-        "birthdate": "",
+        "name": "Javier",
+        "lastName": "Suárez",
+        "email": "javier@kiosko.com",
+        "pass": "javier",
+        "birthdate": "22/09/1990",
         "completeAddress": [
             {
-                "address": "",
-                "streetName": "",
-                "number": "",
-                "cityName": "",
-                "postCodeName": "",
-                "countryName": ""
+                "address": "Direccion en madrid",
+                "streetName": "Calle pedro callejo",
+                "number": "15",
+                "cityName": "Madrid",
+                "postCodeName": "28038",
+                "countryName": "España"
             }
         ],
         "liked": [
@@ -31,8 +31,7 @@
         ],
         "downloads": [
             "1",
-            "3",
-            null
+            "3"
         ]
     },
     {

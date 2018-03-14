@@ -11,7 +11,7 @@ function menuBar(x) {
             var currentUser = JSON.parse(localStorage.getItem('kioskoUser'));
             console.log(currentUser.email);
             $('.menu-profileInfo_username').text(currentUser.email);
-            $('.menu-profileInfo_moreinfo').text(currentUser.name + '' + currentUser.lastName);
+            $('.menu-profileInfo_moreinfo').text(currentUser.name + ' ' + currentUser.lastName);
         break; } }
 
 $(document).ready(function() {

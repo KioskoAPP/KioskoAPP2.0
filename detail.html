@@ -52,9 +52,9 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="ss_options">
-                                <button class="btn ss_btnDownload col-xs-offset-2 col-xs-8 col-sm-4">
+                                <a><button class="btn ss_btnDownload col-xs-offset-2 col-xs-8 col-sm-4">
                                     <i class="glyphicon glyphicon-inbox"></i>Descargar
-                                </button>
+                                </button></a>
                                 <button class="btn ss_btnShoppingCart col-xs-offset-2 col-xs-8 col-sm-4">
                                     <i class="glyphicon glyphicon-shopping-cart"></i>Comprar
                                 </button>
@@ -110,8 +110,8 @@
 
             //Añade la revista a las descargadas por el usuario y lanza la descarga
             function downloadMagazine(e){
-                User.addToDownloads(e.data.user, e.data.magazine.id)
-                 }
+                User.addToDownloads(e.data.user, e.data.magazine.id);
+                window.location.download = 'http://localhost:43210/' + e.data.magazine.downloadUrl; }
             
             //Añade la revista a las comrpadas por el usuario
             function buyMagazine(e){
@@ -119,43 +119,60 @@
 
             //Muestra las revistas recomendadas en la parte de inferior
             function listRecommendedMagazines(){
-                //Hay que implementarlo 
+                var recommendedMagazinesList = 'hola que tal que tal';
+                $('.ss_recommended-content').html(recommendedMagazinesList);
             }
             function viewMagazine(e){
-                window.location =  'detailView.html?user=' + e.data.user.id + '&mag=' + e.data.magazine.id; }
+                window.location =  'detailView.html?id=' + e.data.magazine.id; }
 
 
             $(document).ready(function(){
-                var magazine_id, user_id = location.search.split('?')[1].split('&')[0].split('=')[1];
-                if(location.search.split('?')[1].split('&')[1]) {
-                    magazine_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
-                Magazine.getMagazine(magazine_id).then(
-                    function(magazine){ 
-                        var user = User.getUser(user_id).then(
-                            function(user){
-                                var title_template = "{{title}}";
-                                var owner_template = "{{owner}}";
-                                var description_template = "{{description}}";
-                                $('.ss_detail-thumbnail').css('background-image', 'url(http://localhost:43210/' + magazine.thumbnail + ')');
-                                $('.fa-search-plus').click({'magazine': magazine, 'user': user}, viewMagazine);
-                                $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
-                                $('.ss_title').html(Mustache.render(title_template, {title: magazine.title}));
-                                $('.ss_author').html(Mustache.render(owner_template, {owner: magazine.owner}));
-                                $('.ss_description').html(Mustache.render(description_template, {description: magazine.description}));
-                                $('.glyphicon-heart').click({'magazine_id': magazine_id, 'user_id': user_id}, toggleLike);
-                                $('.ss_btnShoppingCart').click({'user': user, 'magazine': magazine}, buyMagazine);
-                                $('.ss_btnDownload').click({'user': user, 'magazine': magazine}, downloadMagazine);
-                                for(var i = 0; i < magazine.tags.length; i++){
-                                    $('.ss_tags').append("<i class='ss_tag'><a href=''>" + magazine.tags[i] + '</a></i>'); }
-                                if(User.findUserLikedMagazine(user, magazine.id)){
-                                    $('.glyphicon-heart').toggleClass('ss-liked', true);
-                                }else{
-                                    $('.glyphicon-heart').toggleClass('ss-liked', false); }
-                                },
-                            function (jqXHR, textStatus, errorThrown) {
-                                reject(jqXHR, textStatus, errorThrown); }) },
-                    function (jqXHR, textStatus, errorThrown) {
-                        reject(jqXHR, textStatus, errorThrown); }); });
+                if(JSON.parse(localStorage.getItem('kioskoUser'))){
+                    var currentUser = JSON.parse(localStorage.getItem('kioskoUser'));
+                    var magazine_id = location.search.split('?id=')[1];
+                    Magazine.getMagazine(magazine_id).then(
+                        function(magazine){ 
+                            var user = User.getUser(currentUser.id).then(
+                                function(user){
+                                    localStorage.setItem('kioskoUser', JSON.stringify(user));
+                                    var title_template = "{{title}}";
+                                    var owner_template = "{{owner}}";
+                                    var description_template = "{{description}}";
+                                  
+                                    $('.ss_detail-thumbnail').css('background-image', 'url(http://localhost:43210/' + magazine.thumbnail + ')');
+                                    $('.fa-search-plus').click({'magazine': magazine, 'user': user}, viewMagazine);
+                                    $('.ss_rating > select').barrating({ theme: 'fontawesome-stars' }).barrating('set', magazine.rating);
+                                    $('.ss_title').html(Mustache.render(title_template, {title: magazine.title}));
+                                    $('.ss_author').html(Mustache.render(owner_template, {owner: magazine.owner}));
+                                    $('.ss_description').html(Mustache.render(description_template, {description: magazine.description}));
+                                    $('.glyphicon-heart').click({'magazine_id': magazine_id, 'user_id': user.id}, toggleLike);
+                                    $('.ss_btnShoppingCart').click({'user': user, 'magazine': magazine}, buyMagazine);
+                                    $('.ss_btnDownload').click({'user': user, 'magazine': magazine}, downloadMagazine);
+                                    $('.ss_options > a').attr('href', 'http://localhost:43210/' + magazine.downloadUrl).attr('download');
+                                    for(var i = 0; i < magazine.tags.length; i++){
+                                        $('.ss_tags').append("<i class='ss_tag'><a href=''>" + magazine.tags[i] + '</a></i>'); }
+                                    if(User.findUserLikedMagazine(user, magazine.id)){
+                                        $('.glyphicon-heart').toggleClass('ss-liked', true);
+                                    }else{
+                                        $('.glyphicon-heart').toggleClass('ss-liked', false); }
+                                    listRecommendedMagazines();
+                                    },
+                                function (jqXHR, textStatus, errorThrown) {
+                                    reject(jqXHR, textStatus, errorThrown); }) },
+                        function (jqXHR, textStatus, errorThrown) {
+                            reject(jqXHR, textStatus, errorThrown); }); 
+                }else{
+
+                
+
+                }
+            });
+        </script>
+        <script id="tmplRecommendedMagazinesList" type="x-tmpl-mustache">
+            <div class="row">
+
+                
+            </div>
         </script>
     </body>
 </html>

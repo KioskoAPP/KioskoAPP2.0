@@ -230,15 +230,21 @@ body
             .ss_btnDownload
                 margin-top: 35px
                 background-color: $white
+                color: $black
                 border: 2px solid $verylightgray
                 i 
                     margin-right: 15px
             .ss_btnDownload:hover
                 background-color: $verylightgray
                 box-shadow: 0px 0px 15px rgba(230,230,230,0.75)
+            .ss_btnDownload:focus
+                background-color: $lightgray
+                outline: 0
+
 
             .ss_btnShoppingCart
                 margin-top: 35px
+                color: $black
                 background-color: $white
                 border: 2px solid $verylightgray
                 i
@@ -246,6 +252,10 @@ body
             .ss_btnShoppingCart:hover
                 background-color: $verylightgray
                 box-shadow: 0px 0px 15px rgba(230,230,230,0.75)
+
+            .ss_btnShoppingCart:focus
+                background-color: $lightgray
+                outline: 0
     .ss_recommended
         margin-top: 50px
         .ss_recommended-title
@@ -273,12 +283,9 @@ body
     /************************ DetailView page **************************/
     #detailViewContent
         margin-top: -50px
-        background-color: red
         width: 100%
         img 
             width: 100%
-            transform: translateY(-100%) rotate(90deg)
-            transform-origin: bottom left
                 
             
             
@@ -527,9 +534,10 @@ body
     /***************************************************************/
     /************************ DetailView page **************************/
     #detailViewContent
-        margin-top: -100px
+        margin-top: -150px
+        width: 100%
         img 
-            min-width: 100%
+            width: 100%
 
     
 
@@ -705,6 +713,13 @@ body
                 text-align: center
                 min-height: 100px
                 border: 2px solid #eee
+    /***************************************************************/
+    /************************ DetailView page **************************/
+    #detailViewContent
+        margin-top: -150px
+        width: 100%
+        img 
+            width: 100%
 
 
 /**************************    MD    ********************************************************************************************************/
@@ -878,4 +893,11 @@ body
                 text-align: center
                 min-height: 100px
                 border: 2px solid #eee
+    /***************************************************************/
+    /************************ DetailView page **************************/
+    #detailViewContent
+        margin-top: -150px
+        width: 100%
+        img 
+            width: 100%
 

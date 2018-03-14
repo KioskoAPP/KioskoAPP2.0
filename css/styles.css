@@ -200,14 +200,19 @@ body {
     .ss_detail-info .ss_options .ss_btnDownload {
       margin-top: 35px;
       background-color: white;
+      color: #0A0A0A;
       border: 2px solid #eeeeee; }
       .ss_detail-info .ss_options .ss_btnDownload i {
         margin-right: 15px; }
     .ss_detail-info .ss_options .ss_btnDownload:hover {
       background-color: #eeeeee;
       box-shadow: 0px 0px 15px rgba(230, 230, 230, 0.75); }
+    .ss_detail-info .ss_options .ss_btnDownload:focus {
+      background-color: #C8C8C8;
+      outline: 0; }
     .ss_detail-info .ss_options .ss_btnShoppingCart {
       margin-top: 35px;
+      color: #0A0A0A;
       background-color: white;
       border: 2px solid #eeeeee; }
       .ss_detail-info .ss_options .ss_btnShoppingCart i {
@@ -215,6 +220,9 @@ body {
     .ss_detail-info .ss_options .ss_btnShoppingCart:hover {
       background-color: #eeeeee;
       box-shadow: 0px 0px 15px rgba(230, 230, 230, 0.75); }
+    .ss_detail-info .ss_options .ss_btnShoppingCart:focus {
+      background-color: #C8C8C8;
+      outline: 0; }
 
   .ss_recommended {
     margin-top: 50px; }
@@ -240,12 +248,9 @@ body {
   /************************ DetailView page ************************* */
   #detailViewContent {
     margin-top: -50px;
-    background-color: red;
     width: 100%; }
     #detailViewContent img {
-      width: 100%;
-      transform: translateY(-100%) rotate(90deg);
-      transform-origin: bottom left; } }
+      width: 100%; } }
 /**************************    SM    ******************************************************************************************************* */
 @media (min-width: 768px) {
   main {
@@ -477,9 +482,10 @@ body {
   /************************************************************** */
   /************************ DetailView page ************************* */
   #detailViewContent {
-    margin-top: -100px; }
+    margin-top: -150px;
+    width: 100%; }
     #detailViewContent img {
-      min-width: 100%; } }
+      width: 100%; } }
 /**************************    MD    ******************************************************************************************************* */
 @media (min-width: 992px) {
   main {
@@ -643,7 +649,15 @@ body {
       .ss_detail-info .ss_recommended .ss_recommended-item {
         text-align: center;
         min-height: 100px;
-        border: 2px solid #eee; } }
+        border: 2px solid #eee; }
+
+  /************************************************************** */
+  /************************ DetailView page ************************* */
+  #detailViewContent {
+    margin-top: -150px;
+    width: 100%; }
+    #detailViewContent img {
+      width: 100%; } }
 /**************************    MD    ******************************************************************************************************* */
 @media (min-width: 1170px) {
   /********************************************************** */
@@ -804,6 +818,14 @@ body {
       .ss_detail-info .ss_recommended .ss_recommended-item {
         text-align: center;
         min-height: 100px;
-        border: 2px solid #eee; } }
+        border: 2px solid #eee; }
+
+  /************************************************************** */
+  /************************ DetailView page ************************* */
+  #detailViewContent {
+    margin-top: -150px;
+    width: 100%; }
+    #detailViewContent img {
+      width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -11,9 +11,9 @@ function milogin() {
     })
         .then(function (res) {
             if (res.length > 0) {
+                localStorage.setItem('kioskoUser', JSON.stringify(res[0]));
                 window.location.href = "home.html";
-            }
-            else {
+            }else {
                 alert("usuario o contraseña invalido");
             }
         },

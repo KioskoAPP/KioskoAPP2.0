@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
 </head>
 <body>
     <header></header>
     <main class="container-fluid">
         <div class="row">
             <div id="detailViewContent" class="col-xs-12">
-                <img src="assets/images/loading.gif" alt="Magazine detail view">
+                <div class="row">
+                    <img src="http://localhost:43210/assets/loading.gif"  alt="Magazine detail view">
+                </div>
             </div>
         </div>
     </main>
-    <footer></footer>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/magazine.class.js"></script>
     <script type="module">
         import { Magazine } from './js/magazine.class.js';
         
@@ -23,6 +26,9 @@
             var magazine_id, user_id = location.search.split('?')[1].split('&')[0].split('=')[1];
             if(location.search.split('?')[1].split('&')[1]) {
                 magazine_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
+            Magazine.getMagazine(magazine_id).then(function(res){
+                $('#detailViewContent img').attr('src', 'http://localhost:43210/' + res.detailViewUrl);
+            });
 
             
         });

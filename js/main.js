@@ -8,6 +8,9 @@ function menuBar(x) {
         case 'none':
             document.getElementById('toggle-menu').style.setProperty('display', 'inline-block');
             $('nav h1').hide();
+            var currentUser = JSON.parse(localStorage.getItem('kioskoUser'));
+            console.log(currentUser.email);
+            $('.menu-profileInfo_username').text('asd' + currentUser.email);
         break; } }
 
 $(document).ready(function() {

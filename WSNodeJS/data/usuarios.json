@@ -29,10 +29,13 @@
             "4"
         ],
         "cart": [
-            "1"
+            "1",
+            "3"
         ],
         "downloads": [
-            "1"
+            "1",
+            "3",
+            null
         ]
     },
     {
@@ -61,6 +64,103 @@
         ],
         "cart": [],
         "downloads": []
+    },
+    {
+        "id": 3,
+        "name": "",
+        "lastName": "",
+        "email": "asdasd@asd.com",
+        "pass": "asd",
+        "birthdate": "",
+        "completeAddress": [
+            {
+                "address": "",
+                "streetName": "",
+                "number": "",
+                "cityName": "",
+                "postCodeName": "",
+                "countryName": ""
+            }
+        ],
+        "liked": [
+            "2",
+            "4",
+            "6"
+        ],
+        "recommendedmagazine": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "cart": [],
+        "downloads": []
+    },
+    {
+        "id": 4,
+        "name": "",
+        "lastName": "",
+        "email": "fgh@glsfdm.com",
+        "pass": "asd",
+        "birthdate": "",
+        "completeAddress": [
+            {
+                "address": "",
+                "streetName": "",
+                "number": "",
+                "cityName": "",
+                "postCodeName": "",
+                "countryName": ""
+            }
+        ],
+        "liked": [
+            "2",
+            "4",
+            "6"
+        ],
+        "recommendedmagazine": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "cart": [],
+        "downloads": []
+    },
+    {
+        "id": 5,
+        "name": "",
+        "lastName": "",
+        "email": "fgh@gmail.com",
+        "pass": "asd",
+        "birthdate": "",
+        "completeAddress": [
+            {
+                "address": "",
+                "streetName": "",
+                "number": "",
+                "cityName": "",
+                "postCodeName": "",
+                "countryName": ""
+            }
+        ],
+        "liked": [
+            "2",
+            "4",
+            "6"
+        ],
+        "recommendedmagazine": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "cart": [],
+        "downloads": []
     }
+<<<<<<< HEAD
 ]
 >>>>>>> 4335250c5e30683f0284d204d19057ffbc477469
+=======
+]
+>>>>>>> 9441105f21efd9e20cb2958f43cf927e83275958

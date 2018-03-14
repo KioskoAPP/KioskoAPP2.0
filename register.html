@@ -50,6 +50,7 @@
                     function (res) {
                         if (res.length == 0) {
                             User.setUser(email, pass).then(
+<<<<<<< HEAD
                                 function (res) {
                                     localStorage.setItem('kioskoUser', res);
                                     location.href = 'home.html?user=' + res.id;
@@ -93,6 +94,14 @@
             registrarse();
             return true;
         }
+=======
+                                function(res){ 
+                                    localStorage.setItem('kioskoUser', JSON.stringify(res));
+                                    location.href='home.html?user=' + res.id; });
+                        }else{ 
+                            $('#advertencia').html('El email que has utilizado ya existe.Use uno diferente.'); } 
+            }); } }
+>>>>>>> 9441105f21efd9e20cb2958f43cf927e83275958
     </script>
 
 </body>

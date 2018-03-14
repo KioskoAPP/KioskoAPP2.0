@@ -149,10 +149,8 @@ var User = new (
         obj.addToDownloads = function(user, magazine_id){
             if(!this.findUserDownloadedMagazine(user, magazine_id)){
                 user.downloads.push(magazine_id);
-                this.updateUser(user);  }
-                
+                this.updateUser(user); }
         };
-        
     }
 )();
 

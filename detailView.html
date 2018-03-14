@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 </head>
-<body>
+<body style="background-color: rgb(94, 94, 94)">
     <header></header>
     <main class="container-fluid">
         <div class="row">
@@ -23,14 +23,14 @@
         import { Magazine } from './js/magazine.class.js';
         
         $(document).ready(function(){
-            var magazine_id, user_id = location.search.split('?')[1].split('&')[0].split('=')[1];
-            if(location.search.split('?')[1].split('&')[1]) {
-                magazine_id = location.search.split('?')[1].split('&')[1].split('=')[1]; }
-            Magazine.getMagazine(magazine_id).then(function(res){
-                $('#detailViewContent img').attr('src', 'http://localhost:43210/' + res.detailViewUrl);
-            });
-
-            
+            if(JSON.parse(localStorage.getItem('kioskoUser'))){
+                var currentUser = JSON.parse(localStorage.getItem('kioskoUser'));
+                var magazine_id = location.search.split('?id=')[1];
+                Magazine.getMagazine(magazine_id).then(function(res){
+                    $('#detailViewContent img').attr('src', 'http://localhost:43210/' + res.detailViewUrl);
+                });
+            }else{
+                window.location = 'login.html'; }
         });
         
        

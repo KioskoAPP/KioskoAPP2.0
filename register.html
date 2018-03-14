@@ -17,7 +17,7 @@
     </div>
     <br>
     <div class="dra-registro">
-        <button id="registrarseBtn" class="btn btn-block">Registrate</button>
+        <input type="button" id="registrarseBtn" class="btn btn-block" value="Registrate">
     </div>
     <div class="testa">
         <p>Al hacer click en Registrate aceptas los términos y condiciones y la política de privacidad de Kiosko</p>
@@ -37,25 +37,62 @@
     <script src="js/main.js"></script>
     <script src="js/validarreg.js"></script>
     <script type="module">
-        import { User } from './js/user.class.js'; 
-        
-        $('#registrarseBtn').click(registrarse); 
-        
-        function registrarse() { 
-            var email = $('#email').val(); 
-            var pass = $('#contraseña').val(); 
-            var pass2 = $('#contraseña2').val(); 
-            if(pass === pass2){ 
+        import { User } from './js/user.class.js';
+
+        $('#registrarseBtn').click(validar);
+
+        function registrarse() {
+            var email = $('#email').val();
+            var pass = $('#contraseña').val();
+            var pass2 = $('#contraseña2').val();
+            if (pass === pass2) {
                 User.findUserByEmail(email).then(
-                    function(res) { 
-                        if(res.length==0){ 
+                    function (res) {
+                        if (res.length == 0) {
                             User.setUser(email, pass).then(
-                                function(res){ 
+                                function (res) {
                                     localStorage.setItem('kioskoUser', JSON.stringify(res));
-                                    location.href='home.html?user=' + res.id; });
-                        }else{ 
-                            $('#advertencia').html('El email que has utilizado ya existe.Use uno diferente.'); } 
-            }); } }
+                                    location.href = 'home.html';
+                                });
+                        } else {
+                            $('#advertencia').html('El email que has utilizado ya existe. Use uno diferente.');
+                        }
+                    });
+            }
+        }
+
+        function validar() {
+            var email = $('#email').val();
+            var contraseña = $('#contraseña').val();
+            var contraseña1 = $('#contraseña2').val();
+
+            var expresion = /\w+@\w+\.+[a-z]/;
+            if (email === "" || contraseña === "") {
+                alert("Ambos campos son obligatorios");
+                return false;
+            }
+            else if (email.length > 100) {
+                alert("El correo electrónico es muy largo");
+                return false;
+            }
+
+            else if (!expresion.test(email)) {
+                alert("El correo electrónico no es válido");
+                return false;
+            }
+            else if (contraseña.length > 30) {
+                alert("La contraseña debe tener menos de 30 caracteres");
+                return false;
+            }
+
+            else if (contraseña != contraseña1) {
+                alert("La contraseña no coincide con la de arriba");
+                return false;
+            }
+
+            registrarse();
+            return true;
+        }
     </script>
 
 </body>

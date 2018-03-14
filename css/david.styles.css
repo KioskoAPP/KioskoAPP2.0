@@ -159,3 +159,31 @@ text-align: center;
   float: center;
   text-align: center;
 }
+
+.dra-12{
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+.dra-catrevistas {
+  margin-top: 100px;
+}
+
+.dra-revista1 {
+ margin-top: 75;
+ margin-left: 50 px;
+}
+
+.dra-catrevistas {
+    margin-left:150px;
+}
+
+.dra-1f {
+    margin-bottom: 50px;
+}
+
+.dra-minfer {
+    width: 100%;
+    margin-left: 0px;
+}
